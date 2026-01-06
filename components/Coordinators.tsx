@@ -74,7 +74,7 @@ const Coordinators: React.FC = () => {
             image: "https://media.licdn.com/dms/image/v2/D5603AQF0OVHh58uOjg/profile-displayphoto-scale_400_400/B56ZmEDj5mKEAg-/0/1758857150600?e=1769040000&v=beta&t=7KDQrWJ91gC_45T5CGNIaTptJOwRViiYXWoqcJwN45o"
         },
         {
-            name: "Nowrin Begum",
+            name: "Nowrin Akkka",
             role: "Event Coordinator",
             phone: "8807527817",
             email: "nowrinbegum19@gmail.com",
