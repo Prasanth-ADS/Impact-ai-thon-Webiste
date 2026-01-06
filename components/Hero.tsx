@@ -3,11 +3,9 @@ import { ArrowRight, Code2, Cpu, Globe } from 'lucide-react';
 import { TimeLeft } from '../types';
 
 const Hero: React.FC = () => {
-  // Set target date to 14 days from now for demo purposes
+  // Set target date to February 22, 2026
   const [targetDate] = useState<number>(() => {
-    const date = new Date();
-    date.setDate(date.getDate() + 14);
-    return date.getTime();
+    return new Date('2026-02-22T00:00:00').getTime();
   });
 
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
