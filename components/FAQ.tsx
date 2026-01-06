@@ -35,7 +35,7 @@ const FAQ: React.FC = () => {
     {
       icon: Users,
       question: "What is the team size?",
-      answer: "Teams may consist of a minimum of 1 and a maximum of 4 members."
+      answer: "Teams may consist of a minimum of 1 and a maximum of 3 members."
     },
     {
       icon: Share2,
