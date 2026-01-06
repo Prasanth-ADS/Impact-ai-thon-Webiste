@@ -31,11 +31,11 @@ const Hero: React.FC = () => {
     return () => clearInterval(interval);
   }, [targetDate]);
 
-  const TimeUnit: React.FC<{ value: number; label: string }> = ({ value, label }) => (
+  const TimeUnit: React.FC<{ value: number; label: string; shouldAnimate?: boolean }> = ({ value, label, shouldAnimate }) => (
     <div className="flex flex-col items-center mx-2 md:mx-4">
       <div className="w-16 h-16 md:w-24 md:h-24 bg-tech-card border border-tech-cyan/30 rounded-lg flex items-center justify-center shadow-[0_0_15px_rgba(6,182,212,0.15)] relative overflow-hidden group">
         <div className="absolute inset-0 bg-tech-cyan/5 group-hover:bg-tech-cyan/10 transition-colors"></div>
-        <span key={value} className="text-2xl md:text-5xl font-mono font-bold text-white z-10 animate-number-pop">
+        <span key={value} className={`text-2xl md:text-5xl font-mono font-bold text-white z-10 ${shouldAnimate ? 'animate-number-pop' : ''}`}>
           {value.toString().padStart(2, '0')}
         </span>
       </div>
@@ -81,7 +81,7 @@ const Hero: React.FC = () => {
           <TimeUnit value={timeLeft.days} label="Days" />
           <TimeUnit value={timeLeft.hours} label="Hours" />
           <TimeUnit value={timeLeft.minutes} label="Mins" />
-          <TimeUnit value={timeLeft.seconds} label="Secs" />
+          <TimeUnit value={timeLeft.seconds} label="Secs" shouldAnimate={true} />
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-6">
