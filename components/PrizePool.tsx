@@ -15,7 +15,7 @@ const PrizePool: React.FC = () => {
             <span className="text-xs font-bold tracking-widest text-yellow-500 uppercase">Total Rewards</span>
           </div>
           <h2 className="text-5xl md:text-6xl font-black text-white mb-6 tracking-tight">
-            ₹1,50,000+ <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-400">PRIZE POOL</span>
+            ₹1,20,000+ <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-400">PRIZE POOL</span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
             Compete for cash prizes, venture capital introductions, and enterprise-grade tech stacks.
@@ -33,7 +33,7 @@ const PrizePool: React.FC = () => {
             </div>
             <div className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-1">Runner Up</div>
             <h3 className="text-2xl font-bold text-white mb-2">2nd Place</h3>
-            <div className="text-4xl font-mono font-bold text-tech-cyan mb-6">₹50,000</div>
+            <div className="text-4xl font-mono font-bold text-tech-cyan mb-6">₹40,000</div>
             <ul className="text-left w-full space-y-3 text-slate-400 text-sm border-t border-slate-800 pt-6">
               <li className="flex items-center"><Star size={14} className="mr-2 text-slate-500" /> Cloud Credits</li>
               <li className="flex items-center"><Star size={14} className="mr-2 text-slate-500" /> Gadget Bundle</li>
@@ -53,7 +53,7 @@ const PrizePool: React.FC = () => {
 
             <div className="text-sm font-bold text-yellow-500 uppercase tracking-widest mb-1">Grand Champion</div>
             <h3 className="text-3xl font-black text-white mb-2">1st Place</h3>
-            <div className="text-6xl font-mono font-bold text-white mb-8 tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-yellow-200 to-yellow-500">₹75,000</div>
+            <div className="text-6xl font-mono font-bold text-white mb-8 tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-yellow-200 to-yellow-500">₹60,000</div>
 
             <ul className="text-left w-full space-y-4 text-slate-300 text-sm border-t border-yellow-500/20 pt-8">
               <li className="flex items-center font-semibold"><Crown size={16} className="mr-3 text-yellow-500" /> Direct Accelerator Interview</li>
@@ -71,7 +71,7 @@ const PrizePool: React.FC = () => {
             </div>
             <div className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-1">Finalist</div>
             <h3 className="text-2xl font-bold text-white mb-2">3rd Place</h3>
-            <div className="text-4xl font-mono font-bold text-tech-cyan mb-6">₹25,000</div>
+            <div className="text-4xl font-mono font-bold text-tech-cyan mb-6">₹20,000</div>
             <ul className="text-left w-full space-y-3 text-slate-400 text-sm border-t border-slate-800 pt-6">
               <li className="flex items-center"><Star size={14} className="mr-2 text-slate-500" /> Cloud Credits</li>
               <li className="flex items-center"><Star size={14} className="mr-2 text-slate-500" /> Swag Pack</li>
