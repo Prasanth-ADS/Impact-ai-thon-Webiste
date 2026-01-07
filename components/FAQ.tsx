@@ -1,77 +1,77 @@
 import React, { useState } from 'react';
-import {
-  Plus,
-  Minus,
-  MapPin,
-  Calendar,
-  Users,
-  Share2,
-  Wrench,
-  Award,
-  ShieldCheck,
-  Utensils,
-  Laptop,
-  MessageSquare,
-  Linkedin,
-  Phone,
-  Mail
-} from 'lucide-react';
+import { Plus } from 'lucide-react';
 import { FaqItem } from '../types';
 
 const FAQ: React.FC = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const faqs: FaqItem[] = [
     {
-      icon: MapPin,
-      question: "What is the mode of Impact AI Thon 2026?",
-      answer: "Impact AI Thon 2026 will be conducted offline, and all participants are required to attend in person at the venue."
+      emoji: "💸",
+      peekingEmoji: "🤑",
+      question: "Is there an registration fee?",
+      answer: "Nope! This hackathon is completely free to enter. Just bring your enthusiasm and creativity!"
     },
     {
-      icon: Calendar,
-      question: "What is the registration deadline?",
-      answer: "The last date for registration is 18 February 2026. Late registrations will not be accepted."
+      emoji: "⏰",
+      peekingEmoji: "⌛",
+      question: "How long is the hackathon?",
+      answer: "24 hours! That's 24 hours to turn caffeine into code, bugs into features, and sleep deprivation into innovation. Don't worry, we provide energy drinks!"
     },
     {
-      icon: Users,
-      question: "What is the team size?",
-      answer: "Teams may consist of a minimum of 1 and a maximum of 3 members."
+      emoji: "💻",
+      peekingEmoji: "🎒",
+      question: "What should I bring to the hackathon?",
+      answer: "Just your laptop, charger, and an unhealthy amount of ambition! We'll provide WiFi, food, and moral support (results may vary on the last one)."
     },
     {
-      icon: Share2,
-      question: "Are inter-college or inter-department teams allowed?",
-      answer: "Yes, teams with members from different colleges or departments are permitted."
+      emoji: "👥",
+      peekingEmoji: "🤝",
+      question: "Can I participate alone?",
+      answer: "Sorry, but teamwork makes the dream work! Solo participation isn't allowed. You'll need to form a team of 1–3 members. Don't worry, we'll help you find teammates if needed."
     },
     {
-      icon: Wrench,
-      question: "What facilities are provided by the organizers?",
-      answer: "The organizers will provide essential infrastructure for coding, including internet connectivity."
+      emoji: "🌟",
+      peekingEmoji: "🌱",
+      question: "I'm a beginner. Can I still participate?",
+      answer: "Yes! We believe in equal opportunity chaos. Whether you're a coding newbie or a student who remembers when HTML was revolutionary, everyone's welcome! This hackathon is designed specifically for students."
     },
     {
-      icon: Award,
-      question: "Will participants receive certificates?",
-      answer: "Yes, participation certificates will be issued to all eligible participants."
+      emoji: "😴",
+      peekingEmoji: "🛌",
+      question: "Can I sleep during the hackathon?",
+      answer: "Absolutely! Sleeping is optional but highly discouraged by your future self. We have designated quiet zones for power naps between your coffee-induced coding sessions."
     },
     {
-      icon: ShieldCheck,
-      question: "What code of conduct must participants follow?",
-      answer: "Participants must maintain discipline, respect fellow participants and organizers, and avoid damage to venue property."
+      emoji: "🍕",
+      peekingEmoji: "🍔",
+      question: "Will food be provided?",
+      answer: "Absolutely! We provide breakfast, lunch, and dinner, plus energy drinks and snacks throughout the event. If you have dietary restrictions, let us know! We promise the food won't judge your code quality."
     },
     {
-      icon: Utensils,
-      question: "Are accommodation and food provided?",
-      answer: "Accommodation will not be provided. However, food and refreshments will be arranged for participants."
+      emoji: "🏆",
+      peekingEmoji: "🥇",
+      question: "What can I win?",
+      answer: "Amazing prizes worth ₹1,00,000+ plus networking opportunities, and the eternal bragging rights of surviving 24 hours of coding! You might actually build something amazing too."
     },
     {
-      icon: Laptop,
-      question: "What should participants bring?",
-      answer: "Participants must bring their own laptops, chargers, and any tools required for the hackathon."
+      emoji: "🆘",
+      peekingEmoji: "🐛",
+      question: "What if my code breaks at 3 AM?",
+      answer: "Git is your best friend! We also have mentors available 24/7 (they run on the same caffeine as you) to help debug your code and your life choices."
     },
     {
-      icon: MessageSquare,
-      question: "Whom should we contact for queries?",
-      answer: "You can reach out to us via the following channels:"
-    }
+      emoji: "🛠",
+      peekingEmoji: "⚙️",
+      question: "What technologies can I use?",
+      answer: "Any programming language, framework, or tool you want! Python, JavaScript, React, Flutter, or even COBOL if you're feeling retro. Just make it work (somehow)."
+    },
+    {
+      emoji: "🚀",
+      peekingEmoji: "💡",
+      question: "Help! I have no idea what to build!",
+      answer: "Don't panic! Every great project starts as a mess. Focus on building something functional first, then make it pretty. Remember: working ugly code beats beautiful broken code!"
+    },
   ];
 
   const toggleFAQ = (index: number) => {
@@ -87,94 +87,72 @@ const FAQ: React.FC = () => {
       "name": faq.question,
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": faq.question === "Whom should we contact for queries?"
-          ? "LinkedIn: ninjasndias | Phone: 434234234 | Email: dsc@gmail.com"
-          : faq.answer
+        "text": faq.answer
       }
     }))
   };
 
   return (
-    <section id="faq" className="py-24 bg-[#050a14]/90 backdrop-blur-sm relative overflow-hidden">
-      {/* Schema Markup */}
+    <section id="faq" className="w-full max-w-4xl mx-auto px-6 py-24 relative z-10">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
+      <div className="flex flex-col gap-8">
+        {faqs.map((faq, index) => {
+          const isOpen = openIndex === index;
+          const isEven = index % 2 === 0;
 
-      <div className="max-w-4xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-tech-cyan font-mono text-sm tracking-widest mb-2 uppercase">Common Questions</h2>
-          <h3 className="text-4xl font-bold text-white">Frequently Asked <span className="text-tech-purple">Questions</span></h3>
-        </div>
-
-        <div className="space-y-4">
-          {faqs.map((faq, index) => {
-            const Icon = faq.icon;
-            const isOpen = openIndex === index;
-
-            return (
+          return (
+            <div key={index} className="relative group">
+              {/* Peeking Emoji */}
               <div
-                key={index}
-                className={`bg-tech-card/50 border ${isOpen ? 'border-tech-cyan shadow-[0_0_15px_rgba(6,182,212,0.1)]' : 'border-slate-800'} rounded-xl overflow-hidden transition-all duration-300 group`}
+                className={`absolute -top-3 text-2xl z-0 transform transition-transform duration-300 pointer-events-none filter drop-shadow-lg
+                  ${isEven ? '-left-2' : '-right-2'}
+                  ${isOpen
+                    ? `translate-y-[-5px] ${isEven ? 'rotate-[-10deg]' : 'rotate-[10deg]'}`
+                    : `group-hover:translate-y-[-2px] ${isEven ? 'group-hover:rotate-[10deg]' : 'group-hover:rotate-[-10deg]'}`
+                  }`}
+              >
+                {faq.peekingEmoji}
+              </div>
+
+              {/* Main FAQ Card */}
+              <div
+                className={`relative z-10 rounded-full border transition-all duration-300 ease-in-out bg-slate-900 overflow-hidden 
+                  ${isOpen ? 'border-tech-cyan/50 shadow-lg shadow-tech-cyan/10 rounded-2xl' : 'border-white/10 hover:border-white/20'}`}
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full flex items-center justify-between p-6 text-left focus:outline-none cursor-pointer"
+                  className="w-full flex items-center justify-between px-8 py-5 text-left cursor-pointer focus:outline-none"
                   aria-expanded={isOpen}
                 >
-                  <div className="flex items-center space-x-4">
-                    {Icon && (
-                      <div className={`p-2 rounded-lg ${isOpen ? 'bg-tech-cyan/20 text-tech-cyan' : 'bg-slate-800 text-slate-500'} group-hover:text-tech-cyan transition-colors`}>
-                        <Icon size={20} />
-                      </div>
-                    )}
-                    <span className={`font-bold text-lg md:text-xl ${isOpen ? 'text-white' : 'text-slate-300'}`}>
+                  <div className="flex items-center flex-grow mr-4">
+                    <span className={`font-medium text-lg md:text-xl transition-colors ${isOpen ? 'text-tech-cyan' : 'text-slate-200'}`}>
                       {faq.question}
                     </span>
                   </div>
-                  {isOpen ? (
-                    <Minus className="text-tech-cyan flex-shrink-0" />
-                  ) : (
-                    <Plus className="text-slate-500 flex-shrink-0 group-hover:text-tech-cyan transition-colors" />
-                  )}
+
+                  <div className={`flex-shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-45 text-tech-cyan' : 'rotate-0 text-slate-400'}`}>
+                    <Plus size={24} />
+                  </div>
                 </button>
 
+                {/* Answer Panel */}
                 <div
-                  className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                    }`}
+                  className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
                 >
-                  <div className="p-6 pt-0 text-slate-400 leading-relaxed border-t border-slate-800/30 mt-2">
-                    {index === 9 ? (
-                      <div className="space-y-3 mt-4">
-                        <a
-                          href="https://www.linkedin.com/in/aejazahmed2006/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center space-x-3 text-slate-300 hover:text-tech-cyan transition-colors group/link"
-                        >
-                          <Linkedin size={18} className="text-tech-cyan group-hover/link:scale-110 transition-transform" />
-                          <span className="font-mono">Syed Aejaz Ahmed</span>
-                        </a>
-                        <div className="flex items-center space-x-3 text-slate-300">
-                          <Phone size={18} className="text-tech-cyan" />
-                          <span className="font-mono">8940764888</span>
-                        </div>
-                        <div className="flex items-center space-x-3 text-slate-300">
-                          <Mail size={18} className="text-tech-cyan" />
-                          <span className="font-mono">dsc@gmail.com</span>
-                        </div>
-                      </div>
-                    ) : (
-                      faq.answer
-                    )}
+                  <div className="overflow-hidden">
+                    <p className="px-8 pb-6 text-slate-400 leading-relaxed text-base md:text-lg">
+                      {faq.answer}
+                    </p>
                   </div>
                 </div>
               </div>
-            );
-          })}
-        </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

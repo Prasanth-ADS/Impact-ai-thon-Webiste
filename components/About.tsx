@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Target, Users, Lightbulb, Trophy } from 'lucide-react';
+import { Calendar, Trophy, MapPin } from 'lucide-react';
 
 const About: React.FC = () => {
   const stats = [
-    { label: 'Prize Pool', value: '₹1.5 Lakh+', icon: <Trophy className="text-yellow-400" size={24} /> },
-    { label: 'Participants', value: '500+', icon: <Users className="text-blue-400" size={24} /> },
-    { label: 'Mentors', value: '40+', icon: <Lightbulb className="text-purple-400" size={24} /> },
+    { label: 'Date Of Event ', value: '22 Feb - 23 Feb', icon: <Calendar className="text-yellow-400" size={24} /> },
+    { label: 'Prize Pool', value: '₹1,00,000', icon: <Trophy className="text-blue-400" size={24} /> },
+    { label: 'Event Type', value: 'Offline', icon: <MapPin className="text-purple-400" size={24} /> },
   ];
 
   return (

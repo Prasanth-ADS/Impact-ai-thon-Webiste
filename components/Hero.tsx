@@ -64,11 +64,8 @@ const Hero: React.FC = () => {
           <span className="text-xs font-bold tracking-widest uppercase">Registration Open</span>
         </div>
 
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white mb-6 neon-text">
-          BUILD THE <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-tech-cyan to-tech-purple">
-            IMPOSSIBLE
-          </span>
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white mb-6 glitch-text" data-text="IMPACT-AI-THON 2026">
+          IMPACT-AI-THON 2026
         </h1>
 
         <p className="max-w-2xl mx-auto text-lg md:text-xl text-slate-400 mb-12 leading-relaxed">

@@ -27,5 +27,6 @@ export interface TrackItem {
 export interface FaqItem {
   question: string;
   answer: string;
-  icon?: React.ElementType;
+  emoji: string;
+  peekingEmoji: string;
 }

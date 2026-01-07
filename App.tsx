@@ -3,17 +3,18 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Tracks from './components/Tracks';
-import Schedule from './components/Schedule';
 import Sponsors from './components/Sponsors';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import PrizePool from './components/PrizePool';
 import DarkVeil from './components/DarkVeil';
+import Timeline from './components/Timeline';
 
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import TrackDetail from './components/TrackDetail';
 import Coordinators from './components/Coordinators';
+import Loader from './components/Loader';
 
 
 const Home: React.FC = () => {
@@ -26,7 +27,7 @@ const Home: React.FC = () => {
         <Tracks />
         <PrizePool />
         <Sponsors />
-        <Schedule />
+        <Timeline />
         <Coordinators />
         <FAQ />
       </main>
@@ -36,6 +37,17 @@ const Home: React.FC = () => {
 };
 
 const App: React.FC = () => {
+  const [isLoading, setIsLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
   return (
     <Router>
       <div className="font-sans antialiased text-slate-200 selection:bg-tech-cyan selection:text-black relative">
