@@ -96,16 +96,55 @@ export const TRACKS: TrackData[] = [
         title: "Climate and Compass",
         icon: Compass,
         description: "Navigate the future of sustainable tourism and environmental stewardship with AI-powered preservation tools.",
+        objective: "Design AI-driven systems that address climate resilience, sustainable tourism, disaster preparedness, environmental intelligence, and emissions reduction by leveraging real-time data, geospatial intelligence, and predictive analytics—while enabling actionable decisions for governments, enterprises, and communities.",
+        constraints: [
+            "Must support real-time or near-real-time intelligence",
+            "Should leverage geospatial, temporal, or environmental data",
+            "Outputs must be explainable and decision-oriented",
+            "Must demonstrate climate, sustainability, or resilience impact",
+            "Should be scalable for real-world deployment"
+        ],
+        evaluation: [
+            "Environmental and climate impact",
+            "Predictive accuracy and responsiveness",
+            "Practical deployability and scalability",
+            "Explainability of AI outputs",
+            "Value to governments, enterprises, and communities"
+        ],
         color: "border-blue-500 text-blue-400",
         problems: [
-            { title: 'AI-Driven Destination Management', description: 'Predict and mitigate over-tourism through crowd surge forecasting and proactive load balancing across heritage sites.' },
-            { title: 'AI-Driven Tourism Agent Planner', description: 'Generate day-wise, bookable itineraries tailored to user travel dates, budget, and real-world factors like weather.' },
-            { title: 'Sustainable Travel Carbon Tracking', description: 'Real-time carbon footprint calculation for travel decisions with informed suggestions for lower-carbon alternatives.' },
-            { title: 'AI-Based Urban Flood Nowcasting', description: 'Street-level flood risk mapping and short-term predictions using satellite radar and social media distress signal analysis.' },
-            { title: 'Scope 3 Emissions Auto-Accounting', description: 'NLP-based document parsing for automatic extraction and aggregation of indirect emissions data from supplier disclosures.' },
-            { title: 'Automated Post-Disaster Damage Assessment', description: 'Rapid evaluation of infrastructure safety using pre- and post-event satellite or drone imagery comparison and classification.' },
-            { title: 'AI-Based Shipping Route Fuel Optimization', description: 'Minimize fuel consumption and emissions through real-time oceanographic and weather-aware route optimization.' },
-            { title: 'Automated Coral Reef Health Monitoring', description: 'Computer vision-based assessment of coral health and bleaching detection using underwater AUV video feeds.' },
+            {
+                title: "AI-Driven Destination Management & Invisible Crowd Control",
+                description: "Design an AI platform that predicts and mitigates over-tourism by forecasting crowd surges in advance using historical footfall, weather, seasonal trends, and public events. The system should enable proactive visitor load balancing across attractions without imposing physical or digital movement restrictions."
+            },
+            {
+                title: "AI-Driven Tourism Agent Planner & Dynamic Itinerary Management",
+                description: "Build an AI-based tourism planning system that generates time-aware, day-wise, and executable travel itineraries based on user constraints such as budget, availability, interests, and stay preferences. The system must dynamically adapt itineraries to real-world changes like weather, delays, or booking availability."
+            },
+            {
+                title: "Sustainable Travel Carbon Tracking & Green Decision Intelligence",
+                description: "Create a real-time carbon intelligence platform that calculates the environmental impact of travel decisions—including transport, accommodation, and activities—during trip planning or booking. The platform should surface lower-carbon alternatives and verified offset options without disrupting the booking experience."
+            },
+            {
+                title: "AI-Based Urban Flood Nowcasting & Rapid Risk Intelligence",
+                description: "Design an AI-driven urban flood nowcasting system that produces street-level flood risk predictions with short lead times by fusing satellite radar data and social-media-based distress signals. The solution should enable rapid, localized emergency alerts and response coordination in dense urban environments."
+            },
+            {
+                title: "Scope 3 Emissions Auto-Accounting & ESG Intelligence",
+                description: "Build an AI-powered ESG platform that automatically extracts, standardizes, and aggregates Scope 3 emissions data from unstructured supplier documents. The system should produce auditable, regulation-aligned emissions insights with minimal manual intervention."
+            },
+            {
+                title: "Automated Post-Disaster Infrastructure Damage Assessment",
+                description: "Develop an AI system that rapidly assesses infrastructure damage after natural disasters by comparing pre- and post-event satellite or drone imagery. The output should classify buildings and roads by damage severity to support rescue prioritization and recovery planning."
+            },
+            {
+                title: "AI-Based Shipping Route Fuel Optimization & Emissions Reduction",
+                description: "Create an AI-driven maritime route optimization platform that minimizes fuel consumption and emissions by incorporating real-time oceanographic and weather data. The system must balance fuel efficiency, safety, and schedule reliability for shipping operators."
+            },
+            {
+                title: "Automated Coral Reef Health Monitoring & Bleaching Detection",
+                description: "Design an AI-powered marine monitoring platform that analyzes underwater video feeds to identify coral species and detect early signs of bleaching. The system should generate spatial and temporal reef health insights to support conservation and climate impact assessment."
+            }
         ]
     }
 ];
