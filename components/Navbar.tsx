@@ -21,7 +21,6 @@ const Navbar: React.FC = () => {
     { name: 'Tracks', href: '#tracks' },
     { name: 'Prizes', href: '#prizes' },
     { name: 'Sponsors', href: '#sponsors' },
-    { name: 'Schedule', href: '#schedule' },
     { name: 'FAQ', href: '#faq' },
   ];
 
@@ -94,14 +93,6 @@ const Navbar: React.FC = () => {
               {link.name}
             </a>
           ))}
-          <a
-            href="https://unstop.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-2 bg-tech-electric/10 border border-tech-electric text-tech-electric font-bold rounded hover:bg-tech-electric hover:text-black transition-all duration-300 transform hover:scale-105 cursor-pointer no-underline"
-          >
-            REGISTER_NOW
-          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -126,14 +117,6 @@ const Navbar: React.FC = () => {
                 {link.name}
               </a>
             ))}
-            <a
-              href="https://unstop.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full py-3 bg-tech-electric text-black font-bold rounded text-center cursor-pointer no-underline"
-            >
-              REGISTER_NOW
-            </a>
           </div>
         </div>
       )}

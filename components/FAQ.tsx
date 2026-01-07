@@ -7,68 +7,46 @@ const FAQ: React.FC = () => {
 
   const faqs: FaqItem[] = [
     {
-      emoji: "💸",
-      peekingEmoji: "🤑",
       question: "Is there an registration fee?",
       answer: "Nope! This hackathon is completely free to enter. Just bring your enthusiasm and creativity!"
     },
     {
-      emoji: "⏰",
-      peekingEmoji: "⌛",
       question: "How long is the hackathon?",
       answer: "24 hours! That's 24 hours to turn caffeine into code, bugs into features, and sleep deprivation into innovation. Don't worry, we provide energy drinks!"
     },
     {
-      emoji: "💻",
-      peekingEmoji: "🎒",
       question: "What should I bring to the hackathon?",
       answer: "Just your laptop, charger, and an unhealthy amount of ambition! We'll provide WiFi, food, and moral support (results may vary on the last one)."
     },
     {
-      emoji: "👥",
-      peekingEmoji: "🤝",
       question: "Can I participate alone?",
       answer: "Sorry, but teamwork makes the dream work! Solo participation isn't allowed. You'll need to form a team of 1–3 members. Don't worry, we'll help you find teammates if needed."
     },
     {
-      emoji: "🌟",
-      peekingEmoji: "🌱",
       question: "I'm a beginner. Can I still participate?",
       answer: "Yes! We believe in equal opportunity chaos. Whether you're a coding newbie or a student who remembers when HTML was revolutionary, everyone's welcome! This hackathon is designed specifically for students."
     },
     {
-      emoji: "😴",
-      peekingEmoji: "🛌",
       question: "Can I sleep during the hackathon?",
       answer: "Absolutely! Sleeping is optional but highly discouraged by your future self. We have designated quiet zones for power naps between your coffee-induced coding sessions."
     },
     {
-      emoji: "🍕",
-      peekingEmoji: "🍔",
       question: "Will food be provided?",
       answer: "Absolutely! We provide breakfast, lunch, and dinner, plus energy drinks and snacks throughout the event. If you have dietary restrictions, let us know! We promise the food won't judge your code quality."
     },
     {
-      emoji: "🏆",
-      peekingEmoji: "🥇",
       question: "What can I win?",
       answer: "Amazing prizes worth ₹1,00,000+ plus networking opportunities, and the eternal bragging rights of surviving 24 hours of coding! You might actually build something amazing too."
     },
     {
-      emoji: "🆘",
-      peekingEmoji: "🐛",
       question: "What if my code breaks at 3 AM?",
       answer: "Git is your best friend! We also have mentors available 24/7 (they run on the same caffeine as you) to help debug your code and your life choices."
     },
     {
-      emoji: "🛠",
-      peekingEmoji: "⚙️",
       question: "What technologies can I use?",
       answer: "Any programming language, framework, or tool you want! Python, JavaScript, React, Flutter, or even COBOL if you're feeling retro. Just make it work (somehow)."
     },
     {
-      emoji: "🚀",
-      peekingEmoji: "💡",
       question: "Help! I have no idea what to build!",
       answer: "Don't panic! Every great project starts as a mess. Focus on building something functional first, then make it pretty. Remember: working ugly code beats beautiful broken code!"
     },
@@ -106,18 +84,6 @@ const FAQ: React.FC = () => {
 
           return (
             <div key={index} className="relative group">
-              {/* Peeking Emoji */}
-              <div
-                className={`absolute -top-3 text-2xl z-0 transform transition-transform duration-300 pointer-events-none filter drop-shadow-lg
-                  ${isEven ? '-left-2' : '-right-2'}
-                  ${isOpen
-                    ? `translate-y-[-5px] ${isEven ? 'rotate-[-10deg]' : 'rotate-[10deg]'}`
-                    : `group-hover:translate-y-[-2px] ${isEven ? 'group-hover:rotate-[10deg]' : 'group-hover:rotate-[-10deg]'}`
-                  }`}
-              >
-                {faq.peekingEmoji}
-              </div>
-
               {/* Main FAQ Card */}
               <div
                 className={`relative z-10 rounded-full border transition-all duration-300 ease-in-out bg-slate-900 overflow-hidden 

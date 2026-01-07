@@ -27,6 +27,4 @@ export interface TrackItem {
 export interface FaqItem {
   question: string;
   answer: string;
-  emoji: string;
-  peekingEmoji: string;
 }

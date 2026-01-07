@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Code2, Cpu, Globe } from 'lucide-react';
 import { TimeLeft } from '../types';
+import SocialShare from './SocialShare';
 
 const Hero: React.FC = () => {
   // Set target date to February 22, 2026
@@ -55,7 +56,7 @@ const Hero: React.FC = () => {
 
 
       {/* Main Content - Increased z-index to 20 to sit above background overlays */}
-      <div className="relative z-20 container mx-auto px-6 text-center">
+      <div className="relative z-20 container mx-auto px-6 text-center flex flex-col items-center">
         <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-tech-cyan/10 border border-tech-cyan/30 text-tech-cyan mb-8">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-tech-cyan opacity-75"></span>
@@ -64,7 +65,7 @@ const Hero: React.FC = () => {
           <span className="text-xs font-bold tracking-widest uppercase">Registration Open</span>
         </div>
 
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white mb-6 glitch-text" data-text="IMPACT-AI-THON 2026">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black tracking-tighter text-white mb-6 glitch" data-text="IMPACT-AI-THON 2026">
           IMPACT-AI-THON 2026
         </h1>
 
@@ -86,21 +87,12 @@ const Hero: React.FC = () => {
             href="https://unstop.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative px-8 py-4 bg-tech-electric text-black font-bold text-lg rounded-none skew-x-[-10deg] hover:bg-white transition-colors duration-300 cursor-pointer inline-flex items-center justify-center"
+            className="btn-shine group relative inline-flex items-center justify-center hover:scale-105 transition-transform duration-300 cursor-pointer"
           >
-            <span className="block skew-x-[10deg] flex items-center">
-              REGISTER NOW <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-            </span>
+            REGISTER NOW <ArrowRight className="ml-2 text-white group-hover:translate-x-1 transition-transform" />
           </a>
 
-          <button
-            onClick={() => document.getElementById('schedule')?.scrollIntoView({ behavior: 'smooth' })}
-            className="group px-8 py-4 border border-slate-600 text-white font-bold text-lg rounded-none skew-x-[-10deg] hover:border-tech-purple hover:text-tech-purple transition-colors duration-300 cursor-pointer"
-          >
-            <span className="block skew-x-[10deg]">
-              VIEW SCHEDULE
-            </span>
-          </button>
+          <SocialShare />
         </div>
       </div>
 
