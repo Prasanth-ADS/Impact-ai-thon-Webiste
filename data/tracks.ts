@@ -37,7 +37,7 @@ export const TRACKS: TrackData[] = [
     },
     {
         id: 'market-minds',
-        title: "Track 1 – Market and Minds",
+        title: "Market and Minds",
         icon: Brain,
         description: "Merge financial intelligence with market psychologies through innovative FinTech and Marketing AI solutions.",
         objective: "Design AI-driven systems that enhance marketing intelligence, financial security, risk assessment, operational efficiency, and customer decision-making across BFSI, insurance, legal, and enterprise domains—while ensuring real-time performance, explainability, and regulatory compliance.",
