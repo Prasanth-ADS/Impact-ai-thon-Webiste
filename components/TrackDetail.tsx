@@ -47,10 +47,60 @@ const TrackDetail: React.FC = () => {
                         <h1 className="text-5xl md:text-6xl font-black text-white mb-6">
                             {track.title}
                         </h1>
-                        <p className="text-xl text-slate-400 max-w-3xl leading-relaxed">
+                        <p className="text-xl text-slate-400 max-w-3xl leading-relaxed mb-12">
                             {track.description}
                         </p>
 
+                        {/* Track Objective Section */}
+                        {track.objective && (
+                            <div className="mb-12 bg-tech-card/30 border border-slate-800/50 rounded-2xl p-8 backdrop-blur-sm">
+                                <h2 className="text-tech-cyan font-mono text-sm tracking-widest mb-4 uppercase flex items-center">
+                                    <span className="w-4 h-px bg-tech-cyan/50 mr-2"></span>
+                                    Track Objective
+                                </h2>
+                                <p className="text-lg text-white leading-relaxed">
+                                    {track.objective}
+                                </p>
+                            </div>
+                        )}
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                            {/* Global Constraints Section */}
+                            {track.constraints && (
+                                <div className="bg-tech-card/30 border border-slate-800/50 rounded-2xl p-8 backdrop-blur-sm">
+                                    <h2 className="text-tech-cyan font-mono text-sm tracking-widest mb-6 uppercase flex items-center">
+                                        <span className="w-4 h-px bg-tech-cyan/50 mr-2"></span>
+                                        Global Constraints
+                                    </h2>
+                                    <ul className="space-y-4">
+                                        {track.constraints.map((constraint, idx) => (
+                                            <li key={idx} className="flex items-start text-slate-300">
+                                                <span className="inline-block w-1.5 h-1.5 rounded-full bg-tech-cyan mt-2 mr-3 flex-shrink-0"></span>
+                                                <span className="text-sm leading-relaxed">{constraint}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+
+                            {/* Evaluation Focus Section */}
+                            {track.evaluation && (
+                                <div className="bg-tech-card/30 border border-slate-800/50 rounded-2xl p-8 backdrop-blur-sm">
+                                    <h2 className="text-tech-purple font-mono text-sm tracking-widest mb-6 uppercase flex items-center">
+                                        <span className="w-4 h-px bg-tech-purple/50 mr-2"></span>
+                                        Evaluation Focus
+                                    </h2>
+                                    <ul className="space-y-4">
+                                        {track.evaluation.map((item, idx) => (
+                                            <li key={idx} className="flex items-start text-slate-300">
+                                                <span className="inline-block w-1.5 h-1.5 rounded-full bg-tech-purple mt-2 mr-3 flex-shrink-0"></span>
+                                                <span className="text-sm leading-relaxed">{item}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                        </div>
                     </div>
 
                     <div className="mb-12">

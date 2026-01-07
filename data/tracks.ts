@@ -11,6 +11,9 @@ export interface TrackData {
     title: string;
     icon: React.ComponentType<{ size?: number }>;
     description: string;
+    objective?: string;
+    constraints?: string[];
+    evaluation?: string[];
     color: string;
     problems: Problem[];
 }
@@ -34,19 +37,58 @@ export const TRACKS: TrackData[] = [
     },
     {
         id: 'market-minds',
-        title: "Market and Minds",
+        title: "Track 1 – Market and Minds",
         icon: Brain,
         description: "Merge financial intelligence with market psychologies through innovative FinTech and Marketing AI solutions.",
+        objective: "Design AI-driven systems that enhance marketing intelligence, financial security, risk assessment, operational efficiency, and customer decision-making across BFSI, insurance, legal, and enterprise domains—while ensuring real-time performance, explainability, and regulatory compliance.",
+        constraints: [
+            "Must support real-time or near-real-time decisioning",
+            "Must generate explainable and auditable outputs",
+            "Should handle large-scale data streams",
+            "Must respect regulatory, ethical, and compliance requirements",
+            "Human-in-the-loop should be supported where critical"
+        ],
+        evaluation: [
+            "Impact on operational efficiency",
+            "Accuracy and reliability of AI decisions",
+            "Explainability and transparency",
+            "Scalability and real-world deployability",
+            "User experience (customers, agents, managers)"
+        ],
         color: "border-cyan-500 text-cyan-400",
         problems: [
-            { title: 'AI-Powered Call Automation & Voice FAQ Chatbot', description: 'AI-driven call automation with voice-enabled FAQ chatbots for handling customer inquiries and lead qualification.' },
-            { title: 'Real-Time Fraud Detection & Identity Defense', description: 'Millisecond-level transaction risk assessment and synthetic identity fraud defense using computer vision and expert-system logic.' },
-            { title: 'Intelligent Claims Processing Platform', description: 'Automating document ingestion, validation, and fraud detection for insurance and BFSI institutions to accelerate claim evaluation.' },
-            { title: 'AI-Based Document Forgery Analysis', description: 'Detecting tampering and fabricated records using digital forensics, handwriting analysis, and formatting inspection.' },
-            { title: 'AI-Driven Investment Management', description: 'Automating portfolio analysis, risk assessment, and decision-support by continuously evaluating market signals and client objectives.' },
-            { title: 'Climate Risk–Based Credit Scoring', description: 'Evaluating long-term climate exposure of assets to assign location-specific Climate Credit Scores for risk-adjusted lending.' },
-            { title: 'AI-Driven Collections & Recovery Orchestration', description: 'Adaptive AI agents for personalized and compliant debt recovery strategies based on repayment risk and borrower behavior.' },
-            { title: 'Customer 360° Financial Wellness Advisory', description: 'Unified financial health views with personalized guidance delivered through multi-channel bots and relationship manager dashboards.' },
+            {
+                title: "AI-Powered Call Automation & Voice FAQ Intelligence",
+                description: "Design an AI system capable of autonomously handling inbound and outbound marketing calls using voice interaction. The system should understand user intent, resolve FAQs, qualify leads, escalate high-intent cases, and generate actionable campaign analytics—while significantly reducing human call center dependency."
+            },
+            {
+                title: "Real-Time Fraud Detection & Digital Account Opening (DAO) Identity Defense",
+                description: "Build an AI-driven platform that performs millisecond-level fraud detection on live financial transactions while simultaneously preventing synthetic identity fraud during digital account onboarding using video-based KYC. The system must produce explainable decisions across behavioral, biometric, and device-level signals."
+            },
+            {
+                title: "Intelligent Claims Processing for Insurance & BFSI",
+                description: "Create an AI-powered claims processing system that automates document ingestion, data extraction, validation, fraud detection, and underwriting decisions. The platform should minimize manual intervention, reduce claim settlement time, and maintain full auditability and regulatory compliance."
+            },
+            {
+                title: "AI-Based Document Forgery Analysis & Verification",
+                description: "Design an AI system that detects forged or manipulated documents using metadata forensics, handwriting and signature analysis, linguistic inconsistency detection, and formatting inspection. The solution should generate legally defensible, explainable forensic evidence for each verification decision."
+            },
+            {
+                title: "AI-Driven Investment Management & Decision Intelligence",
+                description: "Develop an AI-assisted investment intelligence platform that analyzes real-time market data, portfolio holdings, and client risk profiles to generate transparent, explainable investment recommendations. The system must support human decision-makers rather than replace them, ensuring governance and compliance."
+            },
+            {
+                title: "Climate Risk–Based Credit Scoring & Lending Intelligence",
+                description: "Build an AI-powered Climate Risk Engine that evaluates long-term climate exposure of assets using geospatial and multi-decade climate projections. The output should integrate into lending systems to dynamically influence credit scoring, loan pricing, tenure, and insurance decisions in line with ESG and regulatory norms."
+            },
+            {
+                title: "AI-Driven Collections & Recovery Orchestration",
+                description: "Design an adaptive AI platform that personalizes loan recovery strategies based on borrower behavior, repayment intent, stress indicators, and communication sensitivity. The system should optimize recovery rates while strictly adhering to fair-practice and regulatory guidelines."
+            },
+            {
+                title: "AI-Driven Customer 360° Financial Wellness Advisory",
+                description: "Create a unified AI system that consolidates customer financial data across products to compute a holistic Financial Wellness Score. The platform should proactively detect financial stress, recommend corrective actions, and engage users via multilingual chatbot and voice interfaces—while empowering relationship managers with actionable insights."
+            }
         ]
     },
     {
