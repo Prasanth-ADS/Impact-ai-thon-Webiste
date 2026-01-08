@@ -1,12 +1,7 @@
 import React, { useState } from 'react';
-import { Calendar, Trophy, MapPin } from 'lucide-react';
+import { Calendar, Trophy, MapPin, Users } from 'lucide-react';
 
 const About: React.FC = () => {
-  const stats = [
-    { label: 'Date Of Event ', value: '22 Feb - 23 Feb', icon: <Calendar className="text-yellow-400" size={24} /> },
-    { label: 'Prize Pool', value: '₹1,00,000', icon: <Trophy className="text-blue-400" size={24} /> },
-    { label: 'Event Type', value: 'Offline', icon: <MapPin className="text-purple-400" size={24} /> },
-  ];
 
   return (
     <section id="about" className="py-24 bg-tech-dark/90 backdrop-blur-sm relative overflow-hidden">
@@ -23,16 +18,38 @@ const About: React.FC = () => {
               Open only to students, the hackathon is tailored for aspiring data analysts, data scientists, and machine learning practitioners who want to explore datasets, build analytical models, and derive evidence-based insights using modern tools and techniques. Participants will receive access to curated datasets, technical resources, and expert mentorship to transform raw data into impactful solutions.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12">
-              {stats.map((stat, idx) => (
-                <div key={idx} className="p-4 bg-tech-card border border-slate-800 rounded hover:border-tech-cyan/50 transition-colors">
-                  <div className="flex items-center space-x-3 mb-2">
-                    {stat.icon}
-                    <span className="text-slate-500 text-sm font-mono uppercase">{stat.label}</span>
-                  </div>
-                  <div className="text-2xl font-bold text-white">{stat.value}</div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
+              <div className="p-4 bg-tech-card border border-slate-800 rounded hover:border-tech-cyan/50 transition-colors">
+                <div className="flex items-center space-x-3 mb-2">
+                  <Calendar className="text-yellow-400" size={24} />
+                  <span className="text-slate-500 text-sm font-mono uppercase">Date Of Event</span>
                 </div>
-              ))}
+                <div className="text-xl font-bold text-white">22 Feb - 23 Feb</div>
+              </div>
+
+              <div className="p-4 bg-tech-card border border-slate-800 rounded hover:border-tech-cyan/50 transition-colors">
+                <div className="flex items-center space-x-3 mb-2">
+                  <Trophy className="text-blue-400" size={24} />
+                  <span className="text-slate-500 text-sm font-mono uppercase">Prize Pool</span>
+                </div>
+                <div className="text-xl font-bold text-white">₹1,00,000</div>
+              </div>
+
+              <div className="p-4 bg-tech-card border border-slate-800 rounded hover:border-tech-cyan/50 transition-colors">
+                <div className="flex items-center space-x-3 mb-2">
+                  <Users className="text-purple-400" size={24} />
+                  <span className="text-slate-500 text-sm font-mono uppercase">Event Type</span>
+                </div>
+                <div className="text-xl font-bold text-white">Offline</div>
+              </div>
+
+              <div className="p-4 bg-tech-card border border-slate-800 rounded hover:border-tech-cyan/50 transition-colors">
+                <div className="flex items-center space-x-3 mb-2">
+                  <MapPin className="text-red-400" size={24} />
+                  <span className="text-slate-500 text-sm font-mono uppercase">Venue</span>
+                </div>
+                <div className="text-lg font-bold text-white leading-tight">St. Joseph's College of Engineering</div>
+              </div>
             </div>
           </div>
         </div>

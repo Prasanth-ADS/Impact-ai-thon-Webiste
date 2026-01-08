@@ -31,33 +31,27 @@ const CoordinatorCard: React.FC<CoordinatorProps> = ({ name, role, phone, email,
                 </div>
 
                 <h4 className="text-xl font-bold text-white mb-1 group-hover:text-tech-cyan transition-colors duration-300">{name}</h4>
-                <p className="text-tech-purple font-mono text-xs tracking-wider uppercase mb-6">{role}</p>
+                <p className="text-tech-purple font-mono text-xs tracking-wider uppercase mb-4">{role}</p>
 
-                <div className="flex items-center space-x-4">
-                    <a
-                        href={`tel:${phone}`}
-                        className="p-2.5 rounded-xl bg-slate-800/50 text-slate-400 hover:text-tech-cyan hover:bg-tech-cyan/10 transition-all duration-300"
-                        title="Call"
-                    >
-                        <Phone size={18} />
-                    </a>
-                    <a
-                        href={`mailto:${email}`}
-                        className="p-2.5 rounded-xl bg-slate-800/50 text-slate-400 hover:text-tech-cyan hover:bg-tech-cyan/10 transition-all duration-300"
-                        title="Email"
-                    >
-                        <Mail size={18} />
-                    </a>
-                    <a
-                        href={linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2.5 rounded-xl bg-slate-800/50 text-slate-400 hover:text-tech-cyan hover:bg-tech-cyan/10 transition-all duration-300"
-                        title="LinkedIn"
-                    >
-                        <Linkedin size={18} />
-                    </a>
+                <div className="flex flex-col items-center space-y-2 mb-4 w-full">
+                    <div className="flex items-center justify-center w-full text-slate-400 hover:text-white transition-colors">
+                        <Phone size={14} className="mr-2 text-tech-cyan" />
+                        <span className="text-sm font-mono">{phone}</span>
+                    </div>
+                    <div className="flex items-center justify-center w-full text-slate-400 hover:text-white transition-colors">
+                        <Mail size={14} className="mr-2 text-tech-cyan" />
+                        <span className="text-sm font-mono">{email}</span>
+                    </div>
                 </div>
+
+                <a
+                    href={linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center p-2 rounded-full bg-slate-800/50 text-slate-400 hover:text-white hover:bg-[#0077b5] transition-all duration-300 group/linkedin"
+                >
+                    <Linkedin size={18} />
+                </a>
             </div>
         </div>
     );

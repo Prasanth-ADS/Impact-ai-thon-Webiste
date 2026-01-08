@@ -1,8 +1,8 @@
 import React from 'react';
-import { Hexagon, Globe, Shield, Cpu, Cloud, Database, Code, Lock, Star } from 'lucide-react';
+import { Hexagon, Star, Mail } from 'lucide-react';
 
 const Sponsors: React.FC = () => {
-  const sponsors = [
+  const platinumSponsors = [
     {
       name: "Wareef",
       image: "https://wareef.com.sa/static/wareef_logo-b6eea834a9dea209b1b9ebe144b3d9b9.svg",
@@ -13,17 +13,31 @@ const Sponsors: React.FC = () => {
       hoverShadow: "hover:shadow-[0_0_30px_rgba(52,211,153,0.2)]",
       description: "Leading IT solution provider specializing in vendor management, quality assurance, and localized Arabic content for digital transformation.",
       challenges: ["Local Arabic Content AI", "Enterprise Solution Design", "Quality Assurance Automation"]
+    }
+  ];
+
+  const giftSponsors = [
+    {
+      name: "Decathlon",
+      image: "https://upload.wikimedia.org/wikipedia/commons/a/aa/Decathlon_Logo.svg",
+      website: "https://www.decathlon.in/",
+      color: "text-blue-400",
+      border: "border-blue-500/30",
+      bg: "bg-blue-900/5",
+      hoverShadow: "hover:shadow-[0_0_20px_rgba(59,130,246,0.1)]",
+      description: "The world's largest sporting goods retailer.",
+      offering: "Gift Vouchers & Goodies"
     },
     {
-      name: "CodeWork",
-      image: "https://codework.ai/Logo.svg",
-      website: "https://codework.ai/",
-      color: "text-blue-400",
-      border: "border-blue-500/50",
-      bg: "bg-blue-900/10",
-      hoverShadow: "hover:shadow-[0_0_30_px_rgba(59,130,246,0.2)]",
-      description: "Custom AI software development and innovation agency building powerful automation tools and intelligent enterprise applications.",
-      challenges: ["Generative AI Implementation", "Custom Automation Flow", "Neural Network Optimization"]
+      name: "Poorvika",
+      image: "https://www.kindpng.com/picc/b/48/480838_poorvika-mobile-shop-logo-hd-png-download.png",
+      website: "https://www.poorvika.com/",
+      color: "text-orange-400",
+      border: "border-orange-500/30",
+      bg: "bg-orange-900/5",
+      hoverShadow: "hover:shadow-[0_0_20px_rgba(251,146,60,0.1)]",
+      description: "Leading focused multi-brand mobile retailer.",
+      offering: "Tech Accessories & Discounts"
     }
   ];
 
@@ -44,8 +58,9 @@ const Sponsors: React.FC = () => {
 
         {/* Platinum Tier */}
         <div className="mb-16">
+          <h4 className="text-xl font-bold text-emerald-400 mb-8 uppercase tracking-widest border-b border-emerald-500/20 pb-2 inline-block">Platinum Partner</h4>
           <div className="flex flex-wrap justify-center gap-8">
-            {sponsors.map((sponsor, idx) => (
+            {platinumSponsors.map((sponsor, idx) => (
               <div
                 key={idx}
                 className={`relative group p-8 rounded-2xl border ${sponsor.border} ${sponsor.bg} hover:scale-105 ${sponsor.hoverShadow} transition-all duration-300 overflow-hidden max-w-sm w-full will-change-transform`}
@@ -108,6 +123,45 @@ const Sponsors: React.FC = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Gift Partners Tier */}
+        <div className="mb-16">
+          <h4 className="text-xl font-bold text-purple-400 mb-8 uppercase tracking-widest border-b border-purple-500/20 pb-2 inline-block">Gift & Community Partners</h4>
+          <div className="flex flex-wrap justify-center gap-6">
+            {giftSponsors.map((sponsor, idx) => (
+              <div key={idx} className={`relative group p-6 rounded-xl border ${sponsor.border} ${sponsor.bg} hover:scale-105 transition-all duration-300 max-w-xs w-full`}>
+                <div className="h-16 w-full mb-4 flex items-center justify-center p-2 bg-white/5 rounded-lg">
+                  <img src={sponsor.image} alt={sponsor.name} className="max-h-full max-w-full object-contain" />
+                </div>
+                <h4 className="text-lg font-bold text-white mb-1">{sponsor.name}</h4>
+                <p className="text-xs text-slate-400 mb-2">{sponsor.offering}</p>
+                <a
+                  href={sponsor.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-tech-cyan hover:underline"
+                >
+                  Visit Website
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Want to Sponsor Us */}
+        <div className="mt-20 max-w-3xl mx-auto">
+          <div className="p-8 rounded-2xl bg-gradient-to-r from-tech-purple/20 to-tech-cyan/20 border border-white/10 backdrop-blur-sm text-center relative overflow-hidden group">
+            <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <h3 className="text-2xl font-bold text-white mb-4 relative z-10">Want to Sponsor IMPACT-AI-THON 2026?</h3>
+            <p className="text-slate-300 mb-8 relative z-10">
+              Join us in shaping the future of AI. Connect with top talent, showcase your brand, and be part of an unforgettable experience.
+            </p>
+            <a href="mailto:sponsors@impactaithon.com" className="inline-flex items-center px-8 py-3 bg-white text-black font-bold rounded-full hover:bg-tech-cyan transition-colors relative z-10 mx-auto">
+              <Mail className="w-4 h-4 mr-2" />
+              Become a Sponsor
+            </a>
           </div>
         </div>
       </div>
