@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Mail, Instagram } from 'lucide-react';
+import { Linkedin, Mail, Instagram } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SocialShare from './SocialShare';
 
@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="flex space-x-6">
-            <a href="#" className="text-slate-400 hover:text-white transition-colors"><Github size={20} /></a>
+
             <a href="https://www.linkedin.com/company/data-analytics-club-ads/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-blue-600 transition-colors"><Linkedin size={20} /></a>
             <a href="https://www.instagram.com/dac.ads.official?igsh=eTl0bGV2MGxyY3k0" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-pink-500 transition-colors"><Instagram size={20} /></a>
             <a href="#" className="text-slate-400 hover:text-red-400 transition-colors"><Mail size={20} /></a>
