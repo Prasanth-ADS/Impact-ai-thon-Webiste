@@ -77,7 +77,7 @@ const Navbar: React.FC = () => {
             />
           </div>
           <span className="text-xl font-bold font-mono tracking-tighter text-white group-hover:text-tech-cyan transition-colors">
-            IMPACT-AI-THON
+            IMPACT AI THON '26
           </span>
         </Link>
 

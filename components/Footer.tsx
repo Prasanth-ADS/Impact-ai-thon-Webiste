@@ -1,5 +1,6 @@
 import React from 'react';
 import { Github, Linkedin, Mail, Instagram } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import SocialShare from './SocialShare';
 
 const Footer: React.FC = () => {
@@ -16,9 +17,9 @@ const Footer: React.FC = () => {
                   className="h-full w-full object-cover rounded-md"
                 />
               </div>
-              <span className="text-xl font-bold font-mono tracking-tighter text-white">IMPACT-AI-THON</span>
+              <span className="text-xl font-bold font-mono tracking-tighter text-white">IMPACT AI THON '26</span>
             </div>
-            <p className="text-slate-500 text-sm">© 2026 IMPACT-AI-THON. All rights reserved.</p>
+            <p className="text-slate-500 text-sm">© 2026 IMPACT AI THON '26. All rights reserved.</p>
           </div>
 
           <div className="flex space-x-6">
@@ -30,9 +31,9 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="mt-8 border-t border-slate-900 pt-8 flex justify-center space-x-8 text-xs text-slate-600">
-          <a href="#" className="hover:text-tech-cyan">Code of Conduct</a>
-          <a href="#" className="hover:text-tech-cyan">Privacy Policy</a>
-          <a href="#" className="hover:text-tech-cyan">Terms of Service</a>
+          <Link to="/code-of-conduct" className="hover:text-tech-cyan">Code of Conduct</Link>
+          <Link to="/privacy-policy" className="hover:text-tech-cyan">Privacy Policy</Link>
+          <Link to="/terms-of-service" className="hover:text-tech-cyan">Terms of Service</Link>
         </div>
       </div>
     </footer>

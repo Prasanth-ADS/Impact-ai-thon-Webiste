@@ -12,7 +12,7 @@ const About: React.FC = () => {
             <h2 className="text-tech-cyan font-mono text-sm tracking-widest mb-2 uppercase">About The Event</h2>
             <h3 className="text-4xl font-bold text-white mb-6">Where Technology Meets <br /><span className="text-tech-purple">Human Potential</span>.</h3>
             <p className="text-slate-400 text-lg mb-6 leading-relaxed">
-              IMPACT-AI-THON 2026 is a student-exclusive data analytics hackathon designed to push analytical thinking and technical problem-solving to the next level. This is not a business or idea-pitching event—it is a hands-on challenge where students work directly with data to solve real-world problems.
+              IMPACT AI THON '26 is a student-exclusive data analytics hackathon designed to push analytical thinking and technical problem-solving to the next level. This is not a business or idea-pitching event—it is a hands-on challenge where students work directly with data to solve real-world problems.
             </p>
             <p className="text-slate-400 text-lg mb-8 leading-relaxed">
               Open only to students, the hackathon is tailored for aspiring data analysts, data scientists, and machine learning practitioners who want to explore datasets, build analytical models, and derive evidence-based insights using modern tools and techniques. Participants will receive access to curated datasets, technical resources, and expert mentorship to transform raw data into impactful solutions.

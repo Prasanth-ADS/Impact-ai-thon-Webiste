@@ -65,8 +65,8 @@ const Hero: React.FC = () => {
           <span className="text-xs font-bold tracking-widest uppercase">Registration Open</span>
         </div>
 
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black tracking-tighter text-white mb-6 glitch" data-text="IMPACT-AI-THON 2026">
-          IMPACT-AI-THON 2026
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black tracking-tighter text-white mb-6 glitch" data-text="IMPACT AI THON '26">
+          IMPACT AI THON '26
         </h1>
 
         <p className="max-w-2xl mx-auto text-lg md:text-xl text-slate-400 mb-12 leading-relaxed">

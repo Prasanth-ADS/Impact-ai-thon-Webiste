@@ -19,7 +19,7 @@ const Sponsors: React.FC = () => {
   const giftSponsors = [
     {
       name: "Decathlon",
-      image: "https://upload.wikimedia.org/wikipedia/commons/a/aa/Decathlon_Logo.svg",
+      image: "/decathlon-logo.png",
       website: "https://www.decathlon.in/",
       color: "text-blue-400",
       border: "border-blue-500/30",
@@ -30,7 +30,7 @@ const Sponsors: React.FC = () => {
     },
     {
       name: "Poorvika",
-      image: "https://www.kindpng.com/picc/b/48/480838_poorvika-mobile-shop-logo-hd-png-download.png",
+      image: "/poorvika-logo.png",
       website: "https://www.poorvika.com/",
       color: "text-orange-400",
       border: "border-orange-500/30",
@@ -52,7 +52,7 @@ const Sponsors: React.FC = () => {
           <h2 className="text-tech-cyan font-mono text-sm tracking-widest mb-2 uppercase">Our Partners</h2>
           <h3 className="text-4xl font-bold text-white mb-4">Powering the <span className="text-tech-purple">Future</span></h3>
           <p className="text-slate-400 max-w-2xl mx-auto">
-            Meet the industry leaders providing the technology, mentorship, and resources for IMPACT-AI-THON 2026.
+            Meet the industry leaders providing the technology, mentorship, and resources for IMPACT AI THON '26.
           </p>
         </div>
 
@@ -154,7 +154,7 @@ const Sponsors: React.FC = () => {
         <div className="mt-20 max-w-3xl mx-auto">
           <div className="p-8 rounded-2xl bg-gradient-to-r from-tech-purple/20 to-tech-cyan/20 border border-white/10 backdrop-blur-sm text-center relative overflow-hidden group">
             <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <h3 className="text-2xl font-bold text-white mb-4 relative z-10">Want to Sponsor IMPACT-AI-THON 2026?</h3>
+            <h3 className="text-2xl font-bold text-white mb-4 relative z-10">Want to Sponsor IMPACT AI THON '26?</h3>
             <p className="text-slate-300 mb-8 relative z-10">
               Join us in shaping the future of AI. Connect with top talent, showcase your brand, and be part of an unforgettable experience.
             </p>

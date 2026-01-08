@@ -14,7 +14,11 @@ import Timeline from './components/Timeline';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import TrackDetail from './components/TrackDetail';
 import Coordinators from './components/Coordinators';
+
 import Loader from './components/Loader';
+import CodeOfConduct from './components/CodeOfConduct';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import TermsOfService from './components/TermsOfService';
 
 
 const Home: React.FC = () => {
@@ -57,6 +61,9 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/track/:trackId" element={<TrackDetail />} />
+          <Route path="/code-of-conduct" element={<CodeOfConduct />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
         </Routes>
       </div>
     </Router>

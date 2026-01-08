@@ -34,11 +34,7 @@ const PrizePool: React.FC = () => {
             <div className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-1">Runner Up</div>
             <h3 className="text-2xl font-bold text-white mb-2">2nd Place</h3>
             <div className="text-4xl font-mono font-bold text-tech-cyan mb-6">₹40,000</div>
-            <ul className="text-left w-full space-y-3 text-slate-400 text-sm border-t border-slate-800 pt-6">
-              <li className="flex items-center"><Star size={14} className="mr-2 text-slate-500" /> Cloud Credits</li>
-              <li className="flex items-center"><Star size={14} className="mr-2 text-slate-500" /> Gadget Bundle</li>
-              <li className="flex items-center"><Star size={14} className="mr-2 text-slate-500" /> Mentor Sessions</li>
-            </ul>
+
           </div>
 
           {/* 1st Place */}
@@ -55,12 +51,7 @@ const PrizePool: React.FC = () => {
             <h3 className="text-3xl font-black text-white mb-2">1st Place</h3>
             <div className="text-6xl font-mono font-bold text-white mb-8 tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-yellow-200 to-yellow-500">₹60,000</div>
 
-            <ul className="text-left w-full space-y-4 text-slate-300 text-sm border-t border-yellow-500/20 pt-8">
-              <li className="flex items-center font-semibold"><Crown size={16} className="mr-3 text-yellow-500" /> Direct Accelerator Interview</li>
-              <li className="flex items-center"><Gift size={16} className="mr-3 text-yellow-500" /> ₹50k Startup Credits</li>
-              <li className="flex items-center"><Zap size={16} className="mr-3 text-yellow-500" /> Global Press Feature</li>
-              <li className="flex items-center"><Award size={16} className="mr-3 text-yellow-500" /> HQ Office Tour</li>
-            </ul>
+
           </div>
 
           {/* 3rd Place */}
@@ -72,11 +63,7 @@ const PrizePool: React.FC = () => {
             <div className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-1">Finalist</div>
             <h3 className="text-2xl font-bold text-white mb-2">3rd Place</h3>
             <div className="text-4xl font-mono font-bold text-tech-cyan mb-6">₹20,000</div>
-            <ul className="text-left w-full space-y-3 text-slate-400 text-sm border-t border-slate-800 pt-6">
-              <li className="flex items-center"><Star size={14} className="mr-2 text-slate-500" /> Cloud Credits</li>
-              <li className="flex items-center"><Star size={14} className="mr-2 text-slate-500" /> Swag Pack</li>
-              <li className="flex items-center"><Star size={14} className="mr-2 text-slate-500" /> API Access</li>
-            </ul>
+
           </div>
         </div>
 

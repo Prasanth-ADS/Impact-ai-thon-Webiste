@@ -20,58 +20,6 @@ export interface TrackData {
 
 export const TRACKS: TrackData[] = [
     {
-        id: 'care-cure',
-        title: "Care and Cure",
-        icon: HeartPulse,
-        description: "Redefine healthcare with AI-driven MedTech solutions, focusing on patient care, diagnostics, and wellness.",
-        objective: "Design AI-driven healthcare systems that augment clinical decision-making, improve patient understanding, enhance care quality, enable public-health intelligence, and reduce clinician burnout—while ensuring privacy, explainability, regulatory compliance, and real-world deployability.",
-        constraints: [
-            "Must ensure patient privacy and data security",
-            "Outputs must be clinically explainable and auditable",
-            "Should integrate with existing hospital workflows",
-            "Must align with healthcare regulations and standards",
-            "Human-in-the-loop validation is mandatory"
-        ],
-        evaluation: [
-            "Clinical usefulness and workflow fit",
-            "Accuracy, safety, and explainability",
-            "Privacy-preserving design",
-            "Scalability across hospitals or regions",
-            "Impact on care quality and clinician efficiency"
-        ],
-        color: "border-purple-500 text-purple-400",
-        problems: [
-            {
-                title: "AI-Driven Clinical Decision Support & Patient Report Understanding",
-                description: "Design an AI platform that assists clinicians with real-time, guideline-based insights while simultaneously translating complex medical reports and prescriptions into clear, patient-friendly explanations. The system should integrate handwritten prescriptions, lab reports, and EHR data without disrupting existing clinical workflows."
-            },
-            {
-                title: "AI-Powered Radiology Report Automation & Quality Assurance",
-                description: "Build an AI assistant that reviews radiology reports in real time to improve completeness, consistency, and diagnostic quality. The system should flag potential missed findings, enforce standardized reporting templates, and support radiologists without replacing clinical judgment."
-            },
-            {
-                title: "Federated Learning Platform for Disease Surveillance",
-                description: "Create a privacy-preserving disease surveillance system using Federated Learning that enables hospitals and PHCs to collaboratively detect seasonal and emerging disease outbreaks without sharing raw patient data. The platform must comply with India’s ABDM framework and DPDP Act while supporting public-health decision-making."
-            },
-            {
-                title: "Patient Experience Analytics & Automated Service Recovery",
-                description: "Design an AI platform that analyzes multi-channel patient feedback to detect systemic experience issues and automatically trigger service recovery workflows. The system should close the feedback loop by assigning ownership, tracking resolution, and measuring post-intervention impact."
-            },
-            {
-                title: "AI-Driven Chronic Disease Management for Diabetes & Cardio-Metabolic Care",
-                description: "Build an AI-powered care management system that continuously risk-stratifies chronic patients using longitudinal clinical data and proactively triggers timely interventions. The platform should help clinicians reduce preventable complications while managing large patient populations efficiently."
-            },
-            {
-                title: "Agentic AI–Driven Clinical Documentation Improvement & Coding",
-                description: "Design a multi-agent AI expert system that improves clinical documentation quality and medical coding accuracy. The system should detect documentation gaps, recommend precise codes, ensure compliance, and generate structured summaries to support billing and quality reporting."
-            },
-            {
-                title: "Ambient Clinical Voice Documentation (Scribe AI)",
-                description: "Create an AI-driven ambient clinical documentation system that listens to doctor–patient conversations (with consent) and generates structured, standardized medical notes. The solution should normalize conversational clinical language into globally accepted documentation formats and integrate seamlessly with EHR systems."
-            }
-        ]
-    },
-    {
         id: 'market-minds',
         title: "Market and Minds",
         icon: Brain,
@@ -180,6 +128,58 @@ export const TRACKS: TrackData[] = [
             {
                 title: "Automated Coral Reef Health Monitoring & Bleaching Detection",
                 description: "Design an AI-powered marine monitoring platform that analyzes underwater video feeds to identify coral species and detect early signs of bleaching. The system should generate spatial and temporal reef health insights to support conservation and climate impact assessment."
+            }
+        ]
+    },
+    {
+        id: 'care-cure',
+        title: "Care and Cure",
+        icon: HeartPulse,
+        description: "Redefine healthcare with AI-driven MedTech solutions, focusing on patient care, diagnostics, and wellness.",
+        objective: "Design AI-driven healthcare systems that augment clinical decision-making, improve patient understanding, enhance care quality, enable public-health intelligence, and reduce clinician burnout—while ensuring privacy, explainability, regulatory compliance, and real-world deployability.",
+        constraints: [
+            "Must ensure patient privacy and data security",
+            "Outputs must be clinically explainable and auditable",
+            "Should integrate with existing hospital workflows",
+            "Must align with healthcare regulations and standards",
+            "Human-in-the-loop validation is mandatory"
+        ],
+        evaluation: [
+            "Clinical usefulness and workflow fit",
+            "Accuracy, safety, and explainability",
+            "Privacy-preserving design",
+            "Scalability across hospitals or regions",
+            "Impact on care quality and clinician efficiency"
+        ],
+        color: "border-purple-500 text-purple-400",
+        problems: [
+            {
+                title: "AI-Driven Clinical Decision Support & Patient Report Understanding",
+                description: "Design an AI platform that assists clinicians with real-time, guideline-based insights while simultaneously translating complex medical reports and prescriptions into clear, patient-friendly explanations. The system should integrate handwritten prescriptions, lab reports, and EHR data without disrupting existing clinical workflows."
+            },
+            {
+                title: "AI-Powered Radiology Report Automation & Quality Assurance",
+                description: "Build an AI assistant that reviews radiology reports in real time to improve completeness, consistency, and diagnostic quality. The system should flag potential missed findings, enforce standardized reporting templates, and support radiologists without replacing clinical judgment."
+            },
+            {
+                title: "Federated Learning Platform for Disease Surveillance",
+                description: "Create a privacy-preserving disease surveillance system using Federated Learning that enables hospitals and PHCs to collaboratively detect seasonal and emerging disease outbreaks without sharing raw patient data. The platform must comply with India’s ABDM framework and DPDP Act while supporting public-health decision-making."
+            },
+            {
+                title: "Patient Experience Analytics & Automated Service Recovery",
+                description: "Design an AI platform that analyzes multi-channel patient feedback to detect systemic experience issues and automatically trigger service recovery workflows. The system should close the feedback loop by assigning ownership, tracking resolution, and measuring post-intervention impact."
+            },
+            {
+                title: "AI-Driven Chronic Disease Management for Diabetes & Cardio-Metabolic Care",
+                description: "Build an AI-powered care management system that continuously risk-stratifies chronic patients using longitudinal clinical data and proactively triggers timely interventions. The platform should help clinicians reduce preventable complications while managing large patient populations efficiently."
+            },
+            {
+                title: "Agentic AI–Driven Clinical Documentation Improvement & Coding",
+                description: "Design a multi-agent AI expert system that improves clinical documentation quality and medical coding accuracy. The system should detect documentation gaps, recommend precise codes, ensure compliance, and generate structured summaries to support billing and quality reporting."
+            },
+            {
+                title: "Ambient Clinical Voice Documentation (Scribe AI)",
+                description: "Create an AI-driven ambient clinical documentation system that listens to doctor–patient conversations (with consent) and generates structured, standardized medical notes. The solution should normalize conversational clinical language into globally accepted documentation formats and integrate seamlessly with EHR systems."
             }
         ]
     }
