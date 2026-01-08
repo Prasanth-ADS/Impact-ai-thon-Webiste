@@ -95,6 +95,17 @@ const Navbar: React.FC = () => {
           ))}
         </div>
 
+        {/* College Logo - Desktop */}
+        <div className="hidden md:block ml-4">
+          <div className="h-12 w-auto bg-white/10 rounded-lg p-1 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all">
+            <img
+              src="/college-logo.png"
+              alt="St. Joseph's College of Engineering"
+              className="h-full w-auto object-contain"
+            />
+          </div>
+        </div>
+
         {/* Mobile Toggle */}
         <div className="md:hidden">
           <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-white">
