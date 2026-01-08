@@ -89,7 +89,7 @@ const Coordinators: React.FC = () => {
             phone: "6383457387",
             email: "srinithi7788@gmail.com",
             linkedin: "https://www.linkedin.com/in/srinithi-p-75729b295/",
-            image: "https://media.licdn.com/dms/image/v2/D5603AQGvHrorU-h0xQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1692371413439?e=1769040000&v=beta&t=hdWKTMh166hA3IN1-EW04HhwqvQphCrEqNIk0sO3JyI"
+            image: ""
         }
     ];
 

@@ -32,7 +32,7 @@ const About: React.FC = () => {
                   <Trophy className="text-blue-400" size={24} />
                   <span className="text-slate-500 text-sm font-mono uppercase">Prize Pool</span>
                 </div>
-                <div className="text-xl font-bold text-white">₹1,00,000</div>
+                <div className="text-xl font-bold text-white">₹1,20,000</div>
               </div>
 
               <div className="p-4 bg-tech-card border border-slate-800 rounded hover:border-tech-cyan/50 transition-colors">
