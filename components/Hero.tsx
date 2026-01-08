@@ -84,7 +84,7 @@ const Hero: React.FC = () => {
 
         <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-6">
           <a
-            href="https://unstop.com"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSck7l4BxrEqXGfZzRx8fxryPb5f3v-sPgyz5Xfm6AyYnapHPg/viewform?usp=header"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-shine group relative inline-flex items-center justify-center hover:scale-105 transition-transform duration-300 cursor-pointer"

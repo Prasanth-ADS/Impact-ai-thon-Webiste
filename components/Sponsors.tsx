@@ -13,6 +13,17 @@ const Sponsors: React.FC = () => {
       hoverShadow: "hover:shadow-[0_0_30px_rgba(52,211,153,0.2)]",
       description: "Leading IT solution provider specializing in vendor management, quality assurance, and localized Arabic content for digital transformation.",
       challenges: ["Local Arabic Content AI", "Enterprise Solution Design", "Quality Assurance Automation"]
+    },
+    {
+      name: "CCSB",
+      image: "https://ccsb.io/assets/ccsb-logo-DyJ3Ej8l.png",
+      website: "https://www.ccsb.io/",
+      color: "text-sky-400",
+      border: "border-sky-500/50",
+      bg: "bg-sky-900/10",
+      hoverShadow: "hover:shadow-[0_0_30px_rgba(56,189,248,0.2)]",
+      description: "Empowering Industry 3.0 & 4.0 with end-to-end integrated solutions in additive manufacturing, automation, and digital transformation.",
+      challenges: ["Smart Manufacturing", "Additive Manufacturing", "Industrial Automation"]
     }
   ];
 
