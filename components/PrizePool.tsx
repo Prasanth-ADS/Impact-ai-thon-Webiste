@@ -1,5 +1,5 @@
 import React from 'react';
-import { GridScan } from './GridScan';
+import LiquidEther from './LiquidEther';
 import { Trophy, Medal, Award, Crown, Zap, Code2, Star, Gift } from 'lucide-react';
 
 const PrizePool: React.FC = () => {
@@ -7,17 +7,8 @@ const PrizePool: React.FC = () => {
     <section id="prizes" className="py-24 bg-[#080c16]/90 backdrop-blur-sm relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
-        <GridScan
-          sensitivity={0.55}
-          lineThickness={1}
-          linesColor="#392e4e"
-          gridScale={0.1}
-          scanColor="#FF9FFC"
-          scanOpacity={0.4}
-          enablePost
-          bloomIntensity={0.6}
-          chromaticAberration={0.002}
-          noiseIntensity={0.01}
+        <LiquidEther
+          colors={['#300344', '#7372df', '#e684cc']}
         />
       </div>
 
