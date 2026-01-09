@@ -6,7 +6,6 @@ import Tracks from './components/Tracks';
 import Sponsors from './components/Sponsors';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
-import PrizePool from './components/PrizePool';
 import LiquidEther from './components/LiquidEther';
 import Timeline from './components/Timeline';
 
@@ -29,7 +28,6 @@ const Home: React.FC = () => {
         <Hero />
         <About />
         <Tracks />
-        <PrizePool />
         <Sponsors />
         <Timeline />
         <Coordinators />
