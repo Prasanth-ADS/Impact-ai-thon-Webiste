@@ -142,7 +142,7 @@ const TrackDetail: React.FC = () => {
                             Join the competition and build a solution that makes an impact. Registration is open until the hackathon starts.
                         </p>
                         <a
-                            href="https://unstop.com"
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSck7l4BxrEqXGfZzRx8fxryPb5f3v-sPgyz5Xfm6AyYnapHPg/viewform?usp=header"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center px-8 py-4 bg-tech-cyan text-black font-bold rounded-lg hover:bg-white transition-all transform hover:scale-105 active:scale-95"

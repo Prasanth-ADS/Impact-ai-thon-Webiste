@@ -4,7 +4,7 @@ import { Calendar, Trophy, MapPin, Users } from 'lucide-react';
 const About: React.FC = () => {
 
   return (
-    <section id="about" className="py-24 bg-tech-dark/90 backdrop-blur-sm relative overflow-hidden">
+    <section id="about" className="py-24 bg-transparent relative overflow-hidden">
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col items-center">
