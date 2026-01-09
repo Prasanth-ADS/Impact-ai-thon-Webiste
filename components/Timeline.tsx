@@ -76,12 +76,12 @@ const Timeline: React.FC = () => {
                     <div className="absolute top-1/2 left-0 w-[150vw] md:w-full h-1 bg-gradient-to-r from-transparent via-tech-cyan/50 to-transparent -translate-y-1/2 blur-[1px] z-0"></div>
                     <div className="absolute top-1/2 left-0 w-[150vw] md:w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-y-1/2 z-0"></div>
 
-                    <div className="flex gap-12 md:gap-24 min-w-max px-8 md:justify-center items-center h-[500px]">
+                    <div className="flex gap-6 md:gap-24 min-w-max px-4 md:px-8 md:justify-center items-center h-[500px]">
                         {steps.map((step, index) => (
                             <div
                                 key={index}
                                 onClick={() => setActiveStep(step)}
-                                className="group relative w-80 h-96 snap-center cursor-pointer transition-all duration-500 transform hover:-translate-y-4 hover:rotate-y-12 perspective-card"
+                                className="group relative w-72 h-80 md:w-80 md:h-96 snap-center cursor-pointer transition-all duration-500 transform hover:-translate-y-4 hover:rotate-y-12 perspective-card"
                             >
                                 {/* 3D Card Structure */}
                                 <div className="relative w-full h-full transform-style-3d transition-transform duration-700">
