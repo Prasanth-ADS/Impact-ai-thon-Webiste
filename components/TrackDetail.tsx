@@ -4,7 +4,7 @@ import { TRACKS } from '../data/tracks';
 import { ArrowLeft, ChevronRight } from 'lucide-react';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import DarkVeil from './DarkVeil';
+import { GridScan } from './GridScan';
 
 const TrackDetail: React.FC = () => {
     const { trackId } = useParams<{ trackId: string }>();
@@ -25,7 +25,18 @@ const TrackDetail: React.FC = () => {
     return (
         <div className="font-sans antialiased text-slate-200 selection:bg-tech-cyan selection:text-black relative min-h-screen flex flex-col">
             <div className="fixed inset-0 z-[-1] bg-[#050a14]">
-                <DarkVeil hueShift={10} speed={0.2} />
+                <GridScan
+                    sensitivity={0.55}
+                    lineThickness={1}
+                    linesColor="#392e4e"
+                    gridScale={0.1}
+                    scanColor="#FF9FFC"
+                    scanOpacity={0.4}
+                    enablePost
+                    bloomIntensity={0.6}
+                    chromaticAberration={0.002}
+                    noiseIntensity={0.01}
+                />
             </div>
 
             <Navbar />

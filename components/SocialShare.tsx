@@ -1,5 +1,5 @@
 import React from 'react';
-import { Share2, Linkedin, Facebook, Twitter, Instagram } from 'lucide-react';
+import { Share2, Linkedin, Facebook as FacebookIcon, Twitter, Instagram } from 'lucide-react';
 
 const SocialShare: React.FC = () => {
     // URL to share - update this to the actual production URL when known
@@ -31,7 +31,7 @@ const SocialShare: React.FC = () => {
                         className="social-icon facebook"
                         aria-label="Share on Facebook"
                     >
-                        <Facebook size={20} className="text-gray-800" />
+                        <FacebookIcon size={20} className="text-gray-800" />
                     </a>
                     <a
                         href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`}

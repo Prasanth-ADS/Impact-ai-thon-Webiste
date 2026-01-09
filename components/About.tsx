@@ -19,7 +19,7 @@ const About: React.FC = () => {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
-              <div className="p-4 bg-tech-card border border-slate-800 rounded hover:border-tech-cyan/50 transition-colors">
+              <div className="p-4 bg-tech-card border border-yellow-400/30 rounded shadow-[0_0_20px_rgba(250,204,21,0.2)] hover:shadow-[0_0_30px_rgba(250,204,21,0.4)] transition-all duration-300">
                 <div className="flex items-center space-x-3 mb-2">
                   <Calendar className="text-yellow-400" size={24} />
                   <span className="text-slate-500 text-sm font-mono uppercase">Date Of Event</span>
@@ -27,7 +27,7 @@ const About: React.FC = () => {
                 <div className="text-xl font-bold text-white">22 Feb - 23 Feb</div>
               </div>
 
-              <div className="p-4 bg-tech-card border border-slate-800 rounded hover:border-tech-cyan/50 transition-colors">
+              <div className="p-4 bg-tech-card border border-blue-400/30 rounded shadow-[0_0_20px_rgba(96,165,250,0.2)] hover:shadow-[0_0_30px_rgba(96,165,250,0.4)] transition-all duration-300">
                 <div className="flex items-center space-x-3 mb-2">
                   <Trophy className="text-blue-400" size={24} />
                   <span className="text-slate-500 text-sm font-mono uppercase">Prize Pool</span>
@@ -35,7 +35,7 @@ const About: React.FC = () => {
                 <div className="text-xl font-bold text-white">₹1,20,000</div>
               </div>
 
-              <div className="p-4 bg-tech-card border border-slate-800 rounded hover:border-tech-cyan/50 transition-colors">
+              <div className="p-4 bg-tech-card border border-purple-400/30 rounded shadow-[0_0_20px_rgba(192,132,252,0.2)] hover:shadow-[0_0_30px_rgba(192,132,252,0.4)] transition-all duration-300">
                 <div className="flex items-center space-x-3 mb-2">
                   <Users className="text-purple-400" size={24} />
                   <span className="text-slate-500 text-sm font-mono uppercase">Event Type</span>
@@ -43,7 +43,7 @@ const About: React.FC = () => {
                 <div className="text-xl font-bold text-white">Offline</div>
               </div>
 
-              <div className="p-4 bg-tech-card border border-slate-800 rounded hover:border-tech-cyan/50 transition-colors">
+              <div className="p-4 bg-tech-card border border-red-400/30 rounded shadow-[0_0_20px_rgba(248,113,113,0.2)] hover:shadow-[0_0_30px_rgba(248,113,113,0.4)] transition-all duration-300">
                 <div className="flex items-center space-x-3 mb-2">
                   <MapPin className="text-red-400" size={24} />
                   <span className="text-slate-500 text-sm font-mono uppercase">Venue</span>

@@ -1,11 +1,25 @@
 import React from 'react';
+import { GridScan } from './GridScan';
 import { Trophy, Medal, Award, Crown, Zap, Code2, Star, Gift } from 'lucide-react';
 
 const PrizePool: React.FC = () => {
   return (
     <section id="prizes" className="py-24 bg-[#080c16]/90 backdrop-blur-sm relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(6,182,212,0.05),transparent_70%)] pointer-events-none"></div>
+      <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
+        <GridScan
+          sensitivity={0.55}
+          lineThickness={1}
+          linesColor="#392e4e"
+          gridScale={0.1}
+          scanColor="#FF9FFC"
+          scanOpacity={0.4}
+          enablePost
+          bloomIntensity={0.6}
+          chromaticAberration={0.002}
+          noiseIntensity={0.01}
+        />
+      </div>
 
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">

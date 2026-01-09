@@ -7,7 +7,7 @@ import Sponsors from './components/Sponsors';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import PrizePool from './components/PrizePool';
-import DarkVeil from './components/DarkVeil';
+import { GridScan } from './components/GridScan';
 import Timeline from './components/Timeline';
 
 
@@ -56,7 +56,18 @@ const App: React.FC = () => {
     <Router>
       <div className="font-sans antialiased text-slate-200 selection:bg-tech-cyan selection:text-black relative">
         <div className="fixed inset-0 z-[-1] bg-[#050a14]">
-          <DarkVeil hueShift={10} speed={0.2} />
+          <GridScan
+            sensitivity={0.55}
+            lineThickness={1}
+            linesColor="#392e4e"
+            gridScale={0.1}
+            scanColor="#FF9FFC"
+            scanOpacity={0.4}
+            enablePost
+            bloomIntensity={0.6}
+            chromaticAberration={0.002}
+            noiseIntensity={0.01}
+          />
         </div>
         <Routes>
           <Route path="/" element={<Home />} />

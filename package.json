@@ -10,8 +10,11 @@
   },
   "dependencies": {
     "@google/genai": "^1.33.0",
+    "@types/three": "^0.182.0",
+    "face-api.js": "^0.22.2",
     "lucide-react": "^0.559.0",
     "ogl": "1.0.11",
+    "postprocessing": "^6.38.2",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
     "react-router-dom": "^7.11.0",
