@@ -81,7 +81,7 @@ const Coordinators: React.FC = () => {
             phone: "8489079317",
             email: "shahidahamed3214@gmail.com",
             linkedin: "https://www.linkedin.com/in/shahid-ahamed-s-855ab2295/",
-            image: "https://media.licdn.com/dms/image/v2/D5603AQFwOmBgs8eRXA/profile-displayphoto-scale_400_400/B56ZgmEKyHG0Ak-/0/1752985286149?e=1769040000&v=beta&t=XLqNlm3Tl1WwXvdz0VjiVr7plJ1x3QRIb5KRxZAJfMQ"
+            image: "/Shahidl.jpeg"
         },
         {
             name: "Srinithi P",
@@ -89,7 +89,7 @@ const Coordinators: React.FC = () => {
             phone: "6383457387",
             email: "srinithi7788@gmail.com",
             linkedin: "https://www.linkedin.com/in/srinithi-p-75729b295/",
-            image: ""
+            image: "/Srinithi photo.jpeg"
         }
     ];
 
