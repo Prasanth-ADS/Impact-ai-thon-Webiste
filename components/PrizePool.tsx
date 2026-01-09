@@ -28,47 +28,35 @@ const PrizePool: React.FC = () => {
           </p>
         </div>
 
-        {/* Main Podium */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-end mb-20 max-w-5xl mx-auto">
-          {/* 2nd Place */}
-          <div className="order-2 md:order-1 bg-[#0f172a]/80 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 flex flex-col items-center hover:border-slate-500 transition-all duration-300 group">
-            <div className="relative mb-6">
-              <div className="absolute inset-0 bg-slate-400/20 blur-xl rounded-full group-hover:bg-slate-400/30 transition-all"></div>
-              <Medal size={64} className="text-slate-300 relative z-10" />
+        {/* Surprise Prize Section */}
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-[#0f172a]/60 backdrop-blur-md border border-slate-700/50 rounded-3xl p-12 text-center relative overflow-hidden group hover:border-yellow-500/30 transition-all duration-500">
+            {/* Animated Background */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-500/5 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-[1.5s] ease-in-out"></div>
+
+            <div className="relative z-10 flex flex-col items-center">
+              <div className="mb-8 relative">
+                <div className="absolute inset-0 bg-yellow-500/20 blur-3xl rounded-full scale-150 animate-pulse"></div>
+                <Gift size={80} className="text-yellow-400 relative z-10 drop-shadow-[0_0_25px_rgba(234,179,8,0.4)] animate-bounce" />
+              </div>
+
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Structured & Surprise Prizes
+              </h3>
+
+              <p className="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed mb-8">
+                The total prize pool is divided into exciting categories.
+                <span className="block mt-2 text-yellow-400 font-semibold">
+                  Specific breakdown and surprise rewards to be revealed!
+                </span>
+              </p>
+
+              <div className="inline-flex items-center space-x-2 text-sm text-slate-400 bg-slate-800/50 px-4 py-2 rounded-full border border-slate-700/50">
+                <Star size={14} className="text-yellow-500" />
+                <span>Stay tuned for the detailed reveal</span>
+                <Star size={14} className="text-yellow-500" />
+              </div>
             </div>
-            <div className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-1">Runner Up</div>
-            <h3 className="text-2xl font-bold text-white mb-2">2nd Place</h3>
-            <div className="text-4xl font-mono font-bold text-tech-cyan mb-6">₹40,000</div>
-
-          </div>
-
-          {/* 1st Place */}
-          <div className="order-1 md:order-2 bg-gradient-to-b from-[#1e1b4b] to-[#0f172a] border border-yellow-500/30 rounded-2xl p-8 pb-10 flex flex-col items-center transform md:-translate-y-8 shadow-[0_0_40px_rgba(234,179,8,0.15)] relative overflow-hidden group">
-            <div className="absolute inset-0 bg-yellow-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-yellow-500 to-transparent"></div>
-
-            <div className="relative mb-8 mt-2">
-              <div className="absolute inset-0 bg-yellow-500/30 blur-2xl rounded-full animate-pulse-slow"></div>
-              <Trophy size={80} className="text-yellow-400 relative z-10 drop-shadow-[0_0_15px_rgba(234,179,8,0.5)]" />
-            </div>
-
-            <div className="text-sm font-bold text-yellow-500 uppercase tracking-widest mb-1">Grand Champion</div>
-            <h3 className="text-3xl font-black text-white mb-2">1st Place</h3>
-            <div className="text-6xl font-mono font-bold text-white mb-8 tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-yellow-200 to-yellow-500">₹60,000</div>
-
-
-          </div>
-
-          {/* 3rd Place */}
-          <div className="order-3 bg-[#0f172a]/80 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 flex flex-col items-center hover:border-amber-700/50 transition-all duration-300 group">
-            <div className="relative mb-6">
-              <div className="absolute inset-0 bg-amber-700/20 blur-xl rounded-full group-hover:bg-amber-700/30 transition-all"></div>
-              <Medal size={64} className="text-amber-700 relative z-10" />
-            </div>
-            <div className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-1">Finalist</div>
-            <h3 className="text-2xl font-bold text-white mb-2">3rd Place</h3>
-            <div className="text-4xl font-mono font-bold text-tech-cyan mb-6">₹20,000</div>
-
           </div>
         </div>
 
