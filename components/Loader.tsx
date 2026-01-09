@@ -3,7 +3,7 @@ import React from 'react';
 const Loader: React.FC = () => {
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-[#050a14] z-50">
-            <div className="loader-wrapper">
+            <div className="loader-wrapper scale-[0.4] sm:scale-75 md:scale-100 transition-transform duration-300">
                 <span className="loader-letter">I</span>
                 <span className="loader-letter">M</span>
                 <span className="loader-letter">P</span>
