@@ -20,7 +20,7 @@ const FAQ: React.FC = () => {
     },
     {
       question: "Can I participate alone?",
-      answer: "Sorry, but teamwork makes the dream work! Solo participation isn't allowed. You'll need to form a team of 1–3 members. Don't worry, we'll help you find teammates if needed."
+      answer: "Sorry, but teamwork makes the dream work! Solo participation isn't allowed. You'll need to form a team of 3 members. Don't worry, we'll help you find teammates if needed."
     },
     {
       question: "I'm a beginner. Can I still participate?",
@@ -36,7 +36,7 @@ const FAQ: React.FC = () => {
     },
     {
       question: "What can I win?",
-      answer: "Amazing prizes worth ₹1,00,000+ plus networking opportunities, and the eternal bragging rights of surviving 24 hours of coding! You might actually build something amazing too."
+      answer: "Amazing prizes worth ₹1,20,000+ plus networking opportunities, and the eternal bragging rights of surviving 24 hours of coding! You might actually build something amazing too."
     },
     {
       question: "What if my code breaks at 3 AM?",
