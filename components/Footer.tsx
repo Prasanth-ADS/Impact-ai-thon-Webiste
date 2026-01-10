@@ -35,10 +35,40 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-8 border-t border-slate-900 pt-8 flex justify-center space-x-8 text-xs text-slate-600">
-          <Link to="/code-of-conduct" className="hover:text-tech-cyan">Code of Conduct</Link>
-          <Link to="/privacy-policy" className="hover:text-tech-cyan">Privacy Policy</Link>
-          <Link to="/terms-of-service" className="hover:text-tech-cyan">Terms of Service</Link>
+        <div className="mt-8 border-t border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-xs text-slate-600">
+          <div className="flex space-x-8">
+            <Link to="/code-of-conduct" className="hover:text-tech-cyan">Code of Conduct</Link>
+            <Link to="/privacy-policy" className="hover:text-tech-cyan">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="hover:text-tech-cyan">Terms of Service</Link>
+          </div>
+
+          <button className="btn-back-to-top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <div className="text">
+              <span>Back</span>
+              <span>to</span>
+              <span>top</span>
+            </div>
+            <div className="clone">
+              <span>Back</span>
+              <span>to</span>
+              <span>top</span>
+            </div>
+            <svg
+              width="20px"
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </footer>
