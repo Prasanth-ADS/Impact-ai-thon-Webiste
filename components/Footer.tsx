@@ -35,13 +35,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-8 border-t border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-xs text-slate-600">
-          <div className="flex space-x-8">
-            <Link to="/code-of-conduct" className="hover:text-tech-cyan">Code of Conduct</Link>
-            <Link to="/privacy-policy" className="hover:text-tech-cyan">Privacy Policy</Link>
-            <Link to="/terms-of-service" className="hover:text-tech-cyan">Terms of Service</Link>
-          </div>
-
+        <div className="mt-8 border-t border-slate-900 pt-8 flex flex-col items-center space-y-6">
           <button className="btn-back-to-top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <div className="text">
               <span>Back</span>
@@ -69,6 +63,12 @@ const Footer: React.FC = () => {
               />
             </svg>
           </button>
+
+          <div className="flex space-x-8 text-xs text-slate-600">
+            <Link to="/code-of-conduct" className="hover:text-tech-cyan">Code of Conduct</Link>
+            <Link to="/privacy-policy" className="hover:text-tech-cyan">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="hover:text-tech-cyan">Terms of Service</Link>
+          </div>
         </div>
       </div>
     </footer>
