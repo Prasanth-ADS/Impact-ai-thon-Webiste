@@ -9,17 +9,22 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0 flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="flex items-center space-x-3 mb-3">
+            <a
+              href="https://dac-website.onrender.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-3 mb-3 hover:opacity-80 transition-opacity"
+            >
               <div className="h-10 w-10 rounded-lg overflow-hidden border border-slate-800 bg-white/5 p-0.5">
                 <img
-                  src="/LOGO.jpeg"
+                  src="/Data analytics Club.jpg"
                   alt="Impact AI Thon Logo"
                   className="h-full w-full object-cover rounded-md"
                 />
               </div>
-              <span className="text-xl font-bold font-mono tracking-tighter text-white">IMPACT AI THON '26</span>
-            </div>
-            <p className="text-slate-500 text-sm">© 2026 IMPACT AI THON '26. All rights reserved.</p>
+              <span className="text-xl font-bold font-mono tracking-tighter text-white">DATA ANALYTICS CLUB</span>
+            </a>
+            <p className="text-slate-500 text-sm">© 2026 DATA ANALYTICS CLUB. All rights reserved.</p>
           </div>
 
           <div className="flex space-x-6">

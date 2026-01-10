@@ -66,7 +66,7 @@ const Coordinators: React.FC = () => {
         {
             name: "Naazil",
             role: "Student Coordinator",
-            phone: "78564736383",
+            phone: "9444160065",
             image: "/naazil photo.jpeg",
             imagePosition: "object-top"
         }
@@ -85,7 +85,7 @@ const Coordinators: React.FC = () => {
             role: "Coordinator",
             phone: "8807527817",
             linkedin: "https://www.linkedin.com/in/nowrin-begum/",
-            image: "https://media.licdn.com/dms/image/v2/D4D35AQGgZIE2LhQ_hQ/profile-framedphoto-shrink_400_400/B4DZl3JQGmJQAc-/0/1758640538570?e=1768190400&v=beta&t=NYpGaulwBpnyjhYtZ4PpONTZWNdbAjtZaQqI3vqThDs"
+            image: "/Nowrin.png"
         },
         {
             name: "Shahid Ahamed S",
