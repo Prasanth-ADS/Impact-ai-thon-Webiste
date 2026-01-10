@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Calendar, Trophy, MapPin, Users, Gift, Lock } from 'lucide-react';
+import PrizePool from './PrizePool';
 
 const About: React.FC = () => {
 
@@ -20,46 +21,8 @@ const About: React.FC = () => {
 
             <div className="mt-16">
               {/* FEATURED: Cyberpunk Vault Prize Pool */}
-              <div className="max-w-xl mx-auto mb-16">
-                <div
-                  className="bg-[#050a14]/90 backdrop-blur-xl border border-tech-cyan/30 rounded-2xl p-6 md:p-10 text-center relative overflow-hidden group hover:border-tech-cyan/80 hover:shadow-[0_0_50px_rgba(6,182,212,0.3)] transition-all duration-300 cursor-pointer"
-                >
-                  {/* Scanning Grid Background */}
-                  <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.05)_1px,transparent_1px)] bg-[size:20px_20px] opacity-20 group-hover:opacity-40 transition-opacity"></div>
-
-                  {/* Glitch Overlay */}
-                  <div className="absolute inset-0 bg-tech-cyan/5 opacity-0 group-hover:opacity-100 mix-blend-overlay transition-opacity duration-100"></div>
-
-                  <div className="flex flex-col items-center relative z-10 font-mono">
-                    <div className="mb-6 relative">
-                      <div className="absolute inset-0 bg-tech-cyan/20 blur-2xl rounded-full scale-150 group-hover:animate-pulse"></div>
-                      <Lock className="text-tech-cyan group-hover:animate-bounce transition-transform duration-300" size={64} />
-                    </div>
-
-                    <span className="text-tech-purple text-xs tracking-[0.3em] uppercase mb-2 group-hover:text-red-500 transition-colors">
-                      {/* Changes on hover via CSS content is tricky, sticking to static label for status */}
-                      SECURE STORAGE // ENCRYPTED
-                    </span>
-
-                    <div className="relative h-20 flex items-center justify-center w-full overflow-hidden">
-                      {/* Normal State */}
-                      <div className="text-3xl md:text-6xl font-black text-white tracking-tighter group-hover:translate-y-20 transition-transform duration-300 absolute inset-0 flex items-center justify-center">
-                        ₹1,20,000
-                      </div>
-
-                      {/* Hover State - Glitch Text */}
-                      <div className="text-2xl md:text-5xl font-black text-red-500 tracking-widest translate-y-[-150%] group-hover:translate-y-0 transition-transform duration-200 absolute inset-0 flex items-center justify-center font-heading drop-shadow-[2px_2px_0px_rgba(255,0,0,0.5)]">
-                        ACCESS DENIED
-                      </div>
-                    </div>
-
-                    <div className="mt-4 flex items-center space-x-2 text-xs text-slate-500 border border-slate-800 rounded-full px-3 py-1 group-hover:border-red-500/50 group-hover:text-red-400 transition-colors">
-                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse group-hover:bg-red-500"></div>
-                      <span className="group-hover:hidden">SYSTEM STABLE</span>
-                      <span className="hidden group-hover:inline">BREACH DETECTED</span>
-                    </div>
-                  </div>
-                </div>
+              <div className="max-w-5xl mx-auto mb-16">
+                <PrizePool />
               </div>
 
               {/* Info Grid - 3 Columns Below */}

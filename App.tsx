@@ -8,6 +8,7 @@ import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import LiquidEther from './components/LiquidEther';
 import Timeline from './components/Timeline';
+import PrizePool from './components/PrizePool';
 
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -38,6 +39,8 @@ const Home: React.FC = () => {
   );
 };
 
+import PosterModal from './components/PosterModal';
+
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = React.useState(true);
 
@@ -53,6 +56,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <div className="font-sans antialiased text-slate-200 selection:bg-tech-cyan selection:text-black relative">
+        <PosterModal />
         <div className="fixed inset-0 z-[-1] bg-[#050a14]">
           <LiquidEther
             colors={['#300344', '#7372df', '#e684cc']}

@@ -555,6 +555,7 @@
       background: linear-gradient(to right, #9f9f9f 0, #fff 10%, #868686 20%);
       background-position: 0;
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: shine 3s infinite linear;
       animation-fill-mode: forwards;
@@ -904,6 +905,106 @@
 
     .btn-back-to-top:hover svg {
       transform: translateY(-50%) rotate(-90deg);
+    }
+
+    @keyframes shake {
+
+      0%,
+      100% {
+        transform: translateX(0);
+      }
+
+      10%,
+      30%,
+      50%,
+      70%,
+      90% {
+        transform: translateX(-5px);
+      }
+
+      20%,
+      40%,
+      60%,
+      80% {
+        transform: translateX(5px);
+      }
+    }
+
+    .animate-shake {
+      animation: shake 0.5s cubic-bezier(.36, .07, .19, .97) both;
+    }
+
+    .animate-shake {
+      animation: shake 0.5s cubic-bezier(.36, .07, .19, .97) both;
+    }
+
+    .btn-back-to-top:hover svg {
+      transform: translateY(-50%) rotate(-90deg);
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+    }
+
+    /* Poster Magic Card Styles */
+    .magic-card {
+      background: #07182e;
+      position: relative;
+      display: flex;
+      place-content: center;
+      place-items: center;
+      overflow: hidden;
+      border-radius: 20px;
+      /* Removed fixed width/height to let React component control sizing */
+    }
+
+    .magic-card::before {
+      content: "";
+      position: absolute;
+      width: 200%;
+      /* Increased coverage for rotation */
+      height: 200%;
+      background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(184, 23, 184));
+      animation: rotBGimg 3s linear infinite;
+      transition: all 0.2s linear;
+      z-index: 0;
+      /* Behind content */
+    }
+
+    @keyframes rotBGimg {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .magic-card::after {
+      content: "";
+      position: absolute;
+      background: #020617;
+      /* Matched to modal internal bg */
+      inset: 3px;
+      /* Border thickness */
+      border-radius: 17px;
+      /* adjusted for inset */
+      z-index: 1;
+      /* Above glowing border, behind content */
+    }
+
+    /* Ensure content sits above the pseudo-elements */
+    .magic-card>* {
+      z-index: 2;
     }
   </style>
   <script type="importmap">
