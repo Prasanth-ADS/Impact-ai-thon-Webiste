@@ -6,7 +6,7 @@ import SocialShare from './SocialShare';
 const Hero: React.FC = () => {
   // Set target date to February 22, 2026
   const [targetDate] = useState<number>(() => {
-    return new Date('2026-02-22T00:00:00').getTime();
+    return new Date('2026-02-23T00:00:00').getTime();
   });
 
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({ days: 0, hours: 0, minutes: 0, seconds: 0 });

@@ -33,7 +33,7 @@ const About: React.FC = () => {
                       <Calendar className="text-yellow-400" size={28} />
                     </div>
                     <span className="text-slate-500 text-xs font-mono uppercase mb-1">Date Of Event</span>
-                    <div className="text-xl font-bold text-white">22 Feb - 23 Feb</div>
+                    <div className="text-xl font-bold text-white">23 Feb - 24 Feb</div>
                   </div>
                 </div>
 

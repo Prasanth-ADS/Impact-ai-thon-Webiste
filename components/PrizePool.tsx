@@ -60,7 +60,7 @@ const PrizePool: React.FC = () => {
               <span className="text-xs font-bold tracking-widest text-yellow-500 uppercase">Total Rewards</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-white mb-4 tracking-tight">
-              ₹1,20,000+ <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-400">PRIZE POOL</span>
+              ₹1,50,000+ <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-400">PRIZE POOL</span>
             </h2>
             <p className="text-slate-400 text-sm md:text-base max-w-2xl mx-auto">
               Compete for cash prizes, venture capital introductions, and enterprise-grade tech stacks.
@@ -121,7 +121,7 @@ const PrizePool: React.FC = () => {
                   </div>
                   <div className="mt-6 mb-2">
                     <Medal size={40} className="text-slate-300 mx-auto mb-2" />
-                    <div className="text-3xl font-black text-white">₹40,000</div>
+                    <div className="text-3xl font-black text-white">₹50,000</div>
                     <div className="text-slate-400 text-sm font-bold tracking-widest uppercase">Runner Up</div>
                   </div>
                 </div>
@@ -136,7 +136,7 @@ const PrizePool: React.FC = () => {
                   </div>
                   <div className="mt-8 mb-4">
                     <Trophy size={64} className="text-yellow-400 mx-auto mb-4 drop-shadow-[0_0_15px_rgba(250,204,21,0.5)] animate-bounce" />
-                    <div className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-b from-yellow-300 to-yellow-600">₹60,000</div>
+                    <div className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-b from-yellow-300 to-yellow-600">₹75,000</div>
                     <div className="text-yellow-500 text-base font-bold tracking-[0.2em] uppercase mt-2">Champion</div>
                   </div>
                 </div>
@@ -150,7 +150,7 @@ const PrizePool: React.FC = () => {
                   </div>
                   <div className="mt-6 mb-2">
                     <Award size={40} className="text-amber-600 mx-auto mb-2" />
-                    <div className="text-3xl font-black text-white">₹20,000</div>
+                    <div className="text-3xl font-black text-white">₹25,000</div>
                     <div className="text-amber-600/80 text-sm font-bold tracking-widest uppercase">Second Runner Up</div>
                   </div>
                 </div>

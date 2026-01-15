@@ -36,7 +36,7 @@ const FAQ: React.FC = () => {
     },
     {
       question: "What can I win?",
-      answer: "Amazing prizes worth ₹1,20,000+ plus networking opportunities, and the eternal bragging rights of surviving 24 hours of coding! You might actually build something amazing too."
+      answer: "Amazing prizes worth ₹1,50,000+ plus networking opportunities, and the eternal bragging rights of surviving 24 hours of coding! You might actually build something amazing too."
     },
     {
       question: "What if my code breaks at 3 AM?",
