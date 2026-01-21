@@ -60,7 +60,7 @@ const PrizePool: React.FC = () => {
               <span className="text-xs font-bold tracking-widest text-yellow-500 uppercase">Total Rewards</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-white mb-4 tracking-tight">
-              ₹1,50,000+ <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-400">PRIZE POOL</span>
+              ₹1,20,000+ <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-400">PRIZE POOL</span>
             </h2>
             <p className="text-slate-400 text-sm md:text-base max-w-2xl mx-auto">
               Compete for cash prizes, venture capital introductions, and enterprise-grade tech stacks.

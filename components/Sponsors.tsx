@@ -39,17 +39,7 @@ const Sponsors: React.FC = () => {
       description: "The world's largest sporting goods retailer.",
       offering: "Gift Vouchers & Goodies"
     },
-    {
-      name: "Poorvika",
-      image: "/poorvika-logo.png",
-      website: "https://www.poorvika.com/",
-      color: "text-orange-400",
-      border: "border-orange-500/30",
-      bg: "bg-orange-900/5",
-      hoverShadow: "hover:shadow-[0_0_20px_rgba(251,146,60,0.1)]",
-      description: "Leading focused multi-brand mobile retailer.",
-      offering: "Tech Accessories & Discounts"
-    }
+
   ];
 
   return (
