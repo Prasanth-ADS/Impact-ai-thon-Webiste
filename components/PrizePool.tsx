@@ -10,36 +10,20 @@ const PrizePool: React.FC = () => {
 
 
   // TARGET_HASH calculated with: PBKDF2(password, salt, 100000, 64, 'sha512')
-  const TARGET_HASH = '74c6987c32159c80a3dbb380fd0cac0c2da732212e0ed7e62faa24d489a300c040955b8609ff43b083b94176edf6539881b2f11abca7a954e0b08401d1f003cd';
+  // const TARGET_HASH = '74c6987c32159c80a3dbb380fd0cac0c2da732212e0ed7e62faa24d489a300c040955b8609ff43b083b94176edf6539881b2f11abca7a954e0b08401d1f003cd';
 
   const verifyPasscode = async (code: string) => {
     try {
-      const encoder = new TextEncoder();
-      const keyMaterial = await window.crypto.subtle.importKey(
-        'raw',
-        encoder.encode(code),
-        { name: 'PBKDF2' },
-        false,
-        ['deriveBits']
-      );
+      const response = await fetch('http://localhost:3000/api/unlock', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ code })
+      });
 
-      const salt = encoder.encode('ImpactAIThon2026_Salt');
-      const hashBuffer = await window.crypto.subtle.deriveBits(
-        {
-          name: 'PBKDF2',
-          salt: salt,
-          iterations: 100000,
-          hash: 'SHA-512'
-        },
-        keyMaterial,
-        512 // 64 bytes * 8 bits
-      );
-
-      const hashArray = Array.from(new Uint8Array(hashBuffer));
-      const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-      return hashHex === TARGET_HASH;
+      const data = await response.json();
+      return data.success;
     } catch (e) {
-      console.error("Crypto error:", e);
+      console.error("Verification error:", e);
       return false;
     }
   };
