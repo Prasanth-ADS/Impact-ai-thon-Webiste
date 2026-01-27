@@ -4,37 +4,53 @@ import { Trophy, Medal, Award, Crown, Zap, Code2, Star, Gift, Lock, AlertTriangl
 
 const PrizePool: React.FC = () => {
   const [isUnlocked, setIsUnlocked] = React.useState(false);
-  const [passcode, setPasscode] = React.useState(Array(9).fill(''));
+  const [passcode, setPasscode] = React.useState(Array(10).fill(''));
   const [error, setError] = React.useState(false);
   const inputRefs = React.useRef<(HTMLInputElement | null)[]>([]);
 
-  const handleInputChange = (index: number, value: string) => {
-    // Allow any character since password contains special chars
-    // if (isNaN(Number(value))) return;
+  const TARGET_HASH = 'eeee68e752db4ae4627ad8af5aa905de50c13bfdee9cdcab2ce7f188f717ee94';
 
+  const verifyPasscode = async (code: string) => {
+    try {
+      const encoder = new TextEncoder();
+      const data = encoder.encode(code);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+      return hashHex === TARGET_HASH;
+    } catch (e) {
+      console.error("Crypto error:", e);
+      return false;
+    }
+  };
+
+  const handleInputChange = (index: number, value: string) => {
     const newPasscode = [...passcode];
     newPasscode[index] = value;
     setPasscode(newPasscode);
     setError(false);
 
     // Auto-focus next input
-    if (value && index < 8) {
+    if (value && index < 9) {
       inputRefs.current[index + 1]?.focus();
     }
 
     // Check code when full
-    if (newPasscode.every(digit => digit !== '') && index === 8) {
+    if (newPasscode.every(digit => digit !== '') && index === 9) {
       const fullCode = newPasscode.join('');
-      if (fullCode === '0709@2006') {
-        setTimeout(() => setIsUnlocked(true), 300);
-      } else {
-        setError(true);
-        setTimeout(() => {
-          setPasscode(Array(9).fill(''));
-          inputRefs.current[0]?.focus();
-          setError(false);
-        }, 1000);
-      }
+
+      verifyPasscode(fullCode).then(isValid => {
+        if (isValid) {
+          setTimeout(() => setIsUnlocked(true), 300);
+        } else {
+          setError(true);
+          setTimeout(() => {
+            setPasscode(Array(10).fill(''));
+            inputRefs.current[0]?.focus();
+            setError(false);
+          }, 1000);
+        }
+      });
     }
   };
 

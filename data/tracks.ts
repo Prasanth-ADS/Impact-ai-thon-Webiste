@@ -42,36 +42,150 @@ export const TRACKS: TrackData[] = [
         color: "border-cyan-500 text-cyan-400",
         problems: [
             {
-                title: "AI-Powered Call Automation & Voice FAQ Intelligence",
-                description: "Design an AI system capable of autonomously handling inbound and outbound marketing calls using voice interaction. The system should understand user intent, resolve FAQs, qualify leads, escalate high-intent cases, and generate actionable campaign analytics—while significantly reducing human call center dependency."
+                title: "AI-Powered Call Automation & Voice FAQ Chatbot for Marketing",
+                description: `Explanation:
+Provide businesses with an AI-driven call automation system integrated with a voice-enabled FAQ chatbot to handle customer inquiries, lead qualification, and campaign follow-ups. The AI agent uses natural language understanding and speech recognition to interact with customers, reduce manual call center workload, and ensure consistent, real-time engagement across marketing campaigns.
+
+Scenario:
+Marketing teams deploy AI call agents to automatically call potential leads generated from campaigns and handle inbound customer calls. The system answers frequently asked questions via voice, captures user intent, qualifies leads, and routes high-intent customers to human agents while logging all interactions for analytics and campaign optimization.
+
+Example Output:
+Input:
+Live inbound and outbound call interactions from a marketing campaign targeting 5,000 potential customers.
+
+Output:
+ "Campaign Alpha: 62% of inbound calls resolved by voice FAQ chatbot without human intervention."
+ "Lead-ID 3421 qualified: User expressed purchase intent and requested callback from sales team."
+ "FAQ Insight: 41% of callers asked about pricing plans—recommend updating campaign messaging."
+ "Call Duration Alert: Average AI-handled call time reduced by 38% compared to manual agents."`
             },
             {
                 title: "Real-Time Fraud Detection & Digital Account Opening (DAO) Identity Defense",
-                description: "Build an AI-driven platform that performs millisecond-level fraud detection on live financial transactions while simultaneously preventing synthetic identity fraud during digital account onboarding using video-based KYC. The system must produce explainable decisions across behavioral, biometric, and device-level signals."
+                description: `Explanation:
+Provide banks and financial institutions with an AI-agent–driven fraud prevention system that operates across real-time transactions and digital account onboarding workflows. The platform performs millisecond-level transaction risk assessment while simultaneously defending against synthetic identity fraud during Digital Account Opening (DAO) using computer vision and expertsystem logic for explainable decisions.
+
+Scenario:
+Banks process millions of transactions daily while onboarding new customers through video-based KYC. AI agents continuously monitor live transactions for anomalous patterns and instantly approve or block them before financial loss occurs. During account opening, the same system validates customer identity by analyzing live video, facial consistency, liveness signals, and government ID authenticity to detect deepfakes, spoofed documents, or synthetic identities—ensuring fraud prevention before and after account creation.
+
+Example Output:
+Input:
+ Live transaction stream of 2 million transactions per day.
+ Video KYC feed and identity documents from 10,000 digital account opening requests.
+
+Output:
+ "Transaction-ID 889234 rejected in 12 ms: Behavior deviates from customer baseline—high fraud probability (0.91)."
+ "DAO Alert: Applicant-ID 451 detected using synthetic identity—facial mismatch across frames and ID hologram anomaly."
+ "Explainability Log: Fraud decision based on velocity spike, device fingerprint change, and historical spend deviation."
+ "Loss Prevention Summary: $1.8M potential fraud blocked pre-transaction and during onboarding."`
             },
             {
-                title: "Intelligent Claims Processing for Insurance & BFSI",
-                description: "Create an AI-powered claims processing system that automates document ingestion, data extraction, validation, fraud detection, and underwriting decisions. The platform should minimize manual intervention, reduce claim settlement time, and maintain full auditability and regulatory compliance."
+                title: "Intelligent Claims Processing Platform for Insurance & BFSI",
+                description: `Explanation:
+Provide insurers and BFSI institutions with an AI-powered claims processing platform that automates document ingestion, data extraction, validation, fraud detection, and underwriting decisions. The system replaces manual, rule-heavy workflows with intelligent agents that accelerate claim evaluation while maintaining auditability and regulatory compliance.
+
+Scenario:
+Insurance providers receive thousands of claims daily involving policy documents, bills, reports, and identity proofs. AI agents automatically extract structured data from submitted documents, verify policy coverage, flag fraudulent patterns, and trigger automated approval or escalation workflows. Human underwriters intervene only for high-risk or exceptional cases, drastically reducing turnaround time.
+
+Example Output:
+Input:
+Digitally submitted claim packets (policy document, hospital bills, accident reports) from 25,000 insurance claims.
+
+Output:
+ "Claim-ID 772901 approved in 9 days: Policy verified, documents consistent, fraud score low (0.08)."
+ "Claim-ID 889214 flagged: Duplicate invoice pattern detected—manual review required."
+ "Workflow Insight: 68% of claims processed end-to-end without human intervention."
+ "Operational Metric: Average claim settlement time reduced from 38 days to 8.5 days."`
             },
             {
-                title: "AI-Based Document Forgery Analysis & Verification",
-                description: "Design an AI system that detects forged or manipulated documents using metadata forensics, handwriting and signature analysis, linguistic inconsistency detection, and formatting inspection. The solution should generate legally defensible, explainable forensic evidence for each verification decision."
+                title: "AI-Based Document Forgery Analysis & Verification System",
+                description: `Explanation:
+Provide law enforcement agencies, banks, insurers, and enterprises with an AI-powered document forgery analysis platform that detects tampering, impersonation, and fabricated records. The system combines digital and metadata forensics, handwriting and signature analysis, and linguistic and formatting inspection to assess document authenticity with explainable forensic evidence.
+
+Scenario:
+Organizations receive critical documents such as contracts, affidavits, financial statements, and identity proofs where authenticity is legally and financially critical. AI agents analyze file metadata, image artifacts, handwriting consistency, signature dynamics, language patterns, and formatting anomalies to identify forged or manipulated documents before acceptance or legal submission.
+
+Example Output:
+Input:
+Scanned and digital documents (PDF, image, DOCX) submitted for verification across legal, banking, and insurance workflows.
+
+Output:
+ "Document-ID 33421 flagged: Metadata mismatch—creation timestamp altered postsignature."
+ "Signature Analysis Alert: Stroke pressure and slant deviation detected—high probability of forgery (0.87)."
+ "Linguistic Inconsistency: Section 4 uses divergent syntax and vocabulary—possible content insertion."
+ "Forensic Verdict: Document classified as manipulated with 92% confidence; detailed evidence logs generated."`
             },
             {
-                title: "AI-Driven Investment Management & Decision Intelligence",
-                description: "Develop an AI-assisted investment intelligence platform that analyzes real-time market data, portfolio holdings, and client risk profiles to generate transparent, explainable investment recommendations. The system must support human decision-makers rather than replace them, ensuring governance and compliance."
+                title: "AI-Driven Investment Management & Decision Intelligence System",
+                description: `Explanation:
+Provide financial institutions, asset managers, and wealth management firms with an AI-powered investment management system that automates portfolio analysis, risk assessment, and decisionmaking support. The platform uses AI agents to continuously evaluate market signals, client objectives, and risk constraints, enabling data-driven investment actions with transparency and governance.
+
+Scenario:
+Investment firms manage diverse portfolios across equities, fixed income, and alternative assets while responding to volatile market conditions. AI agents ingest real-time market data, historical performance, macroeconomic indicators, and client profiles to generate portfolio insights, rebalance recommendations, and risk alerts. Human portfolio managers retain control while leveraging AI for faster, more consistent decision support.
+
+Example Output:
+Input:
+Real-time market data feeds, portfolio holdings of 5,000 clients, and predefined risk and compliance constraints.
+
+Output:
+ "Portfolio-ID 10234: Risk exposure exceeds mandate due to sector concentration—rebalancing recommended."
+ "Market Signal Alert: Volatility spike detected in mid-cap equities—defensive allocation suggested."
+ "Client Profile Match: Conservative investor—AI reduced exposure to high-beta assets by 12%."
+ "Decision Log: Investment recommendation generated with rationale based on market trends, risk metrics, and historical performance."`
             },
             {
-                title: "Climate Risk–Based Credit Scoring & Lending Intelligence",
-                description: "Build an AI-powered Climate Risk Engine that evaluates long-term climate exposure of assets using geospatial and multi-decade climate projections. The output should integrate into lending systems to dynamically influence credit scoring, loan pricing, tenure, and insurance decisions in line with ESG and regulatory norms."
+                title: "Climate Risk–Based Credit Scoring & Lending Intelligence System",
+                description: `Explanation:
+Provide banks and financial institutions with a Climate Risk Engine that evaluates long-term climate exposure of assets and assigns a location-specific Climate Credit Score. The system incorporates 50-year projections of climate hazards—such as floods, heatwaves, storms, and sealevel rise—to enable risk-adjusted lending, pricing, and insurance decisions aligned with regulatory and ESG requirements.
+
+Scenario:
+Banks issue home loans, commercial mortgages, and infrastructure financing without fully accounting for future climate risks embedded in asset locations. AI-driven risk models analyze geospatial climate projections and historical climate data to score each property’s long-term exposure. The Climate Credit Score is then integrated into loan underwriting systems to dynamically adjust interest rates, loan tenure, or insurance premiums before financial exposure materializes.
+
+Example Output:
+Input:
+Geolocation data for 50,000 loan-backed properties combined with long-term climate projection datasets.
+
+Output:
+ "Property-ID 98122 assigned Climate Credit Score: 42/100—high flood and cyclone risk projected over 30–50 years."
+ "Loan Pricing Adjustment: Interest rate increased by 1.2% due to elevated climate exposure."
+ "Portfolio Risk Alert: 18% of coastal mortgage portfolio classified as high climate risk."
+ "Explainability Log: Score derived from flood frequency increase, storm intensity projections, and heat stress trends."`
             },
             {
-                title: "AI-Driven Collections & Recovery Orchestration",
-                description: "Design an adaptive AI platform that personalizes loan recovery strategies based on borrower behavior, repayment intent, stress indicators, and communication sensitivity. The system should optimize recovery rates while strictly adhering to fair-practice and regulatory guidelines."
+                title: "AI-Driven Collections & Recovery Orchestration Platform",
+                description: `Explanation:
+Provide banks and NBFCs with an AI-powered collections and recovery platform that replaces rigid, rule-based strategies with adaptive, self-learning AI agents. The system dynamically segments delinquent customers by repayment risk, intent, and communication sensitivity, then orchestrates the optimal channel, tone, and timing for each interaction—while ensuring compliance with fair treatment and regulatory norms.
+
+Scenario:
+Traditional collections teams rely on fixed delinquency buckets and generic reminder messages, resulting in low recovery rates and rising customer dissatisfaction. The AI platform continuously analyzes borrower behavior, payment history, dispute patterns, and response outcomes to personalize recovery strategies. It integrates with existing collections systems to automate outreach, escalate cases intelligently, and learn from every interaction to improve future recovery performance.
+
+Example Output:
+Input:
+Delinquency data from 80,000 loan accounts including repayment history, past communication responses, disputes, and complaint logs.
+
+Output:
+ "Customer-ID 77421 classified: High intent to pay, low stress tolerance—soft SMS reminder scheduled at 7 PM."
+ "Customer-ID 55203 flagged: Low response to digital nudges—human agent call recommended."
+ "Strategy Learning Update: Promise-to-pay success rate improved by 18% for personalized tone messages."
+ "Compliance Log: All recovery actions aligned with RBI fair-practice guidelines—no policy breaches detected."`
             },
             {
-                title: "AI-Driven Customer 360° Financial Wellness Advisory",
-                description: "Create a unified AI system that consolidates customer financial data across products to compute a holistic Financial Wellness Score. The platform should proactively detect financial stress, recommend corrective actions, and engage users via multilingual chatbot and voice interfaces—while empowering relationship managers with actionable insights."
+                title: "AI-Driven Customer 360° Financial Wellness Advisory Platform",
+                description: `Explanation:
+Provide banks and financial institutions with an AI-agent–driven Customer 360° platform that transforms fragmented financial data into a holistic financial health view. The system unifies deposits, cards, loans, and investments to compute a Financial Wellness Score, detect risk patterns, and deliver personalized, explainable guidance—engaging customers through chatbot and voice Bot channels in local languages while empowering relationship managers with actionable insights.
+
+Scenario:
+Retail customers often hold multiple financial products but lack visibility into their overall financial health, leading to underinsurance, over-leverage, and missed growth opportunities. The AI platform continuously analyzes customer portfolios and behavioral signals to identify stress indicators and improvement opportunities. It proactively engages customers with tailored recommendations and surfaces the same intelligence to relationship managers for informed, timely interventions.
+
+Example Output:
+Input:
+Unified customer data across savings accounts, credit cards, loans, insurance policies, and investment portfolios for 120,000 retail customers.
+
+Output:
+ "Financial Health Score: 58/100—high credit utilization and low emergency savings detected."
+ "Risk Pattern Alert: Missed two consecutive EMI payments—early stress signal flagged."
+ "Personalized Recommendation: Suggest debt consolidation plan and automated savings of ₹2,000/month."
+ "Multilingual Engagement: Voicebot delivered guidance in Tamil with step-by-step explanation of actions."
+ "RM Dashboard Insight: Top 15 customers in branch flagged for proactive financial wellness review."`
             }
         ]
     },

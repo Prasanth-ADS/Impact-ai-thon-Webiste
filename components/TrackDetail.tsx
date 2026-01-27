@@ -22,6 +22,21 @@ const TrackDetail: React.FC = () => {
 
     const Icon = track.icon;
 
+    const [selectedProblem, setSelectedProblem] = React.useState<{ title: string; description: string } | null>(null);
+
+    const formatDescription = (text: string) => {
+        const parts = text.split(/(Explanation:|Scenario:|Example Output:|Input:|Output:)/g);
+        return parts.map((part, index) => {
+            if (part === 'Explanation:' || part === 'Scenario:' || part === 'Example Output:') {
+                return <span key={index} className="block text-tech-cyan font-bold text-xl mt-6 mb-2 uppercase tracking-wider">{part}</span>;
+            }
+            if (part === 'Input:' || part === 'Output:') {
+                return <span key={index} className="block text-tech-purple font-bold text-lg mt-4 mb-1 uppercase tracking-wider">{part}</span>;
+            }
+            return <span key={index}>{part}</span>;
+        });
+    };
+
     return (
         <div className="font-sans antialiased text-slate-200 selection:bg-tech-cyan selection:text-black relative min-h-screen flex flex-col">
             <div className="fixed inset-0 z-[-1] bg-[#050a14]">
@@ -115,7 +130,8 @@ const TrackDetail: React.FC = () => {
                             {track.problems.map((problem, idx) => (
                                 <div
                                     key={idx}
-                                    className="bg-tech-card/50 backdrop-blur-md border border-slate-800 rounded-xl p-8 hover:border-tech-cyan/50 hover:bg-tech-card/80 transition-all duration-300 group relative overflow-hidden"
+                                    onClick={() => setSelectedProblem(problem)}
+                                    className="bg-tech-card/50 backdrop-blur-md border border-slate-800 rounded-xl p-8 hover:border-tech-cyan/50 hover:bg-tech-card/80 transition-all duration-300 group relative overflow-hidden cursor-pointer"
                                 >
                                     <div className="absolute -top-10 -right-10 w-24 h-24 bg-tech-cyan/5 rounded-full blur-2xl group-hover:bg-tech-cyan/20 transition-all"></div>
                                     <div className="flex items-start justify-between mb-4">
@@ -127,9 +143,12 @@ const TrackDetail: React.FC = () => {
                                     <h3 className="text-xl font-bold text-white mb-3 group-hover:text-tech-cyan transition-colors">
                                         {problem.title}
                                     </h3>
-                                    <p className="text-slate-400 text-sm leading-relaxed">
+                                    <p className="text-slate-400 text-sm leading-relaxed line-clamp-3">
                                         {problem.description}
                                     </p>
+                                    <div className="mt-4 flex items-center text-tech-cyan text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+                                        VIEW DETAILS <ChevronRight size={16} className="ml-1" />
+                                    </div>
                                 </div>
                             ))}
                         </div>
@@ -154,6 +173,37 @@ const TrackDetail: React.FC = () => {
             </main>
 
             <Footer />
+
+            {/* Problem Detail Modal */}
+            {selectedProblem && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+                    <div
+                        className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+                        onClick={() => setSelectedProblem(null)}
+                    ></div>
+                    <div className="bg-[#0a1122] border border-tech-cyan/30 rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto relative z-10 shadow-[0_0_50px_rgba(6,182,212,0.2)] animate-in fade-in zoom-in-95 duration-300">
+                        <div className="sticky top-0 right-0 p-4 flex justify-end bg-gradient-to-b from-[#0a1122] to-transparent z-20">
+                            <button
+                                onClick={() => setSelectedProblem(null)}
+                                className="p-2 bg-slate-800/80 hover:bg-slate-700 rounded-full text-white transition-colors"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            </button>
+                        </div>
+
+                        <div className="px-8 pb-8 pt-2">
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 border-b border-slate-800 pb-4">
+                                {selectedProblem.title}
+                            </h2>
+                            <div className="prose prose-invert max-w-none">
+                                <div className="text-slate-300 text-lg leading-relaxed whitespace-pre-line font-light">
+                                    {formatDescription(selectedProblem.description)}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
