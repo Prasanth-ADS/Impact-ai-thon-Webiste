@@ -4,12 +4,13 @@ import { Trophy, Medal, Award, Crown, Zap, Code2, Star, Gift, Lock, AlertTriangl
 
 const PrizePool: React.FC = () => {
   const [isUnlocked, setIsUnlocked] = React.useState(false);
-  const [passcode, setPasscode] = React.useState(['', '', '', '']);
+  const [passcode, setPasscode] = React.useState(Array(9).fill(''));
   const [error, setError] = React.useState(false);
   const inputRefs = React.useRef<(HTMLInputElement | null)[]>([]);
 
   const handleInputChange = (index: number, value: string) => {
-    if (isNaN(Number(value))) return;
+    // Allow any character since password contains special chars
+    // if (isNaN(Number(value))) return;
 
     const newPasscode = [...passcode];
     newPasscode[index] = value;
@@ -17,14 +18,14 @@ const PrizePool: React.FC = () => {
     setError(false);
 
     // Auto-focus next input
-    if (value && index < 3) {
+    if (value && index < 8) {
       inputRefs.current[index + 1]?.focus();
     }
 
     // Check code when full
-    if (newPasscode.every(digit => digit !== '') && index === 3) {
+    if (newPasscode.every(digit => digit !== '') && index === 8) {
       const fullCode = newPasscode.join('');
-      if (fullCode === '0709') {
+      if (fullCode === '0709@2006') {
         setTimeout(() => setIsUnlocked(true), 300);
       } else {
         setError(true);
@@ -84,7 +85,7 @@ const PrizePool: React.FC = () => {
                     ENTER ACCESS CODE TO REVEAL
                   </p>
 
-                  <div className="flex justify-center gap-3 md:gap-4 mb-8">
+                  <div className="flex justify-center flex-wrap gap-2 md:gap-3 mb-8">
                     {passcode.map((digit, idx) => (
                       <input
                         key={idx}
@@ -94,7 +95,7 @@ const PrizePool: React.FC = () => {
                         value={digit}
                         onChange={(e) => handleInputChange(idx, e.target.value)}
                         onKeyDown={(e) => handleKeyDown(idx, e)}
-                        className={`w-12 h-14 md:w-14 md:h-16 bg-black/60 border-2 rounded-lg text-center text-2xl md:text-3xl font-bold font-mono text-white focus:outline-none focus:border-tech-cyan focus:shadow-[0_0_15px_rgba(6,182,212,0.5)] transition-all ${error ? 'border-red-500 text-red-500 animate-pulse' : 'border-slate-700'}`}
+                        className={`w-8 h-10 md:w-12 md:h-14 bg-black/60 border-2 rounded-lg text-center text-lg md:text-2xl font-bold font-mono text-white focus:outline-none focus:border-tech-cyan focus:shadow-[0_0_15px_rgba(6,182,212,0.5)] transition-all ${error ? 'border-red-500 text-red-500 animate-pulse' : 'border-slate-700'}`}
                       />
                     ))}
                   </div>
