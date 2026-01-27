@@ -8,7 +8,7 @@ const PrizePool: React.FC = () => {
   const [error, setError] = React.useState(false);
   const inputRefs = React.useRef<(HTMLInputElement | null)[]>([]);
 
-  // TARGET_HASH calculated with: PBKDF2('0709809090', 'ImpactAIThon2026_Salt', 100000, 64, 'sha512', ...)
+  // TARGET_HASH calculated with: PBKDF2(password, salt, 100000, 64, 'sha512')
   const TARGET_HASH = 'e0d37dbbddcf841a7b08b37633731f50c0a768a716a6962a534179ee429235cff03bbb8178d7a399ea6dfcd5584606fa5ca790984bccc6ae5d7c57404416cc3';
 
   const verifyPasscode = async (code: string) => {
