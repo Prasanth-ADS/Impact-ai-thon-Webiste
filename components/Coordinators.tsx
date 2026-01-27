@@ -78,7 +78,7 @@ const Coordinators: React.FC = () => {
             role: "Student Coordinator",
             phone: "7338864970",
             linkedin: "https://www.linkedin.com/in/aejazahmed2006/",
-            image: "/Syed.png"
+            image: "/public/Syed.png"
         },
         {
             name: "Nowrin Begum R",
