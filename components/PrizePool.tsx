@@ -8,13 +8,32 @@ const PrizePool: React.FC = () => {
   const [error, setError] = React.useState(false);
   const inputRefs = React.useRef<(HTMLInputElement | null)[]>([]);
 
-  const TARGET_HASH = 'eeee68e752db4ae4627ad8af5aa905de50c13bfdee9cdcab2ce7f188f717ee94';
+  // TARGET_HASH calculated with: PBKDF2('0709809090', 'ImpactAIThon2026_Salt', 100000, 64, 'sha512', ...)
+  const TARGET_HASH = 'e0d37dbbddcf841a7b08b37633731f50c0a768a716a6962a534179ee429235cff03bbb8178d7a399ea6dfcd5584606fa5ca790984bccc6ae5d7c57404416cc3';
 
   const verifyPasscode = async (code: string) => {
     try {
       const encoder = new TextEncoder();
-      const data = encoder.encode(code);
-      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+      const keyMaterial = await window.crypto.subtle.importKey(
+        'raw',
+        encoder.encode(code),
+        { name: 'PBKDF2' },
+        false,
+        ['deriveBits']
+      );
+
+      const salt = encoder.encode('ImpactAIThon2026_Salt');
+      const hashBuffer = await window.crypto.subtle.deriveBits(
+        {
+          name: 'PBKDF2',
+          salt: salt,
+          iterations: 100000,
+          hash: 'SHA-512'
+        },
+        keyMaterial,
+        512 // 64 bytes * 8 bits
+      );
+
       const hashArray = Array.from(new Uint8Array(hashBuffer));
       const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
       return hashHex === TARGET_HASH;
@@ -106,7 +125,8 @@ const PrizePool: React.FC = () => {
                       <input
                         key={idx}
                         ref={el => inputRefs.current[idx] = el}
-                        type="text"
+                        type="password"
+                        autoComplete="off"
                         maxLength={1}
                         value={digit}
                         onChange={(e) => handleInputChange(idx, e.target.value)}
