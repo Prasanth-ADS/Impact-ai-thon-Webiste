@@ -9,6 +9,14 @@ if (!TARGET_HASH || !SALT) {
     process.exit(1);
 }
 
+// Honeytoken Detection
+if (SALT === 'DECOY_SALT_DO_NOT_USE') {
+    console.warn("\n🚨 CRITICAL SECURITY WARNING: Honeytoken detected!");
+    console.warn("The application is running with DECOY environment variables.");
+    console.warn("These are for detection only and will NOT unlock the system.\n");
+}
+
+
 /**
  * Verifies the provided code against the stored hash securely.
  * Uses PBKDF2-SHA512 and constant-time comparison.

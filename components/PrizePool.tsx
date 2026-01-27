@@ -4,7 +4,7 @@ import { Trophy, Medal, Award, Crown, Zap, Code2, Star, Gift, Lock, AlertTriangl
 
 const PrizePool: React.FC = () => {
   const [isUnlocked, setIsUnlocked] = React.useState(false);
-  const [passcode, setPasscode] = React.useState(Array(9).fill(''));
+  const [passcode, setPasscode] = React.useState(Array(8).fill(''));
   const [error, setError] = React.useState(false);
   const [isVerifying, setIsVerifying] = React.useState(false);
   const inputRefs = React.useRef<(HTMLInputElement | null)[]>([]);
@@ -41,12 +41,12 @@ const PrizePool: React.FC = () => {
     setError(false);
 
     // Auto-focus next input
-    if (value && index < 8) {
+    if (value && index < 7) {
       inputRefs.current[index + 1]?.focus();
     }
 
     // Check code when full
-    if (newPasscode.every(digit => digit !== '') && index === 8) {
+    if (newPasscode.every(digit => digit !== '') && index === 7) {
       const fullCode = newPasscode.join('');
 
       verifyPasscode(fullCode).then(isValid => {
@@ -56,7 +56,7 @@ const PrizePool: React.FC = () => {
           setError(true);
           // Clear inputs after short delay on failure as requested
           setTimeout(() => {
-            setPasscode(Array(9).fill(''));
+            setPasscode(Array(8).fill(''));
             inputRefs.current[0]?.focus();
             setError(false);
           }, 800);
