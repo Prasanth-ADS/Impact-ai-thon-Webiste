@@ -4,12 +4,13 @@ import { Trophy, Medal, Award, Crown, Zap, Code2, Star, Gift, Lock, AlertTriangl
 
 const PrizePool: React.FC = () => {
   const [isUnlocked, setIsUnlocked] = React.useState(false);
-  const [passcode, setPasscode] = React.useState(Array(10).fill(''));
+  const [passcode, setPasscode] = React.useState(Array(9).fill(''));
   const [error, setError] = React.useState(false);
   const inputRefs = React.useRef<(HTMLInputElement | null)[]>([]);
 
+
   // TARGET_HASH calculated with: PBKDF2(password, salt, 100000, 64, 'sha512')
-  const TARGET_HASH = 'e0d37dbbddcf841a7b08b37633731f50c0a768a716a6962a534179ee429235cff03bbb8178d7a399ea6dfcd5584606fa5ca790984bccc6ae5d7c57404416cc3';
+  const TARGET_HASH = '74c6987c32159c80a3dbb380fd0cac0c2da732212e0ed7e62faa24d489a300c040955b8609ff43b083b94176edf6539881b2f11abca7a954e0b08401d1f003cd';
 
   const verifyPasscode = async (code: string) => {
     try {
@@ -50,12 +51,12 @@ const PrizePool: React.FC = () => {
     setError(false);
 
     // Auto-focus next input
-    if (value && index < 9) {
+    if (value && index < 8) {
       inputRefs.current[index + 1]?.focus();
     }
 
     // Check code when full
-    if (newPasscode.every(digit => digit !== '') && index === 9) {
+    if (newPasscode.every(digit => digit !== '') && index === 8) {
       const fullCode = newPasscode.join('');
 
       verifyPasscode(fullCode).then(isValid => {
@@ -64,7 +65,7 @@ const PrizePool: React.FC = () => {
         } else {
           setError(true);
           setTimeout(() => {
-            setPasscode(Array(10).fill(''));
+            setPasscode(Array(9).fill(''));
             inputRefs.current[0]?.focus();
             setError(false);
           }, 1000);
