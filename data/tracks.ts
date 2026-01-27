@@ -213,35 +213,149 @@ Output:
         problems: [
             {
                 title: "AI-Driven Destination Management & Invisible Crowd Control",
-                description: "Design an AI platform that predicts and mitigates over-tourism by forecasting crowd surges in advance using historical footfall, weather, seasonal trends, and public events. The system should enable proactive visitor load balancing across attractions without imposing physical or digital movement restrictions."
+                description: `Explanation:
+Provide tourism authorities and destination management organizations with an AI-driven platform that predicts and mitigates over-tourism without intrusive controls. The system forecasts crowd surges days in advance by analyzing historical footfall, weather patterns, seasonal trends, and public holidays, enabling proactive load balancing across attractions and preservation of heritage sites.
+
+Scenario:
+Popular tourist destinations experience unpredictable crowd spikes that degrade visitor experience and accelerate environmental and cultural damage. The AI platform continuously analyzes multi-source data to anticipate congestion at key locations and dynamically recommends optimal visit windows or alternative routes and lesser-known attractions to stakeholders, tour operators, and digital information channels—without restricting visitor movement.
+
+Example Output:
+Input:
+Historical visitor footfall data across 120 tourist sites, real-time weather feeds, seasonal calendars, and public holiday schedules.
+
+Output:
+ "Attraction-ID 17: Predicted crowd saturation at 92% capacity on Saturday between 11 AM–3 PM."
+ "Load Redistribution Recommendation: Redirect 28% of visitors to nearby Site-ID 44 and Site-ID 51."
+ "Hidden Route Insight: Alternative heritage trail projected to remain under 45% capacity."
+ "Preservation Alert: Repeated overcapacity detected—temporary demand throttling advised."`
             },
             {
                 title: "AI-Driven Tourism Agent Planner & Dynamic Itinerary Management",
-                description: "Build an AI-based tourism planning system that generates time-aware, day-wise, and executable travel itineraries based on user constraints such as budget, availability, interests, and stay preferences. The system must dynamically adapt itineraries to real-world changes like weather, delays, or booking availability."
+                description: `Explanation:
+Provide tourism service providers and travel platforms with an AI-driven Tourism Agent Planner that generates day-wise, time-aware, and bookable itineraries tailored to each traveler. The system analyzes user-provided inputs such as travel dates, preferred stay type, daily timing constraints, budget range, and interests to determine when to go, where to go, how long to stay, and what to book—optimizing the entire travel plan at a granular level.
+
+Scenario:
+Travelers plan trips with vague preferences but face fragmented decisions around accommodation, daily schedules, attractions, and bookings. The AI platform consolidates these inputs into a unified itinerary, allocating optimal time slots for travel, sightseeing, rest, and stays. The system dynamically adjusts the plan based on real-world factors such as weather changes, delays, or availability, ensuring the itinerary remains practical and executable for each day of the trip.
+
+Example Output:
+Input:
+User travel inputs including destination, trip duration (5 days), daily availability windows, accommodation preference, budget limits, and interest categories.
+
+Output:
+ "Day 2 Plan: 9:00–11:30 AM — Heritage site visit (low crowd window); 12:00 PM — lunch near stay location."
+ "Stay Optimization: Hotel selected within 1.2 km of major attractions—travel time reduced by 35%."
+ "Booking Insight: Best price window detected for Day 4 activity—booking recommended within next 6 hours."
+ "Schedule Adjustment: Rain forecast detected—outdoor activity shifted to Day 5; museum visit scheduled for Day 3 afternoon."`
             },
             {
                 title: "Sustainable Travel Carbon Tracking & Green Decision Intelligence",
-                description: "Create a real-time carbon intelligence platform that calculates the environmental impact of travel decisions—including transport, accommodation, and activities—during trip planning or booking. The platform should surface lower-carbon alternatives and verified offset options without disrupting the booking experience."
+                description: `Explanation:
+Provide travelers, travel platforms, and tourism stakeholders with a carbon impact intelligence system that calculates the granular carbon footprint of travel-related decisions—including transportation, accommodation, and food choices—at the time of planning or booking. The platform enables users to understand environmental impact in real time and supports informed, lower-carbon alternatives with verified offset options.
+
+Scenario:
+Travelers plan trips with vague visibility into the environmental consequences of flights, hotel stays, or daily activities. The system integrates into booking workflows via a browser extension or API, analyzing each item in a travel cart to compute carbon emissions. It then presents greener alternatives—such as lower-emission transport modes or eco-certified stays—allowing sustainability-aware choices without disrupting the booking experience.
+
+Example Output:
+Input:
+Travel booking cart containing flight selection, hotel reservation, and daily meal/activity plans.
+
+Output:
+ "Flight Emissions: Route emits 320 kg CO₂—alternative train option emits 74 kg CO₂."
+ "Stay Impact: Selected hotel rated high carbon intensity; eco-certified alternative reduces footprint by 28%."
+ "Daily Footprint Summary: Estimated trip emissions—1.12 tons CO₂ over 6 days."
+ "Offset Recommendation: Verified offset option available to neutralize 100% of trip emissions."`
             },
             {
                 title: "AI-Based Urban Flood Nowcasting & Rapid Risk Intelligence",
-                description: "Design an AI-driven urban flood nowcasting system that produces street-level flood risk predictions with short lead times by fusing satellite radar data and social-media-based distress signals. The solution should enable rapid, localized emergency alerts and response coordination in dense urban environments."
+                description: `Explanation:
+Provide city authorities and disaster management agencies with an AI-driven flood nowcasting platform designed for dense urban environments. The system combines real-time satellite radar data (SAR) with social media–based distress signal analysis to generate street-level flood risk maps and short-term flood predictions with a 15-minute lead time, enabling faster and more localized emergency response.
+
+Scenario:
+Urban areas experience sudden flash floods where traditional hydrological models fail due to latency and coarse spatial resolution. The platform continuously ingests SAR satellite feeds to detect surface water expansion while simultaneously analyzing social media streams for flood-related SOS keywords and geotagged distress signals. AI models fuse these signals to produce near real-time flood intensity maps and trigger automated alerts for affected zones.
+
+Example Output:
+Input:
+ Live SAR satellite imagery over metropolitan areas
+ Real-time social media posts containing flood-related keywords and geolocation metadata
+
+Output:
+ "Zone C – Street-Level Alert: High flood probability (>85%) predicted within next 15 minutes."
+ "SOS Signal Spike: 47 flood-related distress posts detected within 1.2 km radius."
+ "Risk Map Update: Water accumulation expanding along low-lying road corridors."
+ "Emergency Alert Triggered: SMS notifications dispatched to 3,200 residents in affected blocks."`
             },
             {
                 title: "Scope 3 Emissions Auto-Accounting & ESG Intelligence",
-                description: "Build an AI-powered ESG platform that automatically extracts, standardizes, and aggregates Scope 3 emissions data from unstructured supplier documents. The system should produce auditable, regulation-aligned emissions insights with minimal manual intervention."
+                description: `Explanation:
+Provide enterprises with an AI-driven Scope 3 emissions accounting platform that automatically extracts, standardizes, and aggregates indirect emissions data from supplier documents. The system uses NLP-based document parsing to analyze invoices, sustainability disclosures, and annual reports, transforming unstructured data into a unified, auditable dataset for ESG reporting and compliance.
+
+Scenario:
+Large organizations rely on hundreds of suppliers, making Scope 3 emissions tracking fragmented, manual, and error-prone. The platform ingests supplier documents across formats (PDFs, scans, spreadsheets), extracts relevant emissions and activity metrics, normalizes them against reporting standards, and consolidated the results into a centralized ESG dashboard—enabling continuous Scope 3 visibility without manual data collection.
+
+Example Output:
+Input:
+Supplier invoices, procurement records, and sustainability reports from 300 vendors across multiple regions.
+
+Output:
+ "Supplier-ID 118: Estimated Scope 3 emissions—1,420 tCO₂e (logistics and raw materials)."
+ "Data Standardization Alert: Emissions units normalized from kg CO₂ to tCO₂e for reporting."
+ "Coverage Insight: 74% of supplier emissions data auto-extracted without manual intervention."
+ "ESG Dashboard Update: Scope 3 emissions contribute 62% of total corporate carbon footprint."`
             },
             {
                 title: "Automated Post-Disaster Infrastructure Damage Assessment",
-                description: "Develop an AI system that rapidly assesses infrastructure damage after natural disasters by comparing pre- and post-event satellite or drone imagery. The output should classify buildings and roads by damage severity to support rescue prioritization and recovery planning."
+                description: `Explanation:
+Provide disaster management authorities and emergency response agencies with an AI-driven damage assessment platform that rapidly evaluates infrastructure safety after natural disasters. The system compares pre- and post-event satellite or drone imagery to detect structural changes and classify buildings and roads by damage severity—enabling faster situational awareness and prioritized rescue planning.
+
+Scenario:
+Following earthquakes, hurricanes, or floods, first responders struggle to identify safe routes and assess structural damage due to delayed manual inspections. The AI platform ingests recent post-disaster imagery and aligns it with historical baseline data to automatically detect changes in infrastructure integrity. Damage classifications are visualized on geospatial maps to guide rescue teams, logistics planning, and recovery operations.
+
+Example Output:
+Input:
+Pre-disaster and post-disaster satellite/drone imagery covering 250 sq. km of affected urban and semi-urban regions.
+
+Output:
+ "Building-ID 771 classified as Destroyed—roof collapse and structural displacement detected."
+ "Road Segment R-204 marked Damaged—surface deformation detected; avoid heavy vehicle routing."
+ "Rescue Route Priority: 3 intact corridors identified for emergency vehicle access."
+ "Damage Summary: 18% infrastructure destroyed, 27% damaged, 55% intact within assessed zone."`
             },
             {
                 title: "AI-Based Shipping Route Fuel Optimization & Emissions Reduction",
-                description: "Create an AI-driven maritime route optimization platform that minimizes fuel consumption and emissions by incorporating real-time oceanographic and weather data. The system must balance fuel efficiency, safety, and schedule reliability for shipping operators."
+                description: `Explanation:
+Provide maritime operators and logistics companies with an AI-driven route optimization platform that minimizes fuel consumption and carbon emissions. The system uses optimization algorithms to evaluate real-time ocean currents, wind speed, and wave height, generating fuel-efficient shipping routes that outperform traditional shortest-distance navigation—directly reducing operational costs and environmental impact.
+
+Scenario:
+Cargo vessels typically follow distance-optimized routes without accounting for dynamic ocean conditions, leading to unnecessary fuel burn and higher emissions. The AI platform continuously ingests live oceanographic and weather data to compute optimal voyage paths that balance safety, time, and fuel efficiency. These recommendations integrate into fleet management and navigation systems, enabling shipping operators to cut emissions without disrupting delivery schedules.
+
+Example Output:
+Input:
+ Planned voyage route between two ports
+ Real-time ocean current data, wind forecasts, and wave height measurements
+
+Output:
+ "Optimized Route Generated: Fuel consumption reduced by 8.2% compared to shortest-path navigation."
+ "Weather Impact Adjustment: Strong headwinds avoided by rerouting 120 nautical miles south."
+ "Emissions Report: Estimated CO₂ reduction—142 tons for this voyage."
+ "Operational Insight: Arrival time maintained within ±1.5 hours while improving fuel efficiency."`
             },
             {
                 title: "Automated Coral Reef Health Monitoring & Bleaching Detection",
-                description: "Design an AI-powered marine monitoring platform that analyzes underwater video feeds to identify coral species and detect early signs of bleaching. The system should generate spatial and temporal reef health insights to support conservation and climate impact assessment."
+                description: `Explanation:
+Provide marine conservation agencies and environmental researchers with an AI-driven reef monitoring platform that uses underwater computer vision to assess coral health at scale. The system analyzes video feeds from Autonomous Underwater Vehicles (AUVs) to identify coral species and detect early signs of coral bleaching, enabling continuous, data-driven reef conservation.
+
+Scenario:
+Marine ecosystems span vast underwater regions that cannot be monitored effectively by human divers alone. The platform processes underwater video streams captured by AUVs, automatically classifying coral types and detecting visual stress indicators such as color loss and tissue degradation. Over time, the system aggregates these observations into spatial and temporal reef health maps, helping conservation teams identify high-risk zones and measure the impact of climate stressors.
+
+Example Output:
+Input:
+Underwater video feeds from AUV surveys across 40 sq. km of coral reef regions collected over multiple months.
+
+Output:
+ "Reef-Zone 12: Bleaching probability increased to 68% over last 30 days."
+ "Species Detection: Acropora coral identified with visible color degradation."
+ "Health Trend Map: 22% of monitored reef area classified as high-stress zone."
+ "Conservation Alert: Early bleaching indicators detected—field inspection recommended."`
             }
         ]
     },
@@ -268,32 +382,144 @@ Output:
         color: "border-purple-500 text-purple-400",
         problems: [
             {
-                title: "AI-Driven Clinical Decision Support & Patient Report Understanding",
-                description: "Design an AI platform that assists clinicians with real-time, guideline-based insights while simultaneously translating complex medical reports and prescriptions into clear, patient-friendly explanations. The system should integrate handwritten prescriptions, lab reports, and EHR data without disrupting existing clinical workflows."
+                title: "AI-Driven Clinical Decision Support & Patient Medical Report Understanding",
+                description: `Explanation:
+Provide hospitals and healthcare providers with an AI-driven platform that bridges the gap between clinical decision-making and patient understanding. The system ingests handwritten prescriptions, lab reports, and structured EHR data to both assist clinicians at the point of care with guideline-based insights and translate complex medical reports into clear, patient-friendly explanations.
+
+Scenario:
+During short clinical consultations, doctors must interpret lab values, imaging results, prescriptions, and constantly evolving clinical guidelines while patients leave without understanding their diagnosis or treatment plan. The platform runs alongside existing EHR systems, surfacing real-time clinical alerts—such as guideline recommendations, drug–drug interactions, and risk scores—within the clinician’s workflow, while simultaneously generating simplified explanations of reports and prescriptions for patient’s post-visit.
+
+Example Output:
+Input:
+ Handwritten prescriptions and scanned lab reports
+ Structured EHR data (diagnosis codes, medications, vitals, lab values)
+
+Output:
+ "Clinical Alert: Patient on Drug A + Drug B—moderate interaction risk detected per latest guideline."
+ "Risk Score Update: Cardiovascular risk elevated (18%) based on lipid panel and vitals."
+ "Patient Summary Generated: ‘Your blood test shows high cholesterol, which increases heart risk. The prescribed medicine helps reduce this over time.’"
+ "Handwritten Prescription Parsed: Medication name, dosage, and frequency digitized and verified."`
             },
             {
                 title: "AI-Powered Radiology Report Automation & Quality Assurance",
-                description: "Build an AI assistant that reviews radiology reports in real time to improve completeness, consistency, and diagnostic quality. The system should flag potential missed findings, enforce standardized reporting templates, and support radiologists without replacing clinical judgment."
+                description: `Explanation:
+Provide hospitals and diagnostic centers with an AI-driven radiology reporting assistant that reduces reporting burden while improving diagnostic quality. The system analyzes radiology reports alongside imaging metadata to generate structured impressions, flag potential missed findings, and enforce standardized hospital reporting templates—supporting radiologists without replacing clinical judgment.
+
+Scenario:
+Radiologists interpret high volumes of CT, X-ray, and mammography studies under time pressure, increasing burnout and the risk of inconsistencies or missed observations. The AI assistant operates within the reporting workflow, reviewing draft reports in real time to suggest structured language, highlight discrepancies between findings and impressions, and ensure adherence to institutional and regulatory reporting standards.
+
+Example Output:
+Input:
+Radiology study metadata (modality, anatomy, protocol) and draft radiology reports for CT, X-ray, and mammography exams.
+
+Output:
+ "Template Compliance Alert: Impression missing mandatory section for follow-up recommendation."
+ "Potential Miss Flagged: Report mentions lung opacity but no corresponding impression statement found."
+ "Structured Impression Suggested: Findings auto-mapped to standardized terminology and sections."
+ "QA Summary: Report completeness score—94%; ready for final sign-off."`
             },
             {
-                title: "Federated Learning Platform for Disease Surveillance",
-                description: "Create a privacy-preserving disease surveillance system using Federated Learning that enables hospitals and PHCs to collaboratively detect seasonal and emerging disease outbreaks without sharing raw patient data. The platform must comply with India’s ABDM framework and DPDP Act while supporting public-health decision-making."
+                title: "Federated Learning Platform for Seasonal & Widespread Disease Surveillance",
+                description: `Explanation:
+Provide city and state public health authorities with a privacy-preserving disease surveillance platform using Federated Learning. The system enables hospitals and Primary Health Centers (PHCs) to collaboratively train outbreak detection models for seasonal and rapidly spreading diseases without sharing raw patient data, ensuring compliance with India’s ABDM framework and DPDP Act.
+
+Scenario:
+Hospitals and PHCs independently record patient symptoms, diagnoses, lab results, and prescription trends, but data silos prevent early detection of disease clusters such as dengue, influenza, or antibiotic-resistant infections. The federated platform deploys local models within each institution, aggregates encrypted model updates centrally, and detects abnormal spatial or temporal disease patterns—alerting public health officials without exposing individual patient records.
+
+Example Output:
+Input:
+ De-identified EHR summaries from hospitals and PHCs (fever cases, lab trends, prescriptions)
+ Federated model updates from participating institutions across a city or district
+
+Output:
+ "Outbreak Signal Detected: Dengue-like symptom cluster rising across 3 adjacent zones over 6 days."
+ "Seasonal Trend Alert: Influenza cases exceeding historical baseline by 32%."
+ "Resistance Pattern Insight: Increased antibiotic non-response reported across 2 hospitals."
+ "Public Health Dashboard Update: City-wide risk heatmap generated using federated model outputs."`
             },
             {
                 title: "Patient Experience Analytics & Automated Service Recovery",
-                description: "Design an AI platform that analyzes multi-channel patient feedback to detect systemic experience issues and automatically trigger service recovery workflows. The system should close the feedback loop by assigning ownership, tracking resolution, and measuring post-intervention impact."
+                description: `Explanation:
+Provide hospitals and healthcare networks with an AI-driven patient experience analytics platform that transforms fragmented feedback into actionable service improvements. The system ingests multi-channel patient feedback and applies sentiment analysis and issue clustering to identify systemic problems, automatically triggering service recovery workflows to close the loop with patients.
+
+Scenario:
+Hospitals collect feedback through surveys, reviews, call centers, and social platforms, but insights remain siloed and reactive. The platform continuously analyzes incoming feedback to detect negative sentiment patterns related to billing, nursing care, wait times, or facilities. When thresholds are crossed, automated workflows notify relevant departments, assign ownership, and track resolution—ensuring patient concerns are addressed in near real time.
+
+Example Output:
+Input:
+ Patient satisfaction surveys
+ Google reviews
+ Call center transcripts
+ Social media mentions related to hospital services
+
+Output:
+ "Sentiment Alert: Spike in negative feedback related to outpatient wait times over last 48 hours."
+ "Issue Cluster Identified: Billing disputes reported by 23 patients across 2 departments."
+ "Service Recovery Triggered: Case assigned to patient relations team with 24-hour SLA."
+ "Experience Dashboard Update: Overall patient sentiment improved by 14% post-intervention."`
             },
             {
                 title: "AI-Driven Chronic Disease Management for Diabetes & Cardio-Metabolic Care",
-                description: "Build an AI-powered care management system that continuously risk-stratifies chronic patients using longitudinal clinical data and proactively triggers timely interventions. The platform should help clinicians reduce preventable complications while managing large patient populations efficiently."
+                description: `Explanation:
+Provide hospitals and care networks with an AI-driven chronic disease management platform designed for diabetes and cardio-metabolic patients. The system integrates lab results, prescriptions, vitals, and follow-up records to continuously risk-stratify patients, generate personalized care plans, and proactively identify individuals who require tele-consultation or in-person clinical review—reducing preventable complications and hospital overload.
+
+Scenario:
+Hospitals in South India manage large populations of diabetes and cardiac patients, many of whom deteriorate due to missed follow-ups or late intervention. The platform aggregates longitudinal patient data from OPDs, labs, and pharmacy systems to monitor disease progression. AI models identify rising risk patterns and trigger timely care actions, enabling clinicians to intervene early while managing patient loads efficiently.
+
+Example Output:
+Input:
+ Longitudinal lab data (HbA1c, lipid profile, BP readings)
+ Prescription history and medication adherence indicators
+ Follow-up visit records and vitals
+
+Output:
+ "Patient-ID 5521 classified as High Risk: Rising HbA1c and BP trend over last 3 months."
+ "Care Plan Generated: Medication adjustment, diet plan, and 2-week tele-consult scheduled."
+ "Follow-Up Alert: In-person cardiology review recommended within 72 hours."
+ "Population Insight: 21% of enrolled patients escalated to proactive intervention this month."`
             },
             {
                 title: "Agentic AI–Driven Clinical Documentation Improvement & Coding",
-                description: "Design a multi-agent AI expert system that improves clinical documentation quality and medical coding accuracy. The system should detect documentation gaps, recommend precise codes, ensure compliance, and generate structured summaries to support billing and quality reporting."
+                description: `Explanation:
+Provide hospitals with a domain-expert AI system that enhances clinical documentation quality and medical coding accuracy using an Agentic AI architecture. The platform reads clinician notes, detects documentation gaps, recommends precise ICD and procedure codes, and generates structured clinical summaries—helping hospitals improve care quality scores, compliance, and reimbursement outcomes.
+
+Scenario:
+Clinicians document patient encounters under time pressure, often missing key clinical details required for accurate coding and compliance. The AI expert system deploys specialized agents—documentation agents, coding agents, and compliance agents—that collaboratively analyze clinical notes in real time. The system flags missing elements, suggests appropriate codes, and structures encounter summaries before final submission to billing and quality systems.
+
+Example Output:
+Input:
+Unstructured clinician notes from OPD and inpatient encounters, including diagnoses, procedures, and progress notes.
+
+Output:
+ "Documentation Alert: Missing severity descriptor for diagnosis—recommend adding ‘acute’ or ‘chronic’."
+ "Coding Suggestion: ICD-10 code updated from I10 to I11.9 based on documented cardiac involvement."
+ "Compliance Check: Procedure note lacks indication—add justification to meet audit standards."
+ "Structured Summary Generated: Encounter converted into problem list, treatment plan, and discharge instructions."`
             },
             {
                 title: "Ambient Clinical Voice Documentation (Scribe AI)",
-                description: "Create an AI-driven ambient clinical documentation system that listens to doctor–patient conversations (with consent) and generates structured, standardized medical notes. The solution should normalize conversational clinical language into globally accepted documentation formats and integrate seamlessly with EHR systems."
+                description: `Explanation:
+Provide hospitals with an AI-driven ambient clinical documentation platform that listens to doctor–patient conversations (with consent) and automatically generates structured, template-based medical notes. The system supports international clinical language patterns, including American medical slang and conversational English, and converts them into standardized, ABDM-compliant and globally recognized clinical documentation formats.
+
+Scenario:
+In high-volume OPDs, doctors spend more time typing notes than engaging with patients, leading to burnout and reduced care quality. The Scribe AI runs in the background during consultations, capturing spoken dialogue and extracting key clinical elements—diagnosis, assessment, treatment plan, and follow-up. The platform structures this information into hospital-approved templates and international medical documentation standards, allowing clinicians to review and approve notes in seconds.
+
+Example Output:
+Input:
+Live doctor–patient conversation in conversational American English, including informal clinical slang.
+
+Example input snippet:
+“Looks like your sugars are still running high. Let’s tweak the metformin dose and I’ll see you back in two weeks.”
+
+Output:
+ "SOAP Note Generated:"
+o Subjective: Patient reports fatigue; home glucose readings elevated.
+o Objective: HbA1c 8.4%, BP 138/86.
+o Assessment: Poorly controlled Type 2 Diabetes Mellitus.
+o Plan: Increase metformin to 1000 mg BID; dietary counseling; follow-up in 2 weeks.
+ "Template Compliance: Hospital OPD format + ABDM clinical record structure applied."
+ "Language Normalization: Informal phrase ‘sugars running high’ standardized to ‘hyperglycemia’."
+ "EHR Update Ready: Structured note auto-populated for clinician review."`
             }
         ]
     }
