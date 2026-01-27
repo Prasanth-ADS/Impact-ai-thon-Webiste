@@ -30,7 +30,7 @@ const PrizePool: React.FC = () => {
       } else {
         setError(true);
         setTimeout(() => {
-          setPasscode(['', '', '', '']);
+          setPasscode(Array(9).fill(''));
           inputRefs.current[0]?.focus();
           setError(false);
         }, 1000);
