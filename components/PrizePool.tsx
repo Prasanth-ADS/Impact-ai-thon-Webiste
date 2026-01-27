@@ -6,14 +6,16 @@ const PrizePool: React.FC = () => {
   const [isUnlocked, setIsUnlocked] = React.useState(false);
   const [passcode, setPasscode] = React.useState(Array(9).fill(''));
   const [error, setError] = React.useState(false);
+  const [isVerifying, setIsVerifying] = React.useState(false);
   const inputRefs = React.useRef<(HTMLInputElement | null)[]>([]);
 
-
-  // TARGET_HASH calculated with: PBKDF2(password, salt, 100000, 64, 'sha512')
-  // const TARGET_HASH = '74c6987c32159c80a3dbb380fd0cac0c2da732212e0ed7e62faa24d489a300c040955b8609ff43b083b94176edf6539881b2f11abca7a954e0b08401d1f003cd';
-
   const verifyPasscode = async (code: string) => {
+    setIsVerifying(true);
     try {
+      // Intentionally waiting a split second for UX (optional, but requested "UX optimized" often implies feeling "processed")
+      // But user said "Never block Node's event loop" and "UX optimized to mask cryptographic latency".
+      // PBKDF2 on server takes time. We show "Verifying..." immediately.
+
       const response = await fetch('http://localhost:3000/api/unlock', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -25,10 +27,14 @@ const PrizePool: React.FC = () => {
     } catch (e) {
       console.error("Verification error:", e);
       return false;
+    } finally {
+      setIsVerifying(false);
     }
   };
 
   const handleInputChange = (index: number, value: string) => {
+    if (isVerifying) return; // Prevent input during verification
+
     const newPasscode = [...passcode];
     newPasscode[index] = value;
     setPasscode(newPasscode);
@@ -48,11 +54,12 @@ const PrizePool: React.FC = () => {
           setTimeout(() => setIsUnlocked(true), 300);
         } else {
           setError(true);
+          // Clear inputs after short delay on failure as requested
           setTimeout(() => {
             setPasscode(Array(9).fill(''));
             inputRefs.current[0]?.focus();
             setError(false);
-          }, 1000);
+          }, 800);
         }
       });
     }
@@ -95,15 +102,17 @@ const PrizePool: React.FC = () => {
                 <div className="flex flex-col items-center justify-center">
                   <div className="mb-6 relative">
                     <div className="absolute inset-0 bg-red-500/20 blur-xl rounded-full"></div>
-                    <Lock size={48} className="text-red-500 relative z-10" />
+                    <Lock size={48} className={`text-red-500 relative z-10 ${isVerifying ? 'animate-pulse' : ''}`} />
                   </div>
 
                   <h3 className="text-2xl font-black text-white mb-2 tracking-wider uppercase font-mono">
-                    Prize Breakdown Locked
+                    {isVerifying ? "Verifying Access..." : "Prize Breakdown Locked"}
                   </h3>
-                  <p className="text-red-400 mb-8 font-mono text-xs md:text-sm tracking-widest">
-                    ENTER ACCESS CODE TO REVEAL
-                  </p>
+                  <div className="h-6 mb-8">
+                    <p className={`text-red-400 font-mono text-xs md:text-sm tracking-widest transition-opacity ${isVerifying ? 'opacity-0' : 'opacity-100'}`}>
+                      ENTER ACCESS CODE TO REVEAL
+                    </p>
+                  </div>
 
                   <div className="flex justify-center flex-wrap gap-2 md:gap-3 mb-8">
                     {passcode.map((digit, idx) => (
@@ -114,9 +123,10 @@ const PrizePool: React.FC = () => {
                         autoComplete="off"
                         maxLength={1}
                         value={digit}
+                        disabled={isVerifying}
                         onChange={(e) => handleInputChange(idx, e.target.value)}
                         onKeyDown={(e) => handleKeyDown(idx, e)}
-                        className={`w-8 h-10 md:w-12 md:h-14 bg-black/60 border-2 rounded-lg text-center text-lg md:text-2xl font-bold font-mono text-white focus:outline-none focus:border-tech-cyan focus:shadow-[0_0_15px_rgba(6,182,212,0.5)] transition-all ${error ? 'border-red-500 text-red-500 animate-pulse' : 'border-slate-700'}`}
+                        className={`w-8 h-10 md:w-12 md:h-14 bg-black/60 border-2 rounded-lg text-center text-lg md:text-2xl font-bold font-mono text-white focus:outline-none focus:border-tech-cyan focus:shadow-[0_0_15px_rgba(6,182,212,0.5)] transition-all ${error ? 'border-red-500 text-red-500' : 'border-slate-700'} ${isVerifying ? 'opacity-50 cursor-not-allowed' : ''}`}
                       />
                     ))}
                   </div>
