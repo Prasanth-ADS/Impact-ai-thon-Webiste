@@ -75,7 +75,10 @@ const PrizePool: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('http://localhost:3000/api/winners', {
+      // Dynamically determine the backend URL based on where the frontend is loaded from.
+      // If loaded from localhost, uses localhost:3000. If loaded from 192.168.x.x, attempts to hit port 3000 on that same IP.
+      const baseUrl = window.location.protocol + '//' + window.location.hostname + ':3000';
+      const response = await fetch(`${baseUrl}/api/winners`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
