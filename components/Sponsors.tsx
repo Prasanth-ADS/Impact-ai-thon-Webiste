@@ -16,14 +16,14 @@ const Sponsors: React.FC = () => {
     },
     {
       name: "CCSB",
-      image: "https://ccsb.io/assets/ccsb-logo-DyJ3Ej8l.png",
-      website: "https://www.ccsb.io/",
+      image: "/codeworklogo.jpeg",
+      website: "https://codework.ai/",
       color: "text-sky-400",
       border: "border-sky-500/50",
       bg: "bg-sky-900/10",
       hoverShadow: "hover:shadow-[0_0_30px_rgba(56,189,248,0.2)]",
-      description: "Empowering Industry 3.0 & 4.0 with end-to-end integrated solutions in additive manufacturing, automation, and digital transformation.",
-      challenges: ["Smart Manufacturing", "Additive Manufacturing", "Industrial Automation"]
+      description: "AI-Driven Custom Software for Business Growth",
+      challenges: ["Custom Software Building", "AI Integration", "AI-Automation"]
     }
   ];
 

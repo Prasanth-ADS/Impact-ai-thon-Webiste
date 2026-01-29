@@ -10,7 +10,6 @@ import LiquidEther from './components/LiquidEther';
 import Timeline from './components/Timeline';
 import PrizePool from './components/PrizePool';
 
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import TrackDetail from './components/TrackDetail';
 import Coordinators from './components/Coordinators';
