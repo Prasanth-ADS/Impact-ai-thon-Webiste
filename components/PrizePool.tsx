@@ -95,7 +95,7 @@ const PrizePool: React.FC = () => {
                   </h3>
                   <div className="h-6 mb-8">
                     <p className={`text-red-400 font-mono text-xs md:text-sm tracking-widest transition-opacity ${isVerifying ? 'opacity-0' : 'opacity-100'}`}>
-                      ENTER ACCESS CODE TO REVEAL
+                      ENTER ACCESS CODE TO REVEAL (v1.2)
                     </p>
                   </div>
 
