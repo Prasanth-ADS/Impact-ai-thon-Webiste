@@ -43,7 +43,7 @@ const PrizePool: React.FC = () => {
     }
 
     // Check code when full
-    if (newPasscode.every(digit => digit !== '') && index === 7) {
+    if (newPasscode.every(digit => digit !== '')) {
       const fullCode = newPasscode.join('');
 
       verifyPasscode(fullCode);
