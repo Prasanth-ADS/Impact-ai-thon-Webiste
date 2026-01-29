@@ -50,4 +50,15 @@ router.post('/winners', async (req, res) => {
     }
 });
 
+// GET route to view winners (Simple Admin View)
+router.get('/winners', async (req, res) => {
+    try {
+        const db = getDb();
+        const winners = await db.all('SELECT * FROM winners ORDER BY timestamp DESC');
+        res.json({ success: true, count: winners.length, data: winners });
+    } catch (error: any) {
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
 export default router;
