@@ -15,7 +15,7 @@ const Sponsors: React.FC = () => {
       challenges: ["Local Arabic Content AI", "Enterprise Solution Design", "Quality Assurance Automation"]
     },
     {
-      name: "CCSB",
+      name: "Codework",
       image: "/codeworklogo.jpeg",
       website: "https://codework.ai/",
       color: "text-sky-400",
