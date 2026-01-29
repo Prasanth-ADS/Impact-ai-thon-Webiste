@@ -23,6 +23,24 @@ const About: React.FC = () => {
               {/* FEATURED: Cyberpunk Vault Prize Pool */}
               <div className="max-w-5xl mx-auto mb-16">
                 <PrizePool />
+                <div className="mt-8 relative group">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+                  <div className="relative p-6 bg-slate-900 ring-1 ring-gray-900/5 rounded-lg leading-none flex items-center justify-center space-x-6">
+                    <div className="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
+                      <div className="bg-cyan-500/10 p-3 rounded-full border border-cyan-500/50 shadow-[0_0_15px_rgba(6,182,212,0.3)] animate-pulse">
+                        <Gift className="text-cyan-400 w-8 h-8" />
+                      </div>
+                      <div className="space-y-2">
+                        <p className="text-slate-300 text-sm font-mono tracking-wide uppercase border-b border-white/10 pb-1 mb-1 inline-block">
+                          <span className="text-cyan-400">///</span> Transmission Incoming
+                        </p>
+                        <p className="text-slate-300 text-base md:text-lg">
+                          Crack the code to win <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 font-bold text-xl">Rs. 2,000</span> and unlock <span className="text-yellow-400 font-semibold">Priority Shortlisting</span>.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* Info Grid - 3 Columns Below */}
