@@ -22,6 +22,12 @@ app.get('/health', (req, res) => {
 });
 
 // Start Server
-app.listen(PORT, () => {
-    console.log(`SECURE BACKEND running on port ${PORT}`);
+import { initDb } from './database';
+
+initDb().then(() => {
+    app.listen(PORT, () => {
+        console.log(`SECURE BACKEND running on port ${PORT}`);
+    });
+}).catch(err => {
+    console.error("Failed to start server due to DB init usage", err);
 });

@@ -7,10 +7,13 @@
         "dev": "nodemon --exec ts-node src/server.ts"
     },
     "dependencies": {
+        "@types/sqlite3": "^3.1.11",
         "cors": "^2.8.5",
         "dotenv": "^16.0.0",
         "express": "^4.18.0",
-        "express-rate-limit": "^6.0.0"
+        "express-rate-limit": "^6.0.0",
+        "sqlite": "^5.1.1",
+        "sqlite3": "^5.1.7"
     },
     "devDependencies": {
         "@types/cors": "^2.8.12",

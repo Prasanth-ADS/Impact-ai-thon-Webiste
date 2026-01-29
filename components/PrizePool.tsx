@@ -1,19 +1,29 @@
 import React from 'react';
 import LiquidEther from './LiquidEther';
-import { Trophy, Medal, Award, Crown, Zap, Code2, Star, Gift, Lock, AlertTriangle } from 'lucide-react';
+import { Trophy, Medal, Award, Crown, Zap, Code2, Star, Gift, Lock, AlertTriangle, Send } from 'lucide-react';
 
 const PrizePool: React.FC = () => {
   const [isUnlocked, setIsUnlocked] = React.useState(false);
-  const [passcode, setPasscode] = React.useState(Array(8).fill(''));
+  const [passcode, setPasscode] = React.useState(Array(9).fill('')); // Increased to 9 for 0406@0709
   const [error, setError] = React.useState(false);
   const [isVerifying, setIsVerifying] = React.useState(false);
   const inputRefs = React.useRef<(HTMLInputElement | null)[]>([]);
 
+  // Form State
+  const [formData, setFormData] = React.useState({
+    name: '',
+    team_name: '',
+    mobile: '',
+    email: '',
+    college: ''
+  });
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [submissionStatus, setSubmissionStatus] = React.useState<'idle' | 'success' | 'error'>('idle');
+
   const verifyPasscode = async (code: string) => {
     setIsVerifying(true);
     // Client-side verification for immediate cross-device support
-    // The code is '04@07@09'
-    const correctCode = '04@07@09';
+    const correctCode = '0406@0709';
 
     setTimeout(() => {
       if (code === correctCode) {
@@ -21,16 +31,17 @@ const PrizePool: React.FC = () => {
       } else {
         setError(true);
         setTimeout(() => {
-          setPasscode(Array(8).fill(''));
+          setPasscode(Array(9).fill(''));
           inputRefs.current[0]?.focus();
           setError(false);
         }, 800);
       }
       setIsVerifying(false);
-    }, 500); // Small delay for UX "process" feel using setTimeout instead of promise
-  }
+    }, 500);
+  };
+
   const handleInputChange = (index: number, value: string) => {
-    if (isVerifying) return; // Prevent input during verification
+    if (isVerifying) return;
 
     const newPasscode = [...passcode];
     newPasscode[index] = value;
@@ -38,14 +49,13 @@ const PrizePool: React.FC = () => {
     setError(false);
 
     // Auto-focus next input
-    if (value && index < 7) {
+    if (value && index < 8) {
       inputRefs.current[index + 1]?.focus();
     }
 
     // Check code when full
     if (newPasscode.every(digit => digit !== '')) {
       const fullCode = newPasscode.join('');
-
       verifyPasscode(fullCode);
     }
   };
@@ -53,6 +63,37 @@ const PrizePool: React.FC = () => {
   const handleKeyDown = (index: number, e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Backspace' && !passcode[index] && index > 0) {
       inputRefs.current[index - 1]?.focus();
+    }
+  };
+
+  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('http://localhost:3000/api/winners', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        setSubmissionStatus('success');
+      } else {
+        setSubmissionStatus('error');
+      }
+    } catch (err) {
+      console.error("Submission failed", err);
+      // Fallback for demo if backend isn't running perfectly for user yet
+      // setSubmissionStatus('success'); // UNCOMMENT IF testing without backend
+      setSubmissionStatus('error');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -70,13 +111,13 @@ const PrizePool: React.FC = () => {
           <div className="text-center mb-12">
             <div className="inline-flex items-center justify-center p-2 mb-4 rounded-full bg-yellow-500/10 border border-yellow-500/20">
               <Trophy size={16} className="text-yellow-500 mr-2" />
-              <span className="text-xs font-bold tracking-widest text-yellow-500 uppercase">Total Rewards</span>
+              <span className="text-xs font-bold tracking-widest text-yellow-500 uppercase">Secret Vault</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-white mb-4 tracking-tight">
-              ₹1,20,000 <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-400">PRIZE POOL</span>
+              {isUnlocked ? "WINNER REGISTRATION" : "CLASSIFIED ACCESS"}
             </h2>
             <p className="text-slate-400 text-sm md:text-base max-w-2xl mx-auto">
-              Compete for cash prizes, venture capital introductions, and enterprise-grade tech stacks.
+              {isUnlocked ? "Enter your details to claim your victory status." : "Authorized personnel only. Enter the secure access code to proceed."}
             </p>
           </div>
 
@@ -91,11 +132,11 @@ const PrizePool: React.FC = () => {
                   </div>
 
                   <h3 className="text-2xl font-black text-white mb-2 tracking-wider uppercase font-mono">
-                    {isVerifying ? "Verifying Access..." : "Prize Breakdown Locked"}
+                    {isVerifying ? "Verifying Access..." : "System Locked"}
                   </h3>
                   <div className="h-6 mb-8">
                     <p className={`text-red-400 font-mono text-xs md:text-sm tracking-widest transition-opacity ${isVerifying ? 'opacity-0' : 'opacity-100'}`}>
-                      ENTER ACCESS CODE TO REVEAL (v1.2)
+                      ENTER ACCESS CODE (v2.0)
                     </p>
                   </div>
 
@@ -111,7 +152,7 @@ const PrizePool: React.FC = () => {
                         disabled={isVerifying}
                         onChange={(e) => handleInputChange(idx, e.target.value)}
                         onKeyDown={(e) => handleKeyDown(idx, e)}
-                        className={`w-8 h-10 md:w-12 md:h-14 bg-black/60 border-2 rounded-lg text-center text-lg md:text-2xl font-bold font-mono text-white focus:outline-none focus:border-tech-cyan focus:shadow-[0_0_15px_rgba(6,182,212,0.5)] transition-all ${error ? 'border-red-500 text-red-500' : 'border-slate-700'} ${isVerifying ? 'opacity-50 cursor-not-allowed' : ''}`}
+                        className={`w-8 h-10 md:w-10 md:h-14 bg-black/60 border-2 rounded-lg text-center text-lg md:text-2xl font-bold font-mono text-white focus:outline-none focus:border-tech-cyan focus:shadow-[0_0_15px_rgba(6,182,212,0.5)] transition-all ${error ? 'border-red-500 text-red-500' : 'border-slate-700'} ${isVerifying ? 'opacity-50 cursor-not-allowed' : ''}`}
                       />
                     ))}
                   </div>
@@ -119,58 +160,107 @@ const PrizePool: React.FC = () => {
                   <div className="bg-slate-900/50 border border-slate-700 rounded-xl p-3 md:p-4 backdrop-blur-md max-w-md w-full">
                     <div className="flex items-center justify-center space-x-2 text-yellow-500 mb-1">
                       <AlertTriangle size={14} />
-                      <span className="font-bold uppercase tracking-wider text-[10px] md:text-xs">Clue</span>
+                      <span className="font-bold uppercase tracking-wider text-[10px] md:text-xs">Secure Area</span>
                     </div>
                     <p className="text-slate-400 text-xs md:text-sm">
-                      The code will be shared shortly or you can find the clues hidden within the website.
+                      Multiple failed attempts will be logged.
                     </p>
                   </div>
                 </div>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-in fade-in zoom-in-95 duration-700">
-                {/* 2nd Prize */}
-                <div className="bg-[#0f172a]/80 backdrop-blur-md border border-slate-700 rounded-2xl p-6 text-center transform hover:scale-105 transition-all duration-300 relative group md:translate-y-4">
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <div className="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center border-2 border-slate-600 shadow-lg">
-                      <span className="text-xl font-bold text-slate-300">2</span>
+              <div className="bg-[#0f172a]/90 backdrop-blur-xl border border-tech-cyan/30 rounded-2xl p-8 md:p-12 relative overflow-hidden animate-in fade-in zoom-in-95 duration-500">
+                {submissionStatus === 'success' ? (
+                  <div className="text-center py-12">
+                    <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <Star size={40} className="text-green-400" />
                     </div>
+                    <h3 className="text-3xl font-bold text-white mb-4">Registration Confirmed</h3>
+                    <p className="text-slate-300">Your details have been securely recorded in the vault database. Good luck!</p>
                   </div>
-                  <div className="mt-6 mb-2">
-                    <Medal size={40} className="text-slate-300 mx-auto mb-2" />
-                    <div className="text-3xl font-black text-white">₹40,000</div>
-                    <div className="text-slate-400 text-sm font-bold tracking-widest uppercase">Runner Up</div>
-                  </div>
-                </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6 max-w-lg mx-auto">
+                    <div className="grid grid-cols-1 gap-6">
+                      <div>
+                        <label className="block text-slate-400 text-sm font-mono uppercase mb-2">Participant Name</label>
+                        <input
+                          name="name"
+                          required
+                          value={formData.name}
+                          onChange={handleFormChange}
+                          className="w-full bg-slate-900/50 border border-slate-700 rounded-lg p-3 text-white focus:outline-none focus:border-tech-cyan focus:ring-1 focus:ring-tech-cyan transition-colors"
+                          placeholder="John Doe"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-slate-400 text-sm font-mono uppercase mb-2">Team Name</label>
+                        <input
+                          name="team_name"
+                          required
+                          value={formData.team_name}
+                          onChange={handleFormChange}
+                          className="w-full bg-slate-900/50 border border-slate-700 rounded-lg p-3 text-white focus:outline-none focus:border-tech-cyan focus:ring-1 focus:ring-tech-cyan transition-colors"
+                          placeholder="Cyber Alphas"
+                        />
+                      </div>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                          <label className="block text-slate-400 text-sm font-mono uppercase mb-2">Mobile Number</label>
+                          <input
+                            name="mobile"
+                            required
+                            type="tel"
+                            value={formData.mobile}
+                            onChange={handleFormChange}
+                            className="w-full bg-slate-900/50 border border-slate-700 rounded-lg p-3 text-white focus:outline-none focus:border-tech-cyan focus:ring-1 focus:ring-tech-cyan transition-colors"
+                            placeholder="+91 9876543210"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-slate-400 text-sm font-mono uppercase mb-2">Email Address</label>
+                          <input
+                            name="email"
+                            required
+                            type="email"
+                            value={formData.email}
+                            onChange={handleFormChange}
+                            className="w-full bg-slate-900/50 border border-slate-700 rounded-lg p-3 text-white focus:outline-none focus:border-tech-cyan focus:ring-1 focus:ring-tech-cyan transition-colors"
+                            placeholder="john@example.com"
+                          />
+                        </div>
+                      </div>
+                      <div>
+                        <label className="block text-slate-400 text-sm font-mono uppercase mb-2">College Name</label>
+                        <input
+                          name="college"
+                          required
+                          value={formData.college}
+                          onChange={handleFormChange}
+                          className="w-full bg-slate-900/50 border border-slate-700 rounded-lg p-3 text-white focus:outline-none focus:border-tech-cyan focus:ring-1 focus:ring-tech-cyan transition-colors"
+                          placeholder="Institute of Technology"
+                        />
+                      </div>
+                    </div>
 
-                {/* 1st Prize */}
-                <div className="bg-gradient-to-b from-[#1e1b4b] to-[#0f172a] border border-yellow-500/50 rounded-2xl p-8 text-center transform hover:scale-110 transition-all duration-300 relative z-10 shadow-[0_0_30px_rgba(234,179,8,0.2)] group">
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-yellow-500 to-transparent"></div>
-                  <div className="absolute -top-6 left-1/2 -translate-x-1/2">
-                    <div className="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center border-4 border-[#0f172a] shadow-xl">
-                      <Crown size={32} className="text-[#0f172a]" />
-                    </div>
-                  </div>
-                  <div className="mt-8 mb-4">
-                    <Trophy size={64} className="text-yellow-400 mx-auto mb-4 drop-shadow-[0_0_15px_rgba(250,204,21,0.5)] animate-bounce" />
-                    <div className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-b from-yellow-300 to-yellow-600">₹50,000</div>
-                    <div className="text-yellow-500 text-base font-bold tracking-[0.2em] uppercase mt-2">Champion</div>
-                  </div>
-                </div>
+                    {submissionStatus === 'error' && (
+                      <div className="p-3 bg-red-500/10 border border-red-500/30 rounded-lg text-red-400 text-sm text-center">
+                        Failed to submit details. Please check connection.
+                      </div>
+                    )}
 
-                {/* 3rd Prize */}
-                <div className="bg-[#0f172a]/80 backdrop-blur-md border border-amber-800/50 rounded-2xl p-6 text-center transform hover:scale-105 transition-all duration-300 relative group md:translate-y-4">
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <div className="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center border-2 border-amber-700 shadow-lg">
-                      <span className="text-xl font-bold text-amber-600">3</span>
-                    </div>
-                  </div>
-                  <div className="mt-6 mb-2">
-                    <Award size={40} className="text-amber-600 mx-auto mb-2" />
-                    <div className="text-3xl font-black text-white">₹30,000</div>
-                    <div className="text-amber-600/80 text-sm font-bold tracking-widest uppercase">Second Runner Up</div>
-                  </div>
-                </div>
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full py-4 bg-tech-cyan hover:bg-cyan-400 text-black font-bold text-lg rounded-lg transition-all duration-300 transform hover:scale-[1.02] flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {isSubmitting ? 'Registering...' : (
+                        <>
+                          Confirm Registration <Send size={18} />
+                        </>
+                      )}
+                    </button>
+                  </form>
+                )}
               </div>
             )}
           </div>
