@@ -18,6 +18,7 @@ import Loader from './components/Loader';
 import CodeOfConduct from './components/CodeOfConduct';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
+import { Analytics } from '@vercel/analytics/react';
 
 
 const Home: React.FC = () => {
@@ -68,6 +69,7 @@ const App: React.FC = () => {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
         </Routes>
+        <Analytics />
       </div>
     </Router>
   );
