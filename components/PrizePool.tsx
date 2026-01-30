@@ -22,11 +22,18 @@ const PrizePool: React.FC = () => {
 
   const verifyPasscode = async (code: string) => {
     setIsVerifying(true);
-    // Client-side verification for immediate cross-device support
-    const correctCode = '0406@0709';
 
-    setTimeout(() => {
-      if (code === correctCode) {
+    try {
+      const baseUrl = window.location.protocol + '//' + window.location.hostname + ':3000';
+      const response = await fetch(`${baseUrl}/api/unlock`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ code })
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
         setIsUnlocked(true);
       } else {
         setError(true);
@@ -36,8 +43,12 @@ const PrizePool: React.FC = () => {
           setError(false);
         }, 800);
       }
+    } catch (err) {
+      console.error("Verification error", err);
+      setError(true);
+    } finally {
       setIsVerifying(false);
-    }, 500);
+    }
   };
 
   const handleInputChange = (index: number, value: string) => {

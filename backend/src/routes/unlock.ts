@@ -8,14 +8,34 @@ const router = express.Router();
 // But since we moved password check to client-side, this route might be vestigial.
 // We will repurpose/add the winners route.
 
+import crypto from 'crypto';
+
+// Get env vars
+const PASSWORD_HASH = process.env.VAULT_PASSWORD_HASH;
+const SALT = process.env.VAULT_PASSWORD_SALT || 'ImpactAIThon2026_Salt';
+const ITERATIONS = parseInt(process.env.PBKDF2_ITERATIONS || '100000');
+const KEYLEN = 64;
+const DIGEST = 'sha512';
+
 router.post('/unlock', (req, res) => {
-    // Legacy route, simplified mock response since front-end handles actual check now
-    // or we can implement the server-side check for 0406@0709 if they want double security.
     const { code } = req.body;
-    if (code === '0406@0709') { // Updated code
-        res.json({ success: true });
-    } else {
-        res.status(401).json({ success: false });
+
+    if (!code) {
+        return res.status(400).json({ success: false, message: "Code required" });
+    }
+
+    try {
+        const derivedKey = crypto.pbkdf2Sync(code, SALT, ITERATIONS, KEYLEN, DIGEST);
+        const derivedHash = derivedKey.toString('hex');
+
+        if (derivedHash === PASSWORD_HASH) {
+            res.json({ success: true });
+        } else {
+            res.status(401).json({ success: false, message: "Invalid code" });
+        }
+    } catch (error) {
+        console.error("Hashing error", error);
+        res.status(500).json({ success: false, message: "Server error" });
     }
 });
 
