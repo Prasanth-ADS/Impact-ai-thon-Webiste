@@ -24,8 +24,14 @@ const PrizePool: React.FC = () => {
   React.useEffect(() => {
     const checkAuth = async () => {
       try {
-        const baseUrl = window.location.protocol + '//' + window.location.hostname + ':3000';
-        const res = await fetch(`${baseUrl}/api/auth/status`, { credentials: 'include' });
+        const baseUrl = window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
+        // Check both paths for compatibility (Vercel vs Local)
+        let res;
+        try {
+          res = await fetch(`${baseUrl}/api/auth-status`, { credentials: 'include' });
+        } catch {
+          res = await fetch(`${baseUrl}/api/auth/status`, { credentials: 'include' });
+        }
         const data = await res.json();
         if (data.authenticated) {
           setIsUnlocked(true);
@@ -41,8 +47,8 @@ const PrizePool: React.FC = () => {
     setIsVerifying(true);
 
     try {
-      const baseUrl = window.location.protocol + '//' + window.location.hostname + ':3000';
-      const response = await fetch(`${baseUrl}/api/auth/login`, {
+      const baseUrl = window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
+      const response = await fetch(`${baseUrl}/api/unlock`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ code }),
@@ -106,7 +112,7 @@ const PrizePool: React.FC = () => {
     try {
       // Dynamically determine the backend URL based on where the frontend is loaded from.
       // If loaded from localhost, uses localhost:3000. If loaded from 192.168.x.x, attempts to hit port 3000 on that same IP.
-      const baseUrl = window.location.protocol + '//' + window.location.hostname + ':3000';
+      const baseUrl = window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
       const response = await fetch(`${baseUrl}/api/winners`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

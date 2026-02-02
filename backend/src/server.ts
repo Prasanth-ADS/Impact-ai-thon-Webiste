@@ -21,8 +21,13 @@ app.use(cookieParser());
 // Session removed for stateless JWT architecture (Vercel compatible)
 
 // Routes
+// Vercel-compatible path aliases
+app.use('/api/unlock', authRoutes); // Map /api/unlock -> authRoutes (handle inside auth.ts)
+app.use('/api/auth-status', authRoutes);
+app.use('/api/winners', winnerRoutes);
+
+// Keep legacy for safety if needed
 app.use('/api/auth', authRoutes);
-app.use('/api', winnerRoutes);
 
 // Health check
 app.get('/health', (req, res) => {
