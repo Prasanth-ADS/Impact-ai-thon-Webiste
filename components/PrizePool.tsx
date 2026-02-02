@@ -4,7 +4,7 @@ import { Trophy, Medal, Award, Crown, Zap, Code2, Star, Gift, Lock, AlertTriangl
 
 const PrizePool: React.FC = () => {
   const [isUnlocked, setIsUnlocked] = React.useState(false);
-  const [passcode, setPasscode] = React.useState(Array(9).fill('')); // Increased to 9 for 0406@0709
+  const [passcode, setPasscode] = React.useState(Array(13).fill('')); // Increased to 13 for new password
   const [error, setError] = React.useState(false);
   const [isVerifying, setIsVerifying] = React.useState(false);
   const inputRefs = React.useRef<(HTMLInputElement | null)[]>([]);
@@ -20,15 +20,33 @@ const PrizePool: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [submissionStatus, setSubmissionStatus] = React.useState<'idle' | 'success' | 'error'>('idle');
 
+  // Check auth status on mount
+  React.useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const baseUrl = window.location.protocol + '//' + window.location.hostname + ':3000';
+        const res = await fetch(`${baseUrl}/api/auth/status`, { credentials: 'include' });
+        const data = await res.json();
+        if (data.authenticated) {
+          setIsUnlocked(true);
+        }
+      } catch (err) {
+        console.error("Auth check failed", err);
+      }
+    };
+    checkAuth();
+  }, []);
+
   const verifyPasscode = async (code: string) => {
     setIsVerifying(true);
 
     try {
       const baseUrl = window.location.protocol + '//' + window.location.hostname + ':3000';
-      const response = await fetch(`${baseUrl}/api/unlock`, {
+      const response = await fetch(`${baseUrl}/api/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ code })
+        body: JSON.stringify({ code }),
+        credentials: 'include'
       });
 
       const data = await response.json();
@@ -38,7 +56,7 @@ const PrizePool: React.FC = () => {
       } else {
         setError(true);
         setTimeout(() => {
-          setPasscode(Array(9).fill(''));
+          setPasscode(Array(13).fill(''));
           inputRefs.current[0]?.focus();
           setError(false);
         }, 800);
@@ -60,7 +78,7 @@ const PrizePool: React.FC = () => {
     setError(false);
 
     // Auto-focus next input
-    if (value && index < 8) {
+    if (value && index < 12) {
       inputRefs.current[index + 1]?.focus();
     }
 
@@ -92,7 +110,8 @@ const PrizePool: React.FC = () => {
       const response = await fetch(`${baseUrl}/api/winners`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
+        credentials: 'include'
       });
 
       const data = await response.json();
