@@ -1,6 +1,6 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
 import jwt from 'jsonwebtoken';
-// import { getDb } from '../../backend/src/database'; // ADAPT for Prod DB
+import { createClient } from '@supabase/supabase-js';
 
 /* 
  * Vercel Serverless Function: /api/winners
@@ -8,6 +8,11 @@ import jwt from 'jsonwebtoken';
  */
 
 const SECRET = process.env.SESSION_SECRET || 'dev_secret';
+
+// Initialize Supabase (Use Environment Variables in Vercel)
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_KEY; // Use Service Role Key if strict RLS, or Anon key if RLS allows specific operations
+const supabase = (supabaseUrl && supabaseKey) ? createClient(supabaseUrl, supabaseKey) : null;
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
     // 1. Authorization Check
@@ -22,21 +27,44 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         return res.status(401).json({ success: false, message: 'Invalid Token' });
     }
 
-    // 2. Logic (DB access would go here)
+    if (!supabase) {
+        console.error("Supabase not configured");
+        // Fallback for dev without DB
+        if (req.method === 'POST') return res.status(200).json({ success: true, message: 'Registered (Mock)' });
+        return res.status(200).json({ success: true, data: [] });
+    }
+
+    // 2. Database Logic
     if (req.method === 'POST') {
-        const { name, team_name } = req.body;
-        // Basic validation
-        if (!name || !team_name) return res.status(400).json({ success: false });
+        const { name, team_name, mobile, email, college } = req.body;
 
-        // TODO: Insert into Vercel Postgres / Turso / Supabase
-        // await db.insert(...) 
+        // Validation
+        if (!name || !team_name || !mobile || !email || !college) {
+            return res.status(400).json({ success: false, message: 'Missing fields' });
+        }
 
-        console.log("Winner Registered (Console Mock):", name);
+        const { error } = await supabase
+            .from('winners')
+            .insert([{ name, team_name, mobile, email, college }]);
+
+        if (error) {
+            console.error('Supabase Error:', error);
+            return res.status(500).json({ success: false, message: 'Database Error' });
+        }
+
         res.status(200).json({ success: true, message: 'Registered' });
     }
     else if (req.method === 'GET') {
-        // TODO: Select from DB
-        res.status(200).json({ success: true, data: [] });
+        const { data, error } = await supabase
+            .from('winners')
+            .select('*')
+            .order('created_at', { ascending: false });
+
+        if (error) {
+            return res.status(500).json({ success: false, message: 'Fetch Error' });
+        }
+
+        res.status(200).json({ success: true, data });
     }
     else {
         res.status(405).send('Method Not Allowed');

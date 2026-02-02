@@ -1,5 +1,6 @@
 import express from 'express';
 import argon2 from 'argon2';
+import bcrypt from 'bcryptjs';
 import { loginLimiter } from '../middleware/rateLimit';
 import { signToken, verifyToken } from '../utils/jwt';
 
@@ -21,7 +22,16 @@ async function loginLogic(req: express.Request, res: express.Response) {
         const hash = process.env.VAULT_HASH_ARGON2;
         if (!hash) return res.status(500).json({ success: false, message: 'Server config error' });
 
-        const isValid = await argon2.verify(hash, code);
+        let isValid = false;
+        if (hash.startsWith('$argon2')) {
+            try {
+                isValid = await argon2.verify(hash, code);
+            } catch (e) {
+                console.error("Argon2 verify failed, falling back to check if it's bcrypt:", e);
+            }
+        } else {
+            isValid = await bcrypt.compare(code, hash);
+        }
         if (isValid) {
             console.log('[DEBUG] Password verified.');
             const token = signToken({ authenticated: true });

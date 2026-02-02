@@ -1,5 +1,6 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
 import argon2 from 'argon2';
+import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { parse } from 'cookie';
 
@@ -22,7 +23,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     try {
         if (!VAULT_HASH) throw new Error("Missing VAULT_HASH config");
 
-        const isValid = await argon2.verify(VAULT_HASH, code);
+        let isValid = false;
+
+        if (VAULT_HASH.startsWith('$argon2')) {
+            try {
+                isValid = await argon2.verify(VAULT_HASH, code);
+            } catch (e) {
+                console.error("Argon2 verify failed:", e);
+                // Fallback or error
+            }
+        } else {
+            // Assume Bcrypt (starts with $2a, $2b, etc)
+            isValid = await bcrypt.compare(code, VAULT_HASH);
+        }
 
         if (isValid) {
             const token = jwt.sign({ authenticated: true }, SECRET, { expiresIn: '1d' });
