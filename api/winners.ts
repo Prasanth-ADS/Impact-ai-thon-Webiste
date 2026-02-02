@@ -1,6 +1,7 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
 import jwt from 'jsonwebtoken';
 import { createClient } from '@supabase/supabase-js';
+import { parse } from 'cookie';
 
 /* 
  * Vercel Serverless Function: /api/winners
@@ -11,12 +12,14 @@ const SECRET = process.env.SESSION_SECRET || 'dev_secret';
 
 // Initialize Supabase (Use Environment Variables in Vercel)
 const supabaseUrl = process.env.SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_KEY; // Use Service Role Key if strict RLS, or Anon key if RLS allows specific operations
+// Check both names for the key (Vercel integration often uses SERVICE_ROLE_KEY)
+const supabaseKey = process.env.SUPABASE_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY;
+
 const supabase = (supabaseUrl && supabaseKey) ? createClient(supabaseUrl, supabaseKey) : null;
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
     // 1. Authorization Check
-    const cookies = req.headers.cookie ? require('cookie').parse(req.headers.cookie) : {};
+    const cookies = req.headers.cookie ? parse(req.headers.cookie) : {};
     const token = cookies.auth_token;
 
     if (!token) return res.status(401).json({ success: false, message: 'Unauthorized' });
