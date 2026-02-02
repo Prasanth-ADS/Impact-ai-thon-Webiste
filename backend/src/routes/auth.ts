@@ -24,7 +24,9 @@ router.post('/login', loginLimiter, async (req, res) => {
         const isValid = await argon2.verify(hash, code);
 
         if (isValid) {
+            console.log('[DEBUG] Password verified. Generating token...');
             const token = signToken({ authenticated: true });
+            console.log('[DEBUG] Token generated. Setting cookie...');
 
             // Set HttpOnly Cookie
             res.cookie('auth_token', token, {
@@ -33,6 +35,7 @@ router.post('/login', loginLimiter, async (req, res) => {
                 sameSite: 'strict',
                 maxAge: 1000 * 60 * 60 * 24 // 1 day
             });
+            console.log('[DEBUG] Cookie set.');
 
             res.json({ success: true, message: 'Vault unlocked' });
         } else {
@@ -46,6 +49,7 @@ router.post('/login', loginLimiter, async (req, res) => {
 
 router.get('/status', (req, res) => {
     const token = req.cookies.auth_token;
+    console.log(`[DEBUG] Status check. Token present: ${!!token}`);
     const isValid = token ? verifyToken(token) : false;
     res.json({ authenticated: !!isValid });
 });
