@@ -12,7 +12,16 @@ router.post('/login', loginLimiter, async (req, res) => {
     }
 
     try {
-        const isValid = await argon2.verify(process.env.VAULT_HASH_ARGON2!, code);
+        console.log(`[DEBUG] Received login attempt. Code: ${code} (Length: ${code.length})`);
+
+        const hash = process.env.VAULT_HASH_ARGON2;
+        if (!hash) {
+            console.error('[ERROR] VAULT_HASH_ARGON2 is missing from env');
+            return res.status(500).json({ success: false, message: 'Server configuration error' });
+        }
+
+        const isValid = await argon2.verify(hash, code);
+        console.log(`[DEBUG] Verification result: ${isValid}`);
 
         if (isValid) {
             req.session.isAuthenticated = true;

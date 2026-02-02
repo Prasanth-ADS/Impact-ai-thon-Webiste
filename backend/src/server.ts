@@ -45,6 +45,7 @@ import { initDb } from './database';
 initDb().then(() => {
     app.listen(PORT, () => {
         console.log(`SECURE BACKEND running on port ${PORT}`);
+        console.log(`[DEBUG] Vault Hash Loaded: ${process.env.VAULT_HASH_ARGON2 ? 'YES' : 'NO'}`);
     });
 }).catch(err => {
     console.error("Failed to start server due to DB init usage", err);
