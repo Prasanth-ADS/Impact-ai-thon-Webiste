@@ -11,6 +11,7 @@ import { parse } from 'cookie';
 
 const SECRET = process.env.SESSION_SECRET || 'dev_secret';
 const VAULT_HASH = process.env.VAULT_HASH_ARGON2;
+// Force Vercel Rebuild
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (req.method !== 'POST') {
