@@ -19,6 +19,7 @@ const PrizePool: React.FC = () => {
   });
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [submissionStatus, setSubmissionStatus] = React.useState<'idle' | 'success' | 'error'>('idle');
+  const [submissionError, setSubmissionError] = React.useState('');
 
   // Check auth status on mount
   React.useEffect(() => {
@@ -124,12 +125,16 @@ const PrizePool: React.FC = () => {
       if (data.success) {
         setSubmissionStatus('success');
       } else {
+        console.error("Submission failed:", data.message);
+        // Store the specific error message if possible, or just default to error state
+        // For now, we'll alert the user or log it. 
+        // Let's change the UI to show the message.
+        setSubmissionError(data.message || 'Failed to submit details.');
         setSubmissionStatus('error');
       }
     } catch (err) {
       console.error("Submission failed", err);
-      // Fallback for demo if backend isn't running perfectly for user yet
-      // setSubmissionStatus('success'); // UNCOMMENT IF testing without backend
+      setSubmissionError('Network error. Please check connection.');
       setSubmissionStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -283,7 +288,7 @@ const PrizePool: React.FC = () => {
 
                     {submissionStatus === 'error' && (
                       <div className="p-3 bg-red-500/10 border border-red-500/30 rounded-lg text-red-400 text-sm text-center">
-                        Failed to submit details. Please check connection.
+                        {submissionError}
                       </div>
                     )}
 
