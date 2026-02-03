@@ -3,12 +3,7 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { parse } from 'cookie';
 
-/* 
- * Vercel Serverless Function: /api/unlock
- * Verifies password and sets HttpOnly JWT Cookie
- * NOTE: Uses Bcrypt ONLY for Vercel stability.
- * SECURITY: Rate limited to 5 attempts per 15 minutes per IP
- */
+
 
 const SECRET = process.env.SESSION_SECRET || 'dev_secret';
 const VAULT_HASH = process.env.VAULT_HASH_ARGON2;
@@ -23,7 +18,7 @@ interface RateLimitEntry {
 // Global map persists across warm lambda invocations
 const rateLimitStore = new Map<string, RateLimitEntry>();
 
-const RATE_LIMIT_WINDOW = 15 * 60 * 1000; // 15 minutes in milliseconds
+const RATE_LIMIT_WINDOW = 20 * 60 * 1000; // 20 minutes in milliseconds
 const MAX_ATTEMPTS = 5;
 
 function getRateLimitKey(req: VercelRequest): string {
