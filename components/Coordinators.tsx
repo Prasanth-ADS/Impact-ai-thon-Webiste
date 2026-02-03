@@ -61,13 +61,13 @@ const Coordinators: React.FC = () => {
             name: "Kiruthik",
             role: "Student Coordinator",
             phone: "99405 19002",
-            image: "/kiruthik photo.jpeg"
+            image: "/api/protected-image?file=kiruthik-photo.jpeg"
         },
         {
             name: "Naazil",
             role: "Student Coordinator",
             phone: "9444160065",
-            image: "/naazil photo.jpeg",
+            image: "/api/protected-image?file=naazil-photo.jpeg",
             imagePosition: "object-top"
         }
     ];
@@ -78,28 +78,28 @@ const Coordinators: React.FC = () => {
             role: "Student Coordinator",
             phone: "7338864970",
             linkedin: "https://www.linkedin.com/in/aejazahmed2006/",
-            image: "/Syed.png"
+            image: "/api/protected-image?file=syed.png"
         },
         {
             name: "Nowrin Begum R",
             role: "Coordinator",
             phone: "8807527817",
             linkedin: "https://www.linkedin.com/in/nowrin-begum/",
-            image: "/Nowrin.png"
+            image: "/api/protected-image?file=nowrin.png"
         },
         {
             name: "Shahid Ahamed S",
             role: "Coordinator",
             phone: "8489079317",
             linkedin: "https://www.linkedin.com/in/shahid-ahamed-s-855ab2295/",
-            image: "/Shahidl.jpeg"
+            image: "/api/protected-image?file=shahid1.jpeg"
         },
         {
             name: "Srinithi P",
             role: "Coordinator",
             phone: "6383457387",
             linkedin: "https://www.linkedin.com/in/srinithi-p-75729b295/",
-            image: "/Srinithi photo.jpeg"
+            image: "/api/protected-image?file=srinithi-photo.jpeg"
         }
     ];
 
