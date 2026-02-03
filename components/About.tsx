@@ -35,7 +35,7 @@ const About: React.FC = () => {
                           <span className="text-cyan-400">///</span> Transmission Incoming
                         </p>
                         <p className="text-slate-300 text-base md:text-lg">
-                          Crack the code to win <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 font-bold text-xl">Rs. 2,000</span> and unlock <span className="text-yellow-400 font-semibold">Priority Shortlisting</span>.
+                          Crack the code to win <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 font-bold text-xl">₹2,000 worth of vouchers</span> and unlock <span className="text-yellow-400 font-semibold">Priority Shortlisting</span>.
                         </p>
                       </div>
                     </div>
