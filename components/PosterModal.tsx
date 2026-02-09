@@ -68,7 +68,7 @@ const PosterModal: React.FC = () => {
                     {/* Poster Image - using object-cover to 'crop' */}
                     <div className="w-full h-full">
                         <img
-                            src="/public/Announcement.jpeg"
+                            src="/Announcement.jpeg"
                             alt="Impact AI Thon Poster"
                             className="w-full h-full object-cover"
                             onError={(e) => {
